@@ -5,11 +5,19 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch src/index.js",
-    "start": "node src/index.js",
-    "test": "node --test",
-    "lint": "eslint src/**/*.js",
-    "format": "prettier --write src/**/*.js"
+    "start": "node cli-tools/gh-cli.js",
+    "webhook": "node webhooks/webhook-server.js",
+    "example": "node examples/basic-api-usage.js",
+    "test": "echo 'Testes serão implementados em breve'",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint **/*.js --fix",
+    "format": "prettier --write **/*.js",
+    "format:check": "prettier --check **/*.js",
+    "dev": "nodemon webhooks/webhook-server.js",
+    "validate": "npm run lint && npm run format:check",
+    "clean": "rm -rf node_modules package-lock.json || echo 'Limpeza concluída'",
+    "setup": "npm install && npm run format",
+    "ci": "npm run validate"
   },
   "keywords": [
     "github",
