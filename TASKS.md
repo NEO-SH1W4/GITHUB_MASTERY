@@ -15,6 +15,7 @@
 - [ ] Documentar boas práticas de segurança
 
 ### 🔄 IN PROGRESS
+- [ ] Finalizar implementação do REST adapter
 - [x] Melhorar tratamento de eventos no webhook server
 - [x] Adicionar mais comandos interativos no CLI
 - [x] Implementar operações avançadas de issues
@@ -56,5 +57,5 @@
 - [ ] Integração com outras APIs
 
 ---
-*Atualizado em: 02/07/2025 06:16 UTC*
+*Atualizado em: 02/07/2025 19:46 UTC*
 
