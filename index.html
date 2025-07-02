@@ -1131,12 +1131,64 @@
                 });
             }
 
-            // Initialize when page loads
+            // Enhanced initialization with fallbacks
+            function initializeApp() {
+                console.log('🚀 Initializing GitHub Mastery App...');
+                
+                try {
+                    // Initialize core animations
+                    initDataFlow();
+                    initMatrixRain();
+                    
+                    // Initialize charts with error handling
+                    if (typeof Chart !== 'undefined') {
+                        initializeCharts();
+                        console.log('✅ Charts initialized');
+                    } else {
+                        console.warn('⚠️ Chart.js not loaded, skipping charts');
+                    }
+                    
+                    // Initialize agent terminal
+                    initAgentTerminal();
+                    console.log('✅ GitHub Agent Terminal initialized');
+                    
+                    // Initialize icons
+                    if (typeof feather !== 'undefined') {
+                        feather.replace();
+                        console.log('✅ Icons initialized');
+                    }
+                    
+                    // Initialize animations
+                    if (typeof AOS !== 'undefined') {
+                        AOS.init({
+                            duration: 1000,
+                            once: true,
+                            offset: 100,
+                        });
+                        console.log('✅ Animations initialized');
+                    }
+                    
+                    console.log('🎉 GitHub Mastery App fully loaded!');
+                } catch (error) {
+                    console.error('❌ Error initializing app:', error);
+                }
+            }
+            
+            // Multiple initialization strategies
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeApp);
+            } else {
+                initializeApp();
+            }
+            
+            // Backup initialization
             window.addEventListener('load', () => {
-                setTimeout(initDataFlow, 500);
-                setTimeout(initMatrixRain, 700);
-                setTimeout(initializeCharts, 1000);
-                setTimeout(initAgentTerminal, 1500);
+                setTimeout(() => {
+                    if (!document.getElementById('agent-terminal').hasChildNodes()) {
+                        console.log('🔄 Backup initialization...');
+                        initAgentTerminal();
+                    }
+                }, 1000);
             });
         </script>
     </body>
