@@ -101,37 +101,31 @@ export class GitHubMasteryPaymentGateway {
     }
 
     /**
-     * Verificar assinatura ativa
+     * Verificar assinatura ativa (versão demo)
      */
     async verifySubscription(userAddress) {
         try {
-            const contract = new ethers.Contract(
-                this.contractAddress,
-                this.getABI(),
-                this.provider
-            );
-
-            const subscription = await contract.subscriptions(userAddress);
+            const subscription = this.demoData.subscription;
             const now = Math.floor(Date.now() / 1000);
-
-            const isActive = subscription.expiryTime > now;
-
+            
+            const isActive = subscription.isActive && subscription.expiryTime > now;
+            
             console.log(
                 chalk.blue(`📋 Subscription status: ${isActive ? 'Active' : 'Expired'}`)
             );
-
+            
             return {
                 isActive,
-                tier: subscription.tier,
+                tier: subscription.tier || 'free',
                 expiryTime: subscription.expiryTime,
-                remainingDays: Math.max(
+                remainingDays: isActive ? Math.max(
                     0,
                     Math.floor((subscription.expiryTime - now) / 86400)
-                ),
+                ) : 0,
             };
         } catch (error) {
             console.error(chalk.red('❌ Erro ao verificar assinatura:'), error.message);
-            return { isActive: false };
+            return { isActive: false, tier: 'free' };
         }
     }
 
