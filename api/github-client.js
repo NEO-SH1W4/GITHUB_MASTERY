@@ -152,7 +152,7 @@ export class GitHubClient {
             
             return newRepo;
         } catch (error) {
-            console.log(chalk.red(`❌ Erro ao criar repositório:`), error.message);
+            console.log(chalk.red('❌ Erro ao criar repositório:'), error.message);
             throw error;
         }
     }
@@ -192,7 +192,7 @@ export class GitHubClient {
             
             return issues;
         } catch (error) {
-            console.log(chalk.red(`❌ Erro ao listar issues:`), error.message);
+            console.log(chalk.red('❌ Erro ao listar issues:'), error.message);
             throw error;
         }
     }

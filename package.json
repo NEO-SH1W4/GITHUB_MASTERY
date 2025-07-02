@@ -10,7 +10,10 @@
     "webhook": "node webhooks/webhook-server.js",
     "example": "node examples/basic-api-usage.js",
     "validate-env": "node -e \"import('./utils/env-validator.js').then(m => m.runFullValidation())\"",
-    "test": "echo 'Testes serão implementados em breve'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --watchAll=false",
     "lint": "eslint **/*.js --ignore-pattern node_modules/",
     "lint:fix": "eslint **/*.js --fix --ignore-pattern node_modules/",
     "format": "prettier --write **/*.js --ignore-path .gitignore",
@@ -33,18 +36,20 @@
   "author": "João",
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^20.0.2",
     "@octokit/auth-token": "^4.0.0",
-    "dotenv": "^16.3.1",
-    "commander": "^11.1.0",
-    "express": "^4.18.2",
+    "@octokit/rest": "^20.0.2",
     "chalk": "^5.3.0",
-    "inquirer": "^9.2.12"
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "inquirer": "^9.2.12",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
+    "@jest/globals": "^30.0.3",
     "eslint": "^8.57.0",
-    "prettier": "^3.1.1",
-    "nodemon": "^3.0.2"
+    "jest": "^30.0.3",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1"
   }
 }
-

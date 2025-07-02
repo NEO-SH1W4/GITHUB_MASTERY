@@ -119,32 +119,32 @@ app.post('/webhook', (req, res) => {
     try {
         // Processar evento baseado no tipo
         switch (event) {
-            case 'push':
-                handlePushEvent(payload);
-                break;
+        case 'push':
+            handlePushEvent(payload);
+            break;
                 
-            case 'issues':
-                handleIssuesEvent(payload);
-                break;
+        case 'issues':
+            handleIssuesEvent(payload);
+            break;
                 
-            case 'pull_request':
-                handlePullRequestEvent(payload);
-                break;
+        case 'pull_request':
+            handlePullRequestEvent(payload);
+            break;
                 
-            case 'release':
-                handleReleaseEvent(payload);
-                break;
+        case 'release':
+            handleReleaseEvent(payload);
+            break;
                 
-            case 'star':
-                handleStarEvent(payload);
-                break;
+        case 'star':
+            handleStarEvent(payload);
+            break;
                 
-            case 'ping':
-                console.log(chalk.green('🏓 Ping recebido - webhook configurado com sucesso!'));
-                break;
+        case 'ping':
+            console.log(chalk.green('🏓 Ping recebido - webhook configurado com sucesso!'));
+            break;
                 
-            default:
-                console.log(chalk.gray(`📝 Evento ${event} recebido (não processado)`));
+        default:
+            console.log(chalk.gray(`📝 Evento ${event} recebido (não processado)`));
         }
         
         res.status(200).send('OK');
