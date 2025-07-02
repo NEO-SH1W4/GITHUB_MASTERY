@@ -7,6 +7,13 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Added
+- 📚 Documentação híbrida EN/PT-BR estilo DOCSYNC
+- 📖 Quick Start Guide completo em ambos idiomas
+- 🤝 Contributing Guide híbrido com seções bilíngues
+- 🔗 Sistema de navegação entre idiomas
+- 📋 Badges informativos e design profissional
+
 ### Planned
 - Testes automatizados com Jest
 - Dashboard web interativo
