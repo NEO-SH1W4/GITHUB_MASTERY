@@ -24,7 +24,13 @@
     "clean": "rm -rf node_modules package-lock.json || echo 'Limpeza concluída'",
     "setup": "npm install && npm run format && npm run validate-env",
     "ci": "npm run validate && npm run validate-env",
-    "health": "npm run validate-env && echo 'Projeto saudável!'"
+    "health": "npm run validate-env && echo 'Projeto saudável!'",
+    "mcp": "node mcp/github-mcp-server.js",
+    "mcp:ecosystem": "node mcp/ecosystem-adapter.js",
+    "deploy:ecosystem": "node scripts/deploy-to-ecosystem.js",
+    "deploy:check": "node scripts/deploy-to-ecosystem.js --dry-run",
+    "deploy:rollback": "node scripts/deploy-to-ecosystem.js --rollback",
+    "ecosystem:status": "node -e \"import('./mcp/ecosystem-adapter.js').then(m => new m.GitHubMCPEcosystemAdapter().getStatus()).then(console.log)\""
   },
   "keywords": [
     "github",

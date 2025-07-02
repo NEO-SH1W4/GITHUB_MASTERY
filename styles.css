@@ -109,7 +109,7 @@ header {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1c2128 100%);
+    background: var(--gradient-primary);
     color: var(--text-primary);
     padding: 5rem 0;
     text-align: center;
@@ -592,10 +592,83 @@ header {
     margin: 0;
 }
 
+/* Tech Showcase Section */
+.tech-showcase {
+    padding: 5rem 0;
+    background: var(--card-background);
+    border-top: 1px solid var(--border-color);
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.showcase-item {
+    background: var(--gradient-card);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.showcase-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-hover);
+}
+
+.showcase-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.showcase-item:hover::before {
+    opacity: 1;
+}
+
+.showcase-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.showcase-item:hover .showcase-icon {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.5));
+}
+
+.showcase-item h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.showcase-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
 /* Features Section */
 .features {
     padding: 5rem 0;
-    background: var(--card-background);
+    background: var(--background-color);
     border-top: 1px solid var(--border-color);
 }
 
@@ -890,18 +963,6 @@ footer {
 /* ==========================================================================
    MODERN INTERACTIVE ELEMENTS
    ========================================================================== */
-
-/* Data Flow Canvas */
-.data-flow-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.4;
-}
 
 /* Matrix Rain Effect */
 .matrix-canvas {
