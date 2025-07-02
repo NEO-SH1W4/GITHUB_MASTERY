@@ -23,6 +23,28 @@
     --gradient-primary: linear-gradient(135deg, #58a6ff 0%, #4493f8 100%);
     --gradient-secondary: linear-gradient(135deg, #21262d 0%, #161b22 100%);
     --gradient-card: linear-gradient(145deg, #161b22 0%, #1c2128 100%);
+    
+    /* Novos tokens de design */
+    --purple-accent: #d2a8ff;
+    --green-accent: #56d364;
+    --orange-accent: #ffa657;
+    --pink-accent: #f47067;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --border-radius-sm: 6px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --blur-sm: blur(4px);
+    --blur-md: blur(8px);
+    --blur-lg: blur(16px);
 }
 
 /* Reset e Base */
@@ -1698,6 +1720,360 @@ h6 {
     will-change: transform;
 }
 
+/* ==========================================================================
+   ENHANCED UX/UI ELEMENTS
+   ========================================================================== */
+
+/* Enhanced Hero Badge */
+.enhanced-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(88, 166, 255, 0.1);
+    backdrop-filter: var(--blur-md);
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    margin: 0 auto var(--spacing-xl);
+    width: fit-content;
+    transition: var(--transition-normal);
+    animation: badgeFloat 3s ease-in-out infinite;
+}
+
+.enhanced-badge:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(88, 166, 255, 0.3);
+}
+
+.pulse-icon {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.badge-status {
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Enhanced Title */
+.enhanced-title {
+    background: linear-gradient(
+        135deg,
+        var(--text-primary) 0%,
+        var(--primary-color) 50%,
+        var(--purple-accent) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleShine 3s ease-in-out infinite;
+}
+
+.animated-gradient {
+    background: linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--purple-accent),
+        var(--green-accent),
+        var(--primary-color)
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease-in-out infinite;
+}
+
+/* Enhanced Description */
+.enhanced-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(230, 237, 243, 0.9);
+    max-width: 650px;
+    margin: 0 auto var(--spacing-2xl);
+}
+
+.highlight-text {
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+    white-space: nowrap;
+}
+
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--purple-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+}
+
+.highlight-text:hover::after {
+    transform: scaleX(1);
+}
+
+/* Enhanced Buttons */
+.enhanced-buttons {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.enhanced-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.enhanced-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.enhanced-btn:hover::before {
+    left: 100%;
+}
+
+.btn-arrow {
+    transition: transform var(--transition-normal);
+    opacity: 0.7;
+}
+
+.enhanced-btn:hover .btn-arrow {
+    transform: translateX(4px);
+    opacity: 1;
+}
+
+.enhanced-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(88, 166, 255, 0.4);
+}
+
+/* Enhanced Feature Pills */
+.enhanced-features {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.enhanced-pill {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: var(--blur-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    transition: var(--transition-normal);
+    cursor: pointer;
+    min-width: 150px;
+    justify-content: center;
+}
+
+.enhanced-pill:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--primary-color);
+    background: rgba(88, 166, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(88, 166, 255, 0.2);
+}
+
+.animated-icon {
+    font-size: 1.2rem;
+    animation: iconBounce 2s ease-in-out infinite;
+}
+
+.pill-text {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.pill-metric {
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: var(--spacing-xs);
+}
+
+/* Scroll Indicator Hero */
+.scroll-indicator-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-2xl);
+    opacity: 0.7;
+    transition: opacity var(--transition-normal);
+}
+
+.scroll-indicator-hero:hover {
+    opacity: 1;
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.animated-bounce {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    animation: bounceArrow 2s ease-in-out infinite;
+}
+
+/* Enhanced Stats Cards */
+.stats-cards {
+    grid-gap: var(--spacing-lg);
+}
+
+.stat-card {
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.02) 100%
+    );
+    backdrop-filter: var(--blur-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 35px rgba(88, 166, 255, 0.3);
+}
+
+/* Keyframe Animations */
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(88, 166, 255, 0.8);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes titleShine {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes iconBounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+@keyframes bounceArrow {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Enhanced Grid Layouts */
+.enhanced-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+/* Interactive Hover States */
+.interactive-card {
+    transition: var(--transition-normal);
+    cursor: pointer;
+}
+
+.interactive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Enhanced Typography */
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-glow {
+    text-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
+}
+
 /* Accessibility Enhancements */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -1712,5 +2088,61 @@ h6 {
 
     #particles-js {
         display: none;
+    }
+
+    .animated-gradient,
+    .animated-icon,
+    .animated-bounce,
+    .pulse-icon {
+        animation: none !important;
+    }
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+    .enhanced-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .enhanced-btn {
+        min-width: 250px;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .enhanced-features {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .enhanced-pill {
+        min-width: 200px;
+    }
+
+    .enhanced-description {
+        font-size: 1.1rem;
+        padding: 0 var(--spacing-md);
+    }
+
+    .enhanced-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 480px) {
+    .enhanced-title {
+        font-size: 2rem;
+    }
+
+    .enhanced-description {
+        font-size: 1rem;
+    }
+
+    .enhanced-btn {
+        min-width: 220px;
+        font-size: 1rem;
     }
 }
