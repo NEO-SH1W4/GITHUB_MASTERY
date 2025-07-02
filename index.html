@@ -25,6 +25,9 @@
 
     <!-- Chart.js for analytics -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Mermaid.js for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
     <header>
@@ -333,6 +336,148 @@
             </div>
         </section>
 
+        <!-- System Blueprint Section -->
+        <section id="blueprint" class="blueprint-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">System Blueprint</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Complete architectural overview of the GitHub Mastery ecosystem</p>
+                
+                <div class="blueprint-container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blueprint-grid">
+                        <!-- API Layer -->
+                        <div class="blueprint-layer api-layer">
+                            <div class="layer-header">
+                                <i data-feather="layers"></i>
+                                <h3>API Layer</h3>
+                            </div>
+                            <div class="layer-components">
+                                <div class="component-box">
+                                    <span class="component-name">GitHub API Client</span>
+                                    <span class="component-tech">Node.js + Axios</span>
+                                </div>
+                                <div class="component-box">
+                                    <span class="component-name">Rate Limiter</span>
+                                    <span class="component-tech">Redis + Bull Queue</span>
+                                </div>
+                                <div class="component-box">
+                                    <span class="component-name">OAuth Handler</span>
+                                    <span class="component-tech">JWT + Passport</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CLI Layer -->
+                        <div class="blueprint-layer cli-layer">
+                            <div class="layer-header">
+                                <i data-feather="terminal"></i>
+                                <h3>CLI Interface</h3>
+                            </div>
+                            <div class="layer-components">
+                                <div class="component-box">
+                                    <span class="component-name">Interactive Commands</span>
+                                    <span class="component-tech">Commander.js + Inquirer</span>
+                                </div>
+                                <div class="component-box">
+                                    <span class="component-name">Config Manager</span>
+                                    <span class="component-tech">Cosmiconfig + YAML</span>
+                                </div>
+                                <div class="component-box">
+                                    <span class="component-name">Progress UI</span>
+                                    <span class="component-tech">Ora + Chalk</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Server Layer -->
+                        <div class="blueprint-layer server-layer">
+                            <div class="layer-header">
+                                <i data-feather="server"></i>
+                                <h3>Webhook Server</h3>
+                            </div>
+                            <div class="layer-components">
+                                <div class="component-box">
+                                    <span class="component-name">Express Server</span>
+                                    <span class="component-tech">Express.js + Helmet</span>
+                                </div>
+                                <div class="component-box">
+                                    <span class="component-name">Event Processor</span>
+                                    <span class="component-tech">EventEmitter + Workers</span>
+                                </div>
+                                <div class="component-box">
+                                    <span class="component-name">Security Layer</span>
+                                    <span class="component-tech">HMAC + CORS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blueprint-connections">
+                        <div class="connection-line horizontal"></div>
+                        <div class="connection-line vertical"></div>
+                        <div class="connection-node"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Architecture Flow Section -->
+        <section id="architecture-flow" class="architecture-flow-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Data Flow Architecture</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Visualize how data flows through the GitHub Mastery ecosystem</p>
+                
+                <div class="mermaid-container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mermaid">
+                        graph TD
+                            A[👨‍💻 Developer] -->|CLI Commands| B[🔧 GitHub Mastery CLI]
+                            A -->|HTTP Requests| C[🚪 API Gateway]
+                            
+                            B -->|API Calls| D[📡 GitHub API Client]
+                            C -->|Authenticated Requests| D
+                            
+                            D -->|Rate Limited| E[🐙 GitHub API]
+                            E -->|Responses| D
+                            
+                            F[🪝 GitHub Webhooks] -->|Events| G[⚡ Webhook Server]
+                            G -->|Process Events| H[📋 Event Queue]
+                            H -->|Trigger Actions| I[🤖 Automation Engine]
+                            
+                            D -->|Cache| J[(🔥 Redis Cache)]
+                            G -->|Store Events| K[(📊 Event Store)]
+                            I -->|Logs| L[(📈 Analytics DB)]
+                            
+                            style A fill:#58a6ff,stroke:#fff,stroke-width:2px,color:#fff
+                            style E fill:#238636,stroke:#fff,stroke-width:2px,color:#fff
+                            style F fill:#238636,stroke:#fff,stroke-width:2px,color:#fff
+                            style J fill:#d29922,stroke:#fff,stroke-width:2px,color:#fff
+                            style K fill:#d29922,stroke:#fff,stroke-width:2px,color:#fff
+                            style L fill:#d29922,stroke:#fff,stroke-width:2px,color:#fff
+                    </div>
+                </div>
+                
+                <div class="flow-legend" data-aos="fade-up" data-aos-delay="400">
+                    <div class="legend-grid">
+                        <div class="legend-item">
+                            <div class="legend-color user"></div>
+                            <span>User Interfaces</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color github"></div>
+                            <span>GitHub Services</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color storage"></div>
+                            <span>Data Storage</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color processing"></div>
+                            <span>Processing Layer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Features Section -->
         <section id="features" class="features">
             <div class="container">
@@ -424,6 +569,21 @@
         
         // Initialize Feather Icons
         feather.replace();
+        
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#58a6ff',
+                primaryTextColor: '#e6edf3',
+                primaryBorderColor: '#30363d',
+                lineColor: '#8b949e',
+                backgroundColor: '#0d1117',
+                secondaryColor: '#161b22',
+                tertiaryColor: '#21262d'
+            }
+        });
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
