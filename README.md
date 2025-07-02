@@ -12,7 +12,7 @@
 
 *Domínio completo do GitHub através de API, automações, integrações e ferramentas avançadas*
 
-[🌐 **Visit Homepage**](./index.html) | [🇧🇷 Português](./docs/pt-br/README.md) | [🇪🇸 Español](./docs/es/README.md) | 🇺🇸 English
+[🌐 **Visit Homepage**](https://neo-sh1w4.github.io/github_mastery/) | [🇧🇷 Português](./docs/pt-br/README.md) | [🇪🇸 Español](./docs/es/README.md) | 🇺🇸 English
 
 </div>
 

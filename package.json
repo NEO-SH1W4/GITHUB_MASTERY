@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node cli-tools/gh-cli.js",
-    "homepage": "start index.html",
+    "homepage": "start https://neo-sh1w4.github.io/github_mastery/",
+    "homepage:local": "start index.html",
     "webhook": "node webhooks/webhook-server.js",
     "example": "node examples/basic-api-usage.js",
     "validate-env": "node -e \"import('./utils/env-validator.js').then(m => m.runFullValidation())\"",
