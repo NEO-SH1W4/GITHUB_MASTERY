@@ -31,13 +31,13 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <h1>🚀 GitHub Mastery</h1>
+                    <h1>GitHub Mastery</h1>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#metrics">Metrics</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#documentation">Docs</a></li>
-                    <li><a href="#getting-started">Get Started</a></li>
                     <li><a href="https://github.com" class="btn-primary">GitHub</a></li>
                 </ul>
             </div>
@@ -48,13 +48,9 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container">
-                <div class="hero-visual">
-                    <div class="hero-logo">
-                        <div class="logo-animation">
-                            🚀
-                        </div>
-                    </div>
-                </div>
+                <!-- Data Flow Background Animation -->
+                <canvas id="data-flow-canvas" class="data-flow-canvas"></canvas>
+                
                 <div class="hero-content">
                     <h1>Enterprise DevOps Architecture</h1>
                     <p class="hero-subtitle">
@@ -64,9 +60,10 @@
                     </p>
                     <div class="hero-buttons">
                         <a href="#getting-started" class="btn btn-primary">Get Started</a>
-                        <a href="#features" class="btn btn-secondary">Explore Features</a>
+                        <a href="#metrics" class="btn btn-secondary">View Metrics</a>
                     </div>
                 </div>
+
                 <div class="hero-stats">
                     <div class="stat">
                         <span class="stat-number">12M+</span>
@@ -339,117 +336,48 @@
         <!-- Features Section -->
         <section id="features" class="features">
             <div class="container">
-                <h2 class="section-title">Powerful Features</h2>
+                <h2 class="section-title">Advanced Features</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🔌</div>
-                        <h3>GitHub API Client</h3>
-                        <p>Complete GitHub API wrapper with authentication, rate limiting, and error handling. Access repositories, issues, pull requests, and more.</p>
+                        <div class="feature-icon">
+                            <i data-feather="cpu"></i>
+                        </div>
+                        <h3>Enterprise API Gateway</h3>
+                        <p>Complete GitHub API wrapper with enterprise-grade authentication, intelligent rate limiting, and comprehensive error handling.</p>
                         <ul class="feature-list">
-                            <li>✅ OAuth & Personal Access Token support</li>
-                            <li>✅ Automatic rate limit handling</li>
-                            <li>✅ Comprehensive error management</li>
-                            <li>✅ Styled console output</li>
+                            <li>OAuth 2.0 & Enterprise Token support</li>
+                            <li>Automatic rate limit handling with backoff</li>
+                            <li>Comprehensive error management & retries</li>
+                            <li>Structured logging & monitoring</li>
                         </ul>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Interactive CLI</h3>
-                        <p>Command-line interface for GitHub operations. Manage repositories, issues, and account details directly from your terminal.</p>
+                        <div class="feature-icon">
+                            <i data-feather="terminal"></i>
+                        </div>
+                        <h3>Interactive DevOps CLI</h3>
+                        <p>Command-line interface for GitHub operations. Manage repositories, automate workflows, and monitor deployments from your terminal.</p>
                         <ul class="feature-list">
-                            <li>✅ Interactive repository creation</li>
-                            <li>✅ Issue management</li>
-                            <li>✅ Account status monitoring</li>
-                            <li>✅ Bulk operations support</li>
+                            <li>Interactive repository orchestration</li>
+                            <li>CI/CD pipeline management</li>
+                            <li>Real-time deployment monitoring</li>
+                            <li>Bulk operations & automation</li>
                         </ul>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">🔗</div>
-                        <h3>Webhook Server</h3>
-                        <p>Production-ready webhook server for GitHub events. Secure, scalable, and easy to deploy with Express.js.</p>
+                        <div class="feature-icon">
+                            <i data-feather="zap"></i>
+                        </div>
+                        <h3>Production Webhook Server</h3>
+                        <p>Enterprise-ready webhook server for GitHub events. Secure, scalable, and high-performance with Express.js and distributed architecture.</p>
                         <ul class="feature-list">
-                            <li>✅ Signature verification</li>
-                            <li>✅ Multiple event support</li>
-                            <li>✅ Health monitoring</li>
-                            <li>✅ Structured logging</li>
+                            <li>HMAC signature verification</li>
+                            <li>Multi-event processing pipeline</li>
+                            <li>Health monitoring & alerting</li>
+                            <li>Distributed event processing</li>
                         </ul>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🌍</div>
-                        <h3>Multilingual Docs</h3>
-                        <p>Comprehensive documentation available in English, Portuguese, and Spanish. Learn at your own pace in your preferred language.</p>
-                        <ul class="feature-list">
-                            <li>✅ Complete API reference</li>
-                            <li>✅ Step-by-step tutorials</li>
-                            <li>✅ Real-world examples</li>
-                            <li>✅ Best practices guide</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Documentation Section -->
-        <section id="documentation" class="documentation">
-            <div class="container">
-                <h2 class="section-title">Documentation</h2>
-                <p class="section-subtitle">Choose your preferred language and dive deep into GitHub Mastery</p>
-                
-                <div class="docs-grid">
-                    <div class="doc-card">
-                        <div class="doc-flag">🇺🇸</div>
-                        <h3>English Documentation</h3>
-                        <p>Complete guides, API reference, and examples in English.</p>
-                        <a href="docs/en/" class="btn btn-outline">Read in English</a>
-                    </div>
-                    
-                    <div class="doc-card">
-                        <div class="doc-flag">🇧🇷</div>
-                        <h3>Documentação em Português</h3>
-                        <p>Guias completos, referência da API e exemplos em português.</p>
-                        <a href="docs/pt/" class="btn btn-outline">Ler em Português</a>
-                    </div>
-                    
-                    <div class="doc-card">
-                        <div class="doc-flag">🇪🇸</div>
-                        <h3>Documentación en Español</h3>
-                        <p>Guías completas, referencia de API y ejemplos en español.</p>
-                        <a href="docs/es/" class="btn btn-outline">Leer en Español</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Getting Started Section -->
-        <section id="getting-started" class="getting-started">
-            <div class="container">
-                <h2 class="section-title">Get Started in Minutes</h2>
-                <div class="steps-grid">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3>Install Dependencies</h3>
-                        <div class="code-block">
-                            <code>npm install</code>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3>Configure Token</h3>
-                        <div class="code-block">
-                            <code>cp .env.example .env<br># Add your GitHub token</code>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3>Start Building</h3>
-                        <div class="code-block">
-                            <code>node cli/github-cli.js auth<br>node examples/basic-usage.js</code>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -461,36 +389,31 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>GitHub Mastery</h4>
-                    <p>Professional GitHub automation tools for modern developers.</p>
+                    <p>Enterprise GitHub automation platform built by Principal Software Architects for modern DevOps teams.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Architecture</h4>
                     <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#documentation">Documentation</a></li>
-                        <li><a href="#getting-started">Get Started</a></li>
+                        <li><a href="#metrics">Production Metrics</a></li>
+                        <li><a href="#architecture">System Architecture</a></li>
+                        <li><a href="#features">Enterprise Features</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="README.md">README</a></li>
+                        <li><a href="README.md">Documentation</a></li>
                         <li><a href="TASKS.md">Roadmap</a></li>
                         <li><a href="https://github.com">GitHub API</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 GitHub Mastery. Built with ❤️ for developers worldwide.</p>
+                <p>&copy; 2025 GitHub Mastery. Engineered for enterprise-scale DevOps automation.</p>
             </div>
         </div>
     </footer>
     
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-    
-    
-    <!-- Interactive Scripts -->
     <script>
         // Initialize AOS (Animate On Scroll)
         AOS.init({
@@ -501,105 +424,6 @@
         
         // Initialize Feather Icons
         feather.replace();
-        
-        // Particles.js Configuration
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: ['#58a6ff', '#4493f8', '#238636']
-                },
-                shape: {
-                    type: 'circle',
-                    stroke: {
-                        width: 0,
-                        color: '#000000'
-                    }
-                },
-                opacity: {
-                    value: 0.3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 2,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: '#58a6ff',
-                    opacity: 0.2,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 1,
-                    direction: 'none',
-                    random: true,
-                    straight: false,
-                    out_mode: 'out',
-                    bounce: false
-                }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: 'repulse'
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: 'push'
-                    },
-                    resize: true
-                },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    bubble: {
-                        distance: 400,
-                        size: 40,
-                        duration: 2,
-                        opacity: 8,
-                        speed: 3
-                    },
-                    repulse: {
-                        distance: 100,
-                        duration: 0.4
-                    },
-                    push: {
-                        particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
-                    }
-                }
-            },
-            retina_detect: true
-        });
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -615,92 +439,139 @@
             });
         });
         
-        // Typing animation for hero title
-        function typeWriter(text, element, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
+        // Data Flow Animation for Hero Background
+        function initDataFlow() {
+            const canvas = document.getElementById('data-flow-canvas');
+            if (!canvas) return;
             
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+            
+            const nodes = [];
+            const connections = [];
+            const nodeCount = 50;
+            
+            // Create nodes
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    radius: Math.random() * 3 + 1,
+                    opacity: Math.random() * 0.5 + 0.2
+                });
             }
-            type();
-        }
-        
-        // Initialize typing animation when page loads
-        window.addEventListener('load', () => {
-            const heroTitle = document.querySelector('.hero h1');
-            if (heroTitle) {
-                const originalText = heroTitle.textContent;
-                typeWriter(originalText, heroTitle, 80);
-            }
-        });
-        
-        // Floating icons animation
-        function animateFloatingIcons() {
-            const icons = document.querySelectorAll('.floating-icon');
-            icons.forEach((icon, index) => {
-                const delay = index * 500;
-                const duration = 3000 + (index * 200);
-                
-                setTimeout(() => {
-                    icon.style.animation = `float ${duration}ms ease-in-out infinite`;
-                    icon.style.animationDelay = `${delay}ms`;
-                }, delay);
-            });
-        }
-        
-        // Interactive feature cards
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
             
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-        
-        // Stats counter animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            
-            counters.forEach(counter => {
-                const target = counter.textContent;
-                if (target === '∞') return;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
-                const count = parseInt(target.replace('+', ''));
-                let current = 0;
-                const increment = count / 50;
+                // Update and draw nodes
+                nodes.forEach(node => {
+                    node.x += node.vx;
+                    node.y += node.vy;
+                    
+                    if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                    if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+                    
+                    // Draw node
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(88, 166, 255, ${node.opacity})`;
+                    ctx.fill();
+                });
                 
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= count) {
-                        counter.textContent = target;
-                        clearInterval(timer);
-                    } else {
-                        counter.textContent = Math.floor(current) + (target.includes('+') ? '+' : '');
+                // Draw connections
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const dx = nodes[i].x - nodes[j].x;
+                        const dy = nodes[i].y - nodes[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            ctx.strokeStyle = `rgba(88, 166, 255, ${0.3 * (1 - distance / 150)})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
                     }
-                }, 30);
-            });
+                }
+                
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
         }
         
-        // Trigger counter animation when hero section is visible
-        const heroObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    heroObserver.unobserve(entry.target);
-                }
+        // Matrix Rain Effect
+        function initMatrixRain() {
+            const canvas = document.getElementById('matrix-canvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
             });
-        });
-        
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-            heroObserver.observe(heroSection);
+            
+            const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ{}[]|\\:";\'<>?,.!@#$%^&*()_+-=';
+            const chars = matrixChars.split('');
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+            
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.random() * canvas.height;
+            }
+            
+            const matrixColors = ['#00ff41', '#00dc38', '#00b32f', '#58a6ff', '#38bdf8'];
+            
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const char = chars[Math.floor(Math.random() * chars.length)];
+                    const opacity = Math.random() * 0.8 + 0.2;
+                    const colorIndex = Math.floor(Math.random() * matrixColors.length);
+                    
+                    if (Math.random() > 0.98) {
+                        ctx.shadowColor = matrixColors[colorIndex];
+                        ctx.shadowBlur = 10;
+                    } else {
+                        ctx.shadowBlur = 0;
+                    }
+                    
+                    ctx.fillStyle = matrixColors[colorIndex] + Math.floor(opacity * 255).toString(16).padStart(2, '0');
+                    ctx.fillText(char, i * fontSize, drops[i]);
+                    
+                    drops[i] += fontSize;
+                    
+                    if (drops[i] > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                }
+            }
+            
+            function animate() {
+                drawMatrix();
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
         }
         
         // Initialize Charts
@@ -724,19 +595,10 @@
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false }
-                        },
+                        plugins: { legend: { display: false } },
                         scales: {
-                            y: {
-                                beginAtZero: true,
-                                grid: { color: '#30363d' },
-                                ticks: { color: '#8b949e' }
-                            },
-                            x: {
-                                grid: { color: '#30363d' },
-                                ticks: { color: '#8b949e' }
-                            }
+                            y: { beginAtZero: true, grid: { color: '#30363d' }, ticks: { color: '#8b949e' } },
+                            x: { grid: { color: '#30363d' }, ticks: { color: '#8b949e' } }
                         }
                     }
                 });
@@ -760,19 +622,10 @@
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false }
-                        },
+                        plugins: { legend: { display: false } },
                         scales: {
-                            y: {
-                                beginAtZero: true,
-                                grid: { color: '#30363d' },
-                                ticks: { color: '#8b949e' }
-                            },
-                            x: {
-                                grid: { color: '#30363d' },
-                                ticks: { color: '#8b949e' }
-                            }
+                            y: { beginAtZero: true, grid: { color: '#30363d' }, ticks: { color: '#8b949e' } },
+                            x: { grid: { color: '#30363d' }, ticks: { color: '#8b949e' } }
                         }
                     }
                 });
@@ -786,7 +639,7 @@
                     data: {
                         labels: ['Automated', 'Manual'],
                         datasets: [{
-                            data: [85, 15],
+                            data: [67, 33],
                             backgroundColor: ['#3fb950', '#30363d'],
                             borderWidth: 2,
                             borderColor: '#161b22'
@@ -798,157 +651,20 @@
                         plugins: {
                             legend: {
                                 position: 'bottom',
-                                labels: {
-                                    color: '#8b949e',
-                                    padding: 15
-                                }
+                                labels: { color: '#8b949e', padding: 15 }
                             }
                         }
                     }
                 });
             }
         }
-
-        // Initialize charts when page loads
+        
+        // Initialize when page loads
         window.addEventListener('load', () => {
-            setTimeout(initializeCharts, 1000); // Delay to ensure AOS animations complete
+            setTimeout(initDataFlow, 500);
+            setTimeout(initMatrixRain, 700);
+            setTimeout(initializeCharts, 1000);
         });
-        
-        // Matrix Rain Effect
-        function initMatrixRain() {
-            const canvas = document.getElementById('matrix-canvas');
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            
-            // Set canvas size
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-            
-            // Matrix characters (mix of code symbols, binary, and tech characters)
-            const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?~`/\\"\'';
-            const chars = matrixChars.split('');
-            
-            const fontSize = 14;
-            const columns = canvas.width / fontSize;
-            
-            // Array to store y position of each drop
-            const drops = [];
-            
-            // Initialize drops
-            for (let i = 0; i < columns; i++) {
-                drops[i] = Math.random() * canvas.height;
-            }
-            
-            // Matrix colors (green variants for authentic look)
-            const matrixColors = [
-                '#00ff41', // Bright green
-                '#00dc38', // Medium green
-                '#00b32f', // Dark green
-                '#58a6ff', // Blue accent
-                '#38bdf8'  // Light blue accent
-            ];
-            
-            function drawMatrix() {
-                // Semi-transparent black background for fade effect
-                ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
-                
-                // Draw characters
-                for (let i = 0; i < drops.length; i++) {
-                    // Random character
-                    const char = chars[Math.floor(Math.random() * chars.length)];
-                    
-                    // Gradient effect - brighter at the head of the drop
-                    const opacity = Math.random() * 0.8 + 0.2;
-                    const colorIndex = Math.floor(Math.random() * matrixColors.length);
-                    
-                    // Add glow effect for some characters
-                    if (Math.random() > 0.98) {
-                        ctx.shadowColor = matrixColors[colorIndex];
-                        ctx.shadowBlur = 10;
-                    } else {
-                        ctx.shadowBlur = 0;
-                    }
-                    
-                    ctx.fillStyle = matrixColors[colorIndex] + Math.floor(opacity * 255).toString(16).padStart(2, '0');
-                    
-                    // Draw the character
-                    ctx.fillText(char, i * fontSize, drops[i]);
-                    
-                    // Move the drop down
-                    drops[i] += fontSize;
-                    
-                    // Reset drop to top with some randomness
-                    if (drops[i] > canvas.height && Math.random() > 0.975) {
-                        drops[i] = 0;
-                    }
-                }
-            }
-            
-            // Animation loop
-            function animate() {
-                drawMatrix();
-                requestAnimationFrame(animate);
-            }
-            
-            // Start the animation
-            animate();
-        }
-        
-        // Initialize Matrix effect when page loads
-        window.addEventListener('load', () => {
-            setTimeout(initMatrixRain, 500); // Small delay to ensure canvas is ready
-        });
-        
-        // Enhanced typing effect with Matrix-style glitch
-        function matrixTypeWriter(text, element, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    // Occasional glitch effect
-                    if (Math.random() > 0.95) {
-                        const glitchChars = '█▓▒░';
-                        const glitchChar = glitchChars[Math.floor(Math.random() * glitchChars.length)];
-                        element.innerHTML += `<span style="color: #00ff41; text-shadow: 0 0 10px #00ff41;">${glitchChar}</span>`;
-                        setTimeout(() => {
-                            element.innerHTML = element.innerHTML.slice(0, -1) + text.charAt(i);
-                            i++;
-                            setTimeout(type, speed);
-                        }, 50);
-                    } else {
-                        element.innerHTML += text.charAt(i);
-                        i++;
-                        setTimeout(type, speed);
-                    }
-                } else {
-                    // Add subtle glow to completed text
-                    element.style.textShadow = '0 0 20px rgba(88, 166, 255, 0.3)';
-                }
-            }
-            type();
-        }
-        
-        // Enhanced hero title with Matrix effect
-        window.addEventListener('load', () => {
-            const heroTitle = document.querySelector('.hero h1');
-            if (heroTitle) {
-                const originalText = heroTitle.textContent;
-                setTimeout(() => {
-                    matrixTypeWriter(originalText, heroTitle, 60);
-                }, 1000);
-            }
-        });
-        
     </script>
 </body>
 </html>
