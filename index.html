@@ -83,6 +83,9 @@
             </div>
         </section>
 
+        <!-- Matrix Rain Effect -->
+        <canvas id="matrix-canvas" class="matrix-canvas"></canvas>
+
         <!-- Metrics Dashboard Section -->
         <section id="metrics" class="metrics-dashboard">
             <div class="container">
@@ -819,6 +822,141 @@
         // Initialize charts when page loads
         window.addEventListener('load', () => {
             setTimeout(initializeCharts, 1000); // Delay to ensure AOS animations complete
+        });
+        
+        // Matrix Rain Effect
+        function initMatrixRain() {
+            const canvas = document.getElementById('matrix-canvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            // Matrix characters (mix of code symbols, binary, and tech characters)
+            const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?~`/\\"\'';
+            const chars = matrixChars.split('');
+            
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            
+            // Array to store y position of each drop
+            const drops = [];
+            
+            // Initialize drops
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.random() * canvas.height;
+            }
+            
+            // Matrix colors (green variants for authentic look)
+            const matrixColors = [
+                '#00ff41', // Bright green
+                '#00dc38', // Medium green
+                '#00b32f', // Dark green
+                '#58a6ff', // Blue accent
+                '#38bdf8'  // Light blue accent
+            ];
+            
+            function drawMatrix() {
+                // Semi-transparent black background for fade effect
+                ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
+                
+                // Draw characters
+                for (let i = 0; i < drops.length; i++) {
+                    // Random character
+                    const char = chars[Math.floor(Math.random() * chars.length)];
+                    
+                    // Gradient effect - brighter at the head of the drop
+                    const opacity = Math.random() * 0.8 + 0.2;
+                    const colorIndex = Math.floor(Math.random() * matrixColors.length);
+                    
+                    // Add glow effect for some characters
+                    if (Math.random() > 0.98) {
+                        ctx.shadowColor = matrixColors[colorIndex];
+                        ctx.shadowBlur = 10;
+                    } else {
+                        ctx.shadowBlur = 0;
+                    }
+                    
+                    ctx.fillStyle = matrixColors[colorIndex] + Math.floor(opacity * 255).toString(16).padStart(2, '0');
+                    
+                    // Draw the character
+                    ctx.fillText(char, i * fontSize, drops[i]);
+                    
+                    // Move the drop down
+                    drops[i] += fontSize;
+                    
+                    // Reset drop to top with some randomness
+                    if (drops[i] > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                }
+            }
+            
+            // Animation loop
+            function animate() {
+                drawMatrix();
+                requestAnimationFrame(animate);
+            }
+            
+            // Start the animation
+            animate();
+        }
+        
+        // Initialize Matrix effect when page loads
+        window.addEventListener('load', () => {
+            setTimeout(initMatrixRain, 500); // Small delay to ensure canvas is ready
+        });
+        
+        // Enhanced typing effect with Matrix-style glitch
+        function matrixTypeWriter(text, element, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    // Occasional glitch effect
+                    if (Math.random() > 0.95) {
+                        const glitchChars = '█▓▒░';
+                        const glitchChar = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+                        element.innerHTML += `<span style="color: #00ff41; text-shadow: 0 0 10px #00ff41;">${glitchChar}</span>`;
+                        setTimeout(() => {
+                            element.innerHTML = element.innerHTML.slice(0, -1) + text.charAt(i);
+                            i++;
+                            setTimeout(type, speed);
+                        }, 50);
+                    } else {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
+                } else {
+                    // Add subtle glow to completed text
+                    element.style.textShadow = '0 0 20px rgba(88, 166, 255, 0.3)';
+                }
+            }
+            type();
+        }
+        
+        // Enhanced hero title with Matrix effect
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                const originalText = heroTitle.textContent;
+                setTimeout(() => {
+                    matrixTypeWriter(originalText, heroTitle, 60);
+                }, 1000);
+            }
         });
         
     </script>
