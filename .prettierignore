@@ -1,0 +1,57 @@
+# Build outputs
+dist/
+build/
+coverage/
+
+# Dependencies
+node_modules/
+
+# Generated files
+*.min.js
+bundle.js
+*.bundle.js
+
+# Environment files
+.env
+.env.*
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Documentation that should preserve formatting
+CHANGELOG.md
+LICENSE
+*.license
+
+# External libraries
+github-agent-core/
+
+# Templates that need specific formatting
+**/templates/**/*.md
+
+# Binary files and assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.woff
+*.woff2
+*.ttf
+*.eot
+
+# Log files
+*.log
+logs/
+
+# Cache directories
+.cache/
+.eslintcache
+.stylelintcache
+
+# OS generated files
+.DS_Store
+Thumbs.db
+

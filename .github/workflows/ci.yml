@@ -35,7 +35,7 @@ jobs:
         run: npm test
 
       - name: Check formatting
-        run: npm run format -- --check
+        run: npm run format:check
 
   security:
     name: Security Audit
