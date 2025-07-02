@@ -3,6 +3,7 @@
 ## 🗓️ **CRONOGRAMA DE CONTEÚDO (8 SEMANAS)**
 
 ### **Semana 1-2: Fundação Técnica**
+
 ```yaml
 Tarefas Técnicas:
   - [ ] Corrigir ESLint configuration
@@ -17,6 +18,7 @@ Conteúdo:
 ```
 
 ### **Semana 3-4: Documentação Premium**
+
 ```yaml
 Documentação:
   - [ ] Criar cookbook com 10 receitas práticas
@@ -31,6 +33,7 @@ Conteúdo:
 ```
 
 ### **Semana 5-6: Community Engagement**
+
 ```yaml
 Community:
   - [ ] Responder 10 perguntas no Stack Overflow
@@ -45,6 +48,7 @@ Conteúdo:
 ```
 
 ### **Semana 7-8: Showcase & Growth**
+
 ```yaml
 Showcase:
   - [ ] Criar 3 case studies reais
@@ -61,67 +65,75 @@ Conteúdo:
 ## 🎯 **TEMPLATES DE CONTEÚDO**
 
 ### **Blog Post Template**
+
 ```markdown
 # Title: [Benefit] + [Tool/Method] + [Audience]
 
 ## Hook (Problem/Pain Point)
+
 - Start with relatable developer pain
 - Use statistics or common scenarios
 - "Every developer has experienced..."
 
 ## Solution Overview
+
 - Introduce GitHub Mastery naturally
 - Show, don't just tell
 - Include code snippets
 
 ## Step-by-Step Tutorial
+
 - Practical, actionable steps
 - Screenshots/GIFs
 - Copy-pasteable code
 
 ## Real-World Example
+
 - Actual use case
 - Measurable results
 - Before/after comparison
 
 ## Conclusion + CTA
+
 - Summarize benefits
 - Link to GitHub repo
 - Invite to try/contribute
 ```
 
 ### **Video Script Template**
+
 ```yaml
 Intro (30 seconds):
-  - Hook: "What if I told you..."
-  - Problem identification
-  - Solution preview
+    - Hook: 'What if I told you...'
+    - Problem identification
+    - Solution preview
 
 Demo (3-4 minutes):
-  - Live coding/usage
-  - Explain while doing
-  - Show real outputs
+    - Live coding/usage
+    - Explain while doing
+    - Show real outputs
 
 Benefits (1 minute):
-  - Why this matters
-  - Time saved
-  - Better workflows
+    - Why this matters
+    - Time saved
+    - Better workflows
 
 CTA (30 seconds):
-  - GitHub link
-  - Documentation
-  - Community invitation
+    - GitHub link
+    - Documentation
+    - Community invitation
 ```
 
 ### **Social Media Templates**
 
 **Twitter Thread Starter:**
+
 ```text
 🧵 Thread: 5 GitHub API automation tricks that will save you hours
 
 Most developers do these tasks manually:
 • Repository management
-• Issue triaging  
+• Issue triaging
 • Release automation
 • Team notifications
 • Compliance checking
@@ -132,6 +144,7 @@ Here's how to automate all of them: 👇
 ```
 
 **LinkedIn Post:**
+
 ```text
 💡 Professional insight: The best developer tools are invisible
 
@@ -148,27 +161,29 @@ What makes a developer tool truly great in your experience?
 
 ## 📊 **CONTENT CALENDAR**
 
-| Week | Blog Posts | Videos | Social | Community |
-|------|-----------|---------|---------|-----------|
-| 1 | Technical foundation | Demo video | Twitter thread | Setup GitHub Discussions |
-| 2 | CLI best practices | Tutorial pt1 | LinkedIn article | r/programming post |
-| 3 | API deep dive | Tutorial pt2 | Dev.to cross-post | Stack Overflow answers |
-| 4 | Webhook guide | Live coding | Medium article | Contribute to OSS |
-| 5 | Automation patterns | Case study | Twitter tips | Meetup application |
-| 6 | Developer tools | Integration demo | LinkedIn insight | Podcast outreach |
-| 7 | Real world usage | Workshop prep | Success stories | Community showcase |
-| 8 | Future roadmap | Workshop execution | Retrospective | Feedback collection |
+| Week | Blog Posts           | Videos             | Social            | Community                |
+| ---- | -------------------- | ------------------ | ----------------- | ------------------------ |
+| 1    | Technical foundation | Demo video         | Twitter thread    | Setup GitHub Discussions |
+| 2    | CLI best practices   | Tutorial pt1       | LinkedIn article  | r/programming post       |
+| 3    | API deep dive        | Tutorial pt2       | Dev.to cross-post | Stack Overflow answers   |
+| 4    | Webhook guide        | Live coding        | Medium article    | Contribute to OSS        |
+| 5    | Automation patterns  | Case study         | Twitter tips      | Meetup application       |
+| 6    | Developer tools      | Integration demo   | LinkedIn insight  | Podcast outreach         |
+| 7    | Real world usage     | Workshop prep      | Success stories   | Community showcase       |
+| 8    | Future roadmap       | Workshop execution | Retrospective     | Feedback collection      |
 
 ## 🎨 **BRAND VOICE & MESSAGING**
 
 ### **Core Messages:**
+
 ```yaml
-Primary: "Professional GitHub automation for serious developers"
-Secondary: "CLI tools that actually work the way you think"
-Tertiary: "Open source, bilingual, enterprise-ready"
+Primary: 'Professional GitHub automation for serious developers'
+Secondary: 'CLI tools that actually work the way you think'
+Tertiary: 'Open source, bilingual, enterprise-ready'
 ```
 
 ### **Tone Guidelines:**
+
 ```markdown
 ✅ Professional but approachable
 ✅ Technical depth without jargon
@@ -183,9 +198,10 @@ Tertiary: "Open source, bilingual, enterprise-ready"
 ```
 
 ### **Content Pillars:**
+
 ```bash
 1. Education (40%) - Tutorials, guides, best practices
-2. Showcase (30%) - Real use cases, success stories  
+2. Showcase (30%) - Real use cases, success stories
 3. Community (20%) - Q&A, discussions, contributions
 4. Product (10%) - Updates, features, roadmap
 ```
@@ -193,34 +209,36 @@ Tertiary: "Open source, bilingual, enterprise-ready"
 ## 📈 **SUCCESS METRICS**
 
 ### **Content Performance:**
+
 ```yaml
 Blog Posts:
-  - Target: 500+ views per post
-  - Engagement: 5% comment rate
-  - Shares: 20+ per platform
+    - Target: 500+ views per post
+    - Engagement: 5% comment rate
+    - Shares: 20+ per platform
 
 Videos:
-  - Target: 1000+ views per video
-  - Watch time: >60%
-  - Subscribers: +50 per month
+    - Target: 1000+ views per video
+    - Watch time: >60
+    - Subscribers: +50 per month
 
 Social Media:
-  - Twitter: 100+ retweets per thread
-  - LinkedIn: 50+ reactions per post
-  - Dev.to: Top 7 weekly posts
+    - Twitter: 100+ retweets per thread
+    - LinkedIn: 50+ reactions per post
+    - Dev.to: Top 7 weekly posts
 ```
 
 ### **Community Growth:**
+
 ```yaml
 GitHub:
-  - Stars: +20 per week
-  - Contributors: +2 per month
-  - Issues engagement: <24h response
+    - Stars: +20 per week
+    - Contributors: +2 per month
+    - Issues engagement: <24h response
 
 External:
-  - Stack Overflow reputation: +100/month
-  - Speaking opportunities: 1 per quarter
-  - Podcast appearances: 1 per 2 months
+    - Stack Overflow reputation: +100/month
+    - Speaking opportunities: 1 per quarter
+    - Podcast appearances: 1 per 2 months
 ```
 
 ## 🚀 **QUICK WINS (This Week)**
@@ -237,10 +255,10 @@ Day 7: Schedule content for next week
 
 ---
 
-**Remember:** 
+**Remember:**
+
 - Quality over quantity always
 - Provide genuine value first
 - Build relationships, not just followers
 - Stay consistent with posting schedule
 - Measure and iterate based on feedback
-

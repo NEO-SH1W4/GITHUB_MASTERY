@@ -1,36 +1,35 @@
 {
-  "mcpServers": {
-    "github-mastery": {
-      "command": "node",
-      "args": ["./mcp/github-mcp-server.js"],
-      "env": {
-        "GITHUB_TOKEN": "",
-        "MCP_SERVER_NAME": "github-mastery",
-        "MCP_SERVER_VERSION": "1.0.0"
-      }
-    }
-  },
-  "allowedOriginsRegex": [
-    "https://github\\.com/.*",
-    "https://.*\\.github\\.io/.*",
-    "http://localhost:.*"
-  ],
-  "globalShortcuts": [
-    {
-      "key": "github-auth",
-      "description": "Authenticate with GitHub",
-      "action": "authenticate"
+    "mcpServers": {
+        "github-mastery": {
+            "command": "node",
+            "args": ["./mcp/github-mcp-server.js"],
+            "env": {
+                "GITHUB_TOKEN": "",
+                "MCP_SERVER_NAME": "github-mastery",
+                "MCP_SERVER_VERSION": "1.0.0"
+            }
+        }
     },
-    {
-      "key": "github-repos",
-      "description": "List GitHub repositories",
-      "action": "list_repositories"
-    },
-    {
-      "key": "github-issues",
-      "description": "Manage GitHub issues",
-      "action": "manage_issues"
-    }
-  ]
+    "allowedOriginsRegex": [
+        "https://github\\.com/.*",
+        "https://.*\\.github\\.io/.*",
+        "http://localhost:.*"
+    ],
+    "globalShortcuts": [
+        {
+            "key": "github-auth",
+            "description": "Authenticate with GitHub",
+            "action": "authenticate"
+        },
+        {
+            "key": "github-repos",
+            "description": "List GitHub repositories",
+            "action": "list_repositories"
+        },
+        {
+            "key": "github-issues",
+            "description": "Manage GitHub issues",
+            "action": "manage_issues"
+        }
+    ]
 }
-

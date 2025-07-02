@@ -1,831 +1,1014 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Mastery - Architectural Patterns for Modern DevOps</title>
-    <meta name="description" content="Advanced GitHub automation frameworks and architectural patterns for enterprise-scale development operations by a Principal Software Architect">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <!-- Modern Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
-    
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
-    <!-- AOS (Animate On Scroll) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GitHub Mastery - Architectural Patterns for Modern DevOps</title>
+        <meta
+            name="description"
+            content="Advanced GitHub automation frameworks and architectural patterns for enterprise-scale development operations by a Principal Software Architect"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-    <!-- Chart.js for analytics -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Mermaid.js for diagrams -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <h1>GitHub Mastery</h1>
+        <!-- Modern Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Feather Icons -->
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- Particles.js -->
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+        <!-- AOS (Animate On Scroll) -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <!-- Chart.js for analytics -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Mermaid.js for diagrams -->
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="logo">
+                        <h1>GitHub Mastery</h1>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#metrics">Metrics</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li>
+                            <a href="https://github.com" class="btn-primary">GitHub</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#metrics">Metrics</a></li>
-                    <li><a href="#architecture">Architecture</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="https://github.com" class="btn-primary">GitHub</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="container">
-                <!-- Data Flow Background Animation -->
-                <canvas id="data-flow-canvas" class="data-flow-canvas"></canvas>
-                
-                <div class="hero-content">
-                    <h1>Enterprise DevOps Architecture</h1>
-                    <p class="hero-subtitle">
-                        Advanced GitHub automation frameworks and distributed system patterns for 
-                        enterprise-scale development operations. Built by Principal Software Architects 
-                        for engineering teams managing complex CI/CD ecosystems.
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <div class="container">
+                    <!-- Data Flow Background Animation -->
+                    <canvas id="data-flow-canvas" class="data-flow-canvas"></canvas>
+
+                    <div class="hero-content">
+                        <h1>Enterprise DevOps Architecture</h1>
+                        <p class="hero-subtitle">
+                            Advanced GitHub automation frameworks and distributed system
+                            patterns for enterprise-scale development operations. Built
+                            by Principal Software Architects for engineering teams
+                            managing complex CI/CD ecosystems.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#getting-started" class="btn btn-primary"
+                                >Get Started</a
+                            >
+                            <a href="#metrics" class="btn btn-secondary"
+                                >View Metrics</a
+                            >
+                        </div>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">12M+</span>
+                            <span class="stat-label">API Calls/Month</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">99.97%</span>
+                            <span class="stat-label">SLA Uptime</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">847</span>
+                            <span class="stat-label">Enterprise Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Matrix Rain Effect -->
+            <canvas id="matrix-canvas" class="matrix-canvas"></canvas>
+
+            <!-- Metrics Dashboard Section -->
+            <section id="metrics" class="metrics-dashboard">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">
+                        Production Metrics & SLAs
+                    </h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Real-time operational metrics from our distributed GitHub
+                        automation infrastructure serving enterprise clients
                     </p>
-                    <div class="hero-buttons">
-                        <a href="#getting-started" class="btn btn-primary">Get Started</a>
-                        <a href="#metrics" class="btn btn-secondary">View Metrics</a>
+
+                    <div class="metrics-grid" data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="metric-card"
+                            data-aos="zoom-in"
+                            data-aos-delay="300"
+                        >
+                            <div class="metric-header">
+                                <h3>API Performance</h3>
+                                <span class="metric-status status-excellent"
+                                    >Excellent</span
+                                >
+                            </div>
+                            <div class="metric-chart">
+                                <canvas id="apiChart" width="300" height="200"></canvas>
+                            </div>
+                            <div class="metric-stats">
+                                <div class="stat">
+                                    <span class="stat-value">99.97%</span>
+                                    <span class="stat-label">SLA Uptime</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">23ms</span>
+                                    <span class="stat-label">P95 Latency</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="metric-card"
+                            data-aos="zoom-in"
+                            data-aos-delay="400"
+                        >
+                            <div class="metric-header">
+                                <h3>Usage Statistics</h3>
+                                <span class="metric-status status-growing"
+                                    >Growing</span
+                                >
+                            </div>
+                            <div class="metric-chart">
+                                <canvas
+                                    id="usageChart"
+                                    width="300"
+                                    height="200"
+                                ></canvas>
+                            </div>
+                            <div class="metric-stats">
+                                <div class="stat">
+                                    <span class="stat-value">12.4M</span>
+                                    <span class="stat-label">Monthly Req</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">2,847</span>
+                                    <span class="stat-label">Active Orgs</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="metric-card"
+                            data-aos="zoom-in"
+                            data-aos-delay="500"
+                        >
+                            <div class="metric-header">
+                                <h3>Automation Efficiency</h3>
+                                <span class="metric-status status-optimal"
+                                    >Optimal</span
+                                >
+                            </div>
+                            <div class="metric-chart">
+                                <canvas
+                                    id="efficiencyChart"
+                                    width="300"
+                                    height="200"
+                                ></canvas>
+                            </div>
+                            <div class="metric-stats">
+                                <div class="stat">
+                                    <span class="stat-value">67%</span>
+                                    <span class="stat-label">Deploy Time ↓</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">1,247</span>
+                                    <span class="stat-label">Pipelines</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="enterprise-features"
+                        data-aos="fade-up"
+                        data-aos-delay="600"
+                    >
+                        <div class="enterprise-grid">
+                            <div class="enterprise-item">
+                                <i data-feather="shield" class="enterprise-icon"></i>
+                                <h4>Enterprise Security</h4>
+                                <p>
+                                    Advanced authentication, audit logs, and compliance
+                                    features
+                                </p>
+                            </div>
+                            <div class="enterprise-item">
+                                <i
+                                    data-feather="trending-up"
+                                    class="enterprise-icon"
+                                ></i>
+                                <h4>Scalable Architecture</h4>
+                                <p>
+                                    Built to handle millions of API calls with
+                                    auto-scaling capabilities
+                                </p>
+                            </div>
+                            <div class="enterprise-item">
+                                <i data-feather="cpu" class="enterprise-icon"></i>
+                                <h4>High Performance</h4>
+                                <p>
+                                    Optimized for speed with intelligent caching and
+                                    rate limiting
+                                </p>
+                            </div>
+                            <div class="enterprise-item">
+                                <i data-feather="globe" class="enterprise-icon"></i>
+                                <h4>Global CDN</h4>
+                                <p>
+                                    Worldwide distribution for minimal latency and
+                                    maximum reliability
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">12M+</span>
-                        <span class="stat-label">API Calls/Month</span>
+            <!-- Enterprise Architecture Section -->
+            <section id="architecture" class="architecture-section">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">
+                        Enterprise Architecture
+                    </h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Scalable, secure, and high-performance infrastructure designed
+                        for enterprise workloads
+                    </p>
+
+                    <div
+                        class="architecture-diagram"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div
+                            class="architecture-layer"
+                            data-aos="slide-right"
+                            data-aos-delay="300"
+                        >
+                            <div class="layer-title">
+                                <i data-feather="monitor" class="layer-icon"></i>
+                                <h3>Client Layer</h3>
+                            </div>
+                            <div class="layer-components">
+                                <div class="component">
+                                    <i data-feather="terminal"></i>
+                                    <span>CLI Tools</span>
+                                </div>
+                                <div class="component">
+                                    <i data-feather="code"></i>
+                                    <span>API Client</span>
+                                </div>
+                                <div class="component">
+                                    <i data-feather="globe"></i>
+                                    <span>Web Interface</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="architecture-arrow"
+                            data-aos="fade-in"
+                            data-aos-delay="400"
+                        >
+                            <i data-feather="arrow-down"></i>
+                        </div>
+
+                        <div
+                            class="architecture-layer"
+                            data-aos="slide-left"
+                            data-aos-delay="500"
+                        >
+                            <div class="layer-title">
+                                <i data-feather="server" class="layer-icon"></i>
+                                <h3>API Gateway</h3>
+                            </div>
+                            <div class="layer-components">
+                                <div class="component">
+                                    <i data-feather="shield"></i>
+                                    <span>Authentication</span>
+                                </div>
+                                <div class="component">
+                                    <i data-feather="zap"></i>
+                                    <span>Rate Limiting</span>
+                                </div>
+                                <div class="component">
+                                    <i data-feather="activity"></i>
+                                    <span>Load Balancer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="architecture-arrow"
+                            data-aos="fade-in"
+                            data-aos-delay="600"
+                        >
+                            <i data-feather="arrow-down"></i>
+                        </div>
+
+                        <div
+                            class="architecture-layer"
+                            data-aos="slide-right"
+                            data-aos-delay="700"
+                        >
+                            <div class="layer-title">
+                                <i data-feather="cpu" class="layer-icon"></i>
+                                <h3>Processing Layer</h3>
+                            </div>
+                            <div class="layer-components">
+                                <div class="component">
+                                    <i data-feather="git-branch"></i>
+                                    <span>GitHub API</span>
+                                </div>
+                                <div class="component">
+                                    <i data-feather="webhook"></i>
+                                    <span>Webhook Server</span>
+                                </div>
+                                <div class="component">
+                                    <i data-feather="settings"></i>
+                                    <span>Automation Engine</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="architecture-arrow"
+                            data-aos="fade-in"
+                            data-aos-delay="800"
+                        >
+                            <i data-feather="arrow-down"></i>
+                        </div>
+
+                        <div
+                            class="architecture-layer"
+                            data-aos="slide-left"
+                            data-aos-delay="900"
+                        >
+                            <div class="layer-title">
+                                <i data-feather="database" class="layer-icon"></i>
+                                <h3>Data Layer</h3>
+                            </div>
+                            <div class="layer-components">
+                                <div class="component">
+                                    <i data-feather="hard-drive"></i>
+                                    <span>Cache Redis</span>
+                                </div>
+                                <div class="component">
+                                    <i data-feather="file-text"></i>
+                                    <span>Logs</span>
+                                </div>
+                                <div class="component">
+                                    <i data-feather="bar-chart"></i>
+                                    <span>Analytics</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">99.97%</span>
-                        <span class="stat-label">SLA Uptime</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">847</span>
-                        <span class="stat-label">Enterprise Clients</span>
+
+                    <div class="tech-stack" data-aos="fade-up" data-aos-delay="1000">
+                        <h3>Technology Stack</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <div class="tech-logo">⚡</div>
+                                <div class="tech-info">
+                                    <h4>Node.js</h4>
+                                    <p>High-performance runtime</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-logo">🐳</div>
+                                <div class="tech-info">
+                                    <h4>Docker</h4>
+                                    <p>Containerized deployment</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-logo">☁️</div>
+                                <div class="tech-info">
+                                    <h4>Cloud Native</h4>
+                                    <p>Kubernetes orchestration</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-logo">🔥</div>
+                                <div class="tech-info">
+                                    <h4>Redis</h4>
+                                    <p>Ultra-fast caching</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-logo">📊</div>
+                                <div class="tech-info">
+                                    <h4>Prometheus</h4>
+                                    <p>Advanced monitoring</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-logo">🔒</div>
+                                <div class="tech-info">
+                                    <h4>OAuth 2.0</h4>
+                                    <p>Enterprise security</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Matrix Rain Effect -->
-        <canvas id="matrix-canvas" class="matrix-canvas"></canvas>
+            <!-- System Blueprint Section -->
+            <section id="blueprint" class="blueprint-section">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">System Blueprint</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Complete architectural overview of the GitHub Mastery ecosystem
+                    </p>
 
-        <!-- Metrics Dashboard Section -->
-        <section id="metrics" class="metrics-dashboard">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Production Metrics & SLAs</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Real-time operational metrics from our distributed GitHub automation infrastructure serving enterprise clients</p>
-                
-                <div class="metrics-grid" data-aos="fade-up" data-aos-delay="200">
-                    <div class="metric-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="metric-header">
-                            <h3>API Performance</h3>
-                            <span class="metric-status status-excellent">Excellent</span>
-                        </div>
-                        <div class="metric-chart">
-                            <canvas id="apiChart" width="300" height="200"></canvas>
-                        </div>
-                        <div class="metric-stats">
-                            <div class="stat">
-                                <span class="stat-value">99.97%</span>
-                                <span class="stat-label">SLA Uptime</span>
+                    <div
+                        class="blueprint-container"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="blueprint-grid">
+                            <!-- API Layer -->
+                            <div class="blueprint-layer api-layer">
+                                <div class="layer-header">
+                                    <i data-feather="layers"></i>
+                                    <h3>API Layer</h3>
+                                </div>
+                                <div class="layer-components">
+                                    <div class="component-box">
+                                        <span class="component-name"
+                                            >GitHub API Client</span
+                                        >
+                                        <span class="component-tech"
+                                            >Node.js + Axios</span
+                                        >
+                                    </div>
+                                    <div class="component-box">
+                                        <span class="component-name">Rate Limiter</span>
+                                        <span class="component-tech"
+                                            >Redis + Bull Queue</span
+                                        >
+                                    </div>
+                                    <div class="component-box">
+                                        <span class="component-name"
+                                            >OAuth Handler</span
+                                        >
+                                        <span class="component-tech"
+                                            >JWT + Passport</span
+                                        >
+                                    </div>
+                                </div>
                             </div>
-                            <div class="stat">
-                                <span class="stat-value">23ms</span>
-                                <span class="stat-label">P95 Latency</span>
+
+                            <!-- CLI Layer -->
+                            <div class="blueprint-layer cli-layer">
+                                <div class="layer-header">
+                                    <i data-feather="terminal"></i>
+                                    <h3>CLI Interface</h3>
+                                </div>
+                                <div class="layer-components">
+                                    <div class="component-box">
+                                        <span class="component-name"
+                                            >Interactive Commands</span
+                                        >
+                                        <span class="component-tech"
+                                            >Commander.js + Inquirer</span
+                                        >
+                                    </div>
+                                    <div class="component-box">
+                                        <span class="component-name"
+                                            >Config Manager</span
+                                        >
+                                        <span class="component-tech"
+                                            >Cosmiconfig + YAML</span
+                                        >
+                                    </div>
+                                    <div class="component-box">
+                                        <span class="component-name">Progress UI</span>
+                                        <span class="component-tech">Ora + Chalk</span>
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- Server Layer -->
+                            <div class="blueprint-layer server-layer">
+                                <div class="layer-header">
+                                    <i data-feather="server"></i>
+                                    <h3>Webhook Server</h3>
+                                </div>
+                                <div class="layer-components">
+                                    <div class="component-box">
+                                        <span class="component-name"
+                                            >Express Server</span
+                                        >
+                                        <span class="component-tech"
+                                            >Express.js + Helmet</span
+                                        >
+                                    </div>
+                                    <div class="component-box">
+                                        <span class="component-name"
+                                            >Event Processor</span
+                                        >
+                                        <span class="component-tech"
+                                            >EventEmitter + Workers</span
+                                        >
+                                    </div>
+                                    <div class="component-box">
+                                        <span class="component-name"
+                                            >Security Layer</span
+                                        >
+                                        <span class="component-tech">HMAC + CORS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blueprint-connections">
+                            <div class="connection-line horizontal"></div>
+                            <div class="connection-line vertical"></div>
+                            <div class="connection-node"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Architecture Flow Section -->
+            <section id="architecture-flow" class="architecture-flow-section">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">
+                        Data Flow Architecture
+                    </h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Visualize how data flows through the GitHub Mastery ecosystem
+                    </p>
+
+                    <div
+                        class="mermaid-container"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="mermaid">
+                            graph TD A[👨‍💻 Developer] -->|CLI Commands| B[🔧 GitHub
+                            Mastery CLI] A -->|HTTP Requests| C[🚪 API Gateway] B
+                            -->|API Calls| D[📡 GitHub API Client] C -->|Authenticated
+                            Requests| D D -->|Rate Limited| E[🐙 GitHub API] E
+                            -->|Responses| D F[🪝 GitHub Webhooks] -->|Events| G[⚡
+                            Webhook Server] G -->|Process Events| H[📋 Event Queue] H
+                            -->|Trigger Actions| I[🤖 Automation Engine] D -->|Cache|
+                            J[(🔥 Redis Cache)] G -->|Store Events| K[(📊 Event Store)]
+                            I -->|Logs| L[(📈 Analytics DB)] style A
+                            fill:#58a6ff,stroke:#fff,stroke-width:2px,color:#fff style E
+                            fill:#238636,stroke:#fff,stroke-width:2px,color:#fff style F
+                            fill:#238636,stroke:#fff,stroke-width:2px,color:#fff style J
+                            fill:#d29922,stroke:#fff,stroke-width:2px,color:#fff style K
+                            fill:#d29922,stroke:#fff,stroke-width:2px,color:#fff style L
+                            fill:#d29922,stroke:#fff,stroke-width:2px,color:#fff
                         </div>
                     </div>
 
-                    <div class="metric-card" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="metric-header">
-                            <h3>Usage Statistics</h3>
-                            <span class="metric-status status-growing">Growing</span>
-                        </div>
-                        <div class="metric-chart">
-                            <canvas id="usageChart" width="300" height="200"></canvas>
-                        </div>
-                        <div class="metric-stats">
-                            <div class="stat">
-                                <span class="stat-value">12.4M</span>
-                                <span class="stat-label">Monthly Req</span>
+                    <div class="flow-legend" data-aos="fade-up" data-aos-delay="400">
+                        <div class="legend-grid">
+                            <div class="legend-item">
+                                <div class="legend-color user"></div>
+                                <span>User Interfaces</span>
                             </div>
-                            <div class="stat">
-                                <span class="stat-value">2,847</span>
-                                <span class="stat-label">Active Orgs</span>
+                            <div class="legend-item">
+                                <div class="legend-color github"></div>
+                                <span>GitHub Services</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="metric-card" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="metric-header">
-                            <h3>Automation Efficiency</h3>
-                            <span class="metric-status status-optimal">Optimal</span>
-                        </div>
-                        <div class="metric-chart">
-                            <canvas id="efficiencyChart" width="300" height="200"></canvas>
-                        </div>
-                        <div class="metric-stats">
-                            <div class="stat">
-                                <span class="stat-value">67%</span>
-                                <span class="stat-label">Deploy Time ↓</span>
+                            <div class="legend-item">
+                                <div class="legend-color storage"></div>
+                                <span>Data Storage</span>
                             </div>
-                            <div class="stat">
-                                <span class="stat-value">1,247</span>
-                                <span class="stat-label">Pipelines</span>
+                            <div class="legend-item">
+                                <div class="legend-color processing"></div>
+                                <span>Processing Layer</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="enterprise-features" data-aos="fade-up" data-aos-delay="600">
-                    <div class="enterprise-grid">
-                        <div class="enterprise-item">
-                            <i data-feather="shield" class="enterprise-icon"></i>
-                            <h4>Enterprise Security</h4>
-                            <p>Advanced authentication, audit logs, and compliance features</p>
+            <!-- Features Section -->
+            <section id="features" class="features">
+                <div class="container">
+                    <h2 class="section-title">Advanced Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-feather="cpu"></i>
+                            </div>
+                            <h3>Enterprise API Gateway</h3>
+                            <p>
+                                Complete GitHub API wrapper with enterprise-grade
+                                authentication, intelligent rate limiting, and
+                                comprehensive error handling.
+                            </p>
+                            <ul class="feature-list">
+                                <li>OAuth 2.0 & Enterprise Token support</li>
+                                <li>Automatic rate limit handling with backoff</li>
+                                <li>Comprehensive error management & retries</li>
+                                <li>Structured logging & monitoring</li>
+                            </ul>
                         </div>
-                        <div class="enterprise-item">
-                            <i data-feather="trending-up" class="enterprise-icon"></i>
-                            <h4>Scalable Architecture</h4>
-                            <p>Built to handle millions of API calls with auto-scaling capabilities</p>
-                        </div>
-                        <div class="enterprise-item">
-                            <i data-feather="cpu" class="enterprise-icon"></i>
-                            <h4>High Performance</h4>
-                            <p>Optimized for speed with intelligent caching and rate limiting</p>
-                        </div>
-                        <div class="enterprise-item">
-                            <i data-feather="globe" class="enterprise-icon"></i>
-                            <h4>Global CDN</h4>
-                            <p>Worldwide distribution for minimal latency and maximum reliability</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Enterprise Architecture Section -->
-        <section id="architecture" class="architecture-section">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Enterprise Architecture</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Scalable, secure, and high-performance infrastructure designed for enterprise workloads</p>
-                
-                <div class="architecture-diagram" data-aos="fade-up" data-aos-delay="200">
-                    <div class="architecture-layer" data-aos="slide-right" data-aos-delay="300">
-                        <div class="layer-title">
-                            <i data-feather="monitor" class="layer-icon"></i>
-                            <h3>Client Layer</h3>
-                        </div>
-                        <div class="layer-components">
-                            <div class="component">
+                        <div class="feature-card">
+                            <div class="feature-icon">
                                 <i data-feather="terminal"></i>
-                                <span>CLI Tools</span>
                             </div>
-                            <div class="component">
-                                <i data-feather="code"></i>
-                                <span>API Client</span>
-                            </div>
-                            <div class="component">
-                                <i data-feather="globe"></i>
-                                <span>Web Interface</span>
-                            </div>
+                            <h3>Interactive DevOps CLI</h3>
+                            <p>
+                                Command-line interface for GitHub operations. Manage
+                                repositories, automate workflows, and monitor
+                                deployments from your terminal.
+                            </p>
+                            <ul class="feature-list">
+                                <li>Interactive repository orchestration</li>
+                                <li>CI/CD pipeline management</li>
+                                <li>Real-time deployment monitoring</li>
+                                <li>Bulk operations & automation</li>
+                            </ul>
                         </div>
-                    </div>
 
-                    <div class="architecture-arrow" data-aos="fade-in" data-aos-delay="400">
-                        <i data-feather="arrow-down"></i>
-                    </div>
-
-                    <div class="architecture-layer" data-aos="slide-left" data-aos-delay="500">
-                        <div class="layer-title">
-                            <i data-feather="server" class="layer-icon"></i>
-                            <h3>API Gateway</h3>
-                        </div>
-                        <div class="layer-components">
-                            <div class="component">
-                                <i data-feather="shield"></i>
-                                <span>Authentication</span>
-                            </div>
-                            <div class="component">
+                        <div class="feature-card">
+                            <div class="feature-icon">
                                 <i data-feather="zap"></i>
-                                <span>Rate Limiting</span>
                             </div>
-                            <div class="component">
-                                <i data-feather="activity"></i>
-                                <span>Load Balancer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="architecture-arrow" data-aos="fade-in" data-aos-delay="600">
-                        <i data-feather="arrow-down"></i>
-                    </div>
-
-                    <div class="architecture-layer" data-aos="slide-right" data-aos-delay="700">
-                        <div class="layer-title">
-                            <i data-feather="cpu" class="layer-icon"></i>
-                            <h3>Processing Layer</h3>
-                        </div>
-                        <div class="layer-components">
-                            <div class="component">
-                                <i data-feather="git-branch"></i>
-                                <span>GitHub API</span>
-                            </div>
-                            <div class="component">
-                                <i data-feather="webhook"></i>
-                                <span>Webhook Server</span>
-                            </div>
-                            <div class="component">
-                                <i data-feather="settings"></i>
-                                <span>Automation Engine</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="architecture-arrow" data-aos="fade-in" data-aos-delay="800">
-                        <i data-feather="arrow-down"></i>
-                    </div>
-
-                    <div class="architecture-layer" data-aos="slide-left" data-aos-delay="900">
-                        <div class="layer-title">
-                            <i data-feather="database" class="layer-icon"></i>
-                            <h3>Data Layer</h3>
-                        </div>
-                        <div class="layer-components">
-                            <div class="component">
-                                <i data-feather="hard-drive"></i>
-                                <span>Cache Redis</span>
-                            </div>
-                            <div class="component">
-                                <i data-feather="file-text"></i>
-                                <span>Logs</span>
-                            </div>
-                            <div class="component">
-                                <i data-feather="bar-chart"></i>
-                                <span>Analytics</span>
-                            </div>
+                            <h3>Production Webhook Server</h3>
+                            <p>
+                                Enterprise-ready webhook server for GitHub events.
+                                Secure, scalable, and high-performance with Express.js
+                                and distributed architecture.
+                            </p>
+                            <ul class="feature-list">
+                                <li>HMAC signature verification</li>
+                                <li>Multi-event processing pipeline</li>
+                                <li>Health monitoring & alerting</li>
+                                <li>Distributed event processing</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </section>
+        </main>
 
-                <div class="tech-stack" data-aos="fade-up" data-aos-delay="1000">
-                    <h3>Technology Stack</h3>
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <div class="tech-logo">⚡</div>
-                            <div class="tech-info">
-                                <h4>Node.js</h4>
-                                <p>High-performance runtime</p>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-logo">🐳</div>
-                            <div class="tech-info">
-                                <h4>Docker</h4>
-                                <p>Containerized deployment</p>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-logo">☁️</div>
-                            <div class="tech-info">
-                                <h4>Cloud Native</h4>
-                                <p>Kubernetes orchestration</p>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-logo">🔥</div>
-                            <div class="tech-info">
-                                <h4>Redis</h4>
-                                <p>Ultra-fast caching</p>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-logo">📊</div>
-                            <div class="tech-info">
-                                <h4>Prometheus</h4>
-                                <p>Advanced monitoring</p>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-logo">🔒</div>
-                            <div class="tech-info">
-                                <h4>OAuth 2.0</h4>
-                                <p>Enterprise security</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- System Blueprint Section -->
-        <section id="blueprint" class="blueprint-section">
+        <footer>
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">System Blueprint</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Complete architectural overview of the GitHub Mastery ecosystem</p>
-                
-                <div class="blueprint-container" data-aos="fade-up" data-aos-delay="200">
-                    <div class="blueprint-grid">
-                        <!-- API Layer -->
-                        <div class="blueprint-layer api-layer">
-                            <div class="layer-header">
-                                <i data-feather="layers"></i>
-                                <h3>API Layer</h3>
-                            </div>
-                            <div class="layer-components">
-                                <div class="component-box">
-                                    <span class="component-name">GitHub API Client</span>
-                                    <span class="component-tech">Node.js + Axios</span>
-                                </div>
-                                <div class="component-box">
-                                    <span class="component-name">Rate Limiter</span>
-                                    <span class="component-tech">Redis + Bull Queue</span>
-                                </div>
-                                <div class="component-box">
-                                    <span class="component-name">OAuth Handler</span>
-                                    <span class="component-tech">JWT + Passport</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- CLI Layer -->
-                        <div class="blueprint-layer cli-layer">
-                            <div class="layer-header">
-                                <i data-feather="terminal"></i>
-                                <h3>CLI Interface</h3>
-                            </div>
-                            <div class="layer-components">
-                                <div class="component-box">
-                                    <span class="component-name">Interactive Commands</span>
-                                    <span class="component-tech">Commander.js + Inquirer</span>
-                                </div>
-                                <div class="component-box">
-                                    <span class="component-name">Config Manager</span>
-                                    <span class="component-tech">Cosmiconfig + YAML</span>
-                                </div>
-                                <div class="component-box">
-                                    <span class="component-name">Progress UI</span>
-                                    <span class="component-tech">Ora + Chalk</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Server Layer -->
-                        <div class="blueprint-layer server-layer">
-                            <div class="layer-header">
-                                <i data-feather="server"></i>
-                                <h3>Webhook Server</h3>
-                            </div>
-                            <div class="layer-components">
-                                <div class="component-box">
-                                    <span class="component-name">Express Server</span>
-                                    <span class="component-tech">Express.js + Helmet</span>
-                                </div>
-                                <div class="component-box">
-                                    <span class="component-name">Event Processor</span>
-                                    <span class="component-tech">EventEmitter + Workers</span>
-                                </div>
-                                <div class="component-box">
-                                    <span class="component-name">Security Layer</span>
-                                    <span class="component-tech">HMAC + CORS</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>GitHub Mastery</h4>
+                        <p>
+                            Enterprise GitHub automation platform built by Principal
+                            Software Architects for modern DevOps teams.
+                        </p>
                     </div>
-                    
-                    <div class="blueprint-connections">
-                        <div class="connection-line horizontal"></div>
-                        <div class="connection-line vertical"></div>
-                        <div class="connection-node"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Architecture Flow Section -->
-        <section id="architecture-flow" class="architecture-flow-section">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Data Flow Architecture</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Visualize how data flows through the GitHub Mastery ecosystem</p>
-                
-                <div class="mermaid-container" data-aos="fade-up" data-aos-delay="200">
-                    <div class="mermaid">
-                        graph TD
-                            A[👨‍💻 Developer] -->|CLI Commands| B[🔧 GitHub Mastery CLI]
-                            A -->|HTTP Requests| C[🚪 API Gateway]
-                            
-                            B -->|API Calls| D[📡 GitHub API Client]
-                            C -->|Authenticated Requests| D
-                            
-                            D -->|Rate Limited| E[🐙 GitHub API]
-                            E -->|Responses| D
-                            
-                            F[🪝 GitHub Webhooks] -->|Events| G[⚡ Webhook Server]
-                            G -->|Process Events| H[📋 Event Queue]
-                            H -->|Trigger Actions| I[🤖 Automation Engine]
-                            
-                            D -->|Cache| J[(🔥 Redis Cache)]
-                            G -->|Store Events| K[(📊 Event Store)]
-                            I -->|Logs| L[(📈 Analytics DB)]
-                            
-                            style A fill:#58a6ff,stroke:#fff,stroke-width:2px,color:#fff
-                            style E fill:#238636,stroke:#fff,stroke-width:2px,color:#fff
-                            style F fill:#238636,stroke:#fff,stroke-width:2px,color:#fff
-                            style J fill:#d29922,stroke:#fff,stroke-width:2px,color:#fff
-                            style K fill:#d29922,stroke:#fff,stroke-width:2px,color:#fff
-                            style L fill:#d29922,stroke:#fff,stroke-width:2px,color:#fff
-                    </div>
-                </div>
-                
-                <div class="flow-legend" data-aos="fade-up" data-aos-delay="400">
-                    <div class="legend-grid">
-                        <div class="legend-item">
-                            <div class="legend-color user"></div>
-                            <span>User Interfaces</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color github"></div>
-                            <span>GitHub Services</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color storage"></div>
-                            <span>Data Storage</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color processing"></div>
-                            <span>Processing Layer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="features">
-            <div class="container">
-                <h2 class="section-title">Advanced Features</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i data-feather="cpu"></i>
-                        </div>
-                        <h3>Enterprise API Gateway</h3>
-                        <p>Complete GitHub API wrapper with enterprise-grade authentication, intelligent rate limiting, and comprehensive error handling.</p>
-                        <ul class="feature-list">
-                            <li>OAuth 2.0 & Enterprise Token support</li>
-                            <li>Automatic rate limit handling with backoff</li>
-                            <li>Comprehensive error management & retries</li>
-                            <li>Structured logging & monitoring</li>
+                    <div class="footer-section">
+                        <h4>Architecture</h4>
+                        <ul>
+                            <li><a href="#metrics">Production Metrics</a></li>
+                            <li><a href="#architecture">System Architecture</a></li>
+                            <li><a href="#features">Enterprise Features</a></li>
                         </ul>
                     </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i data-feather="terminal"></i>
-                        </div>
-                        <h3>Interactive DevOps CLI</h3>
-                        <p>Command-line interface for GitHub operations. Manage repositories, automate workflows, and monitor deployments from your terminal.</p>
-                        <ul class="feature-list">
-                            <li>Interactive repository orchestration</li>
-                            <li>CI/CD pipeline management</li>
-                            <li>Real-time deployment monitoring</li>
-                            <li>Bulk operations & automation</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i data-feather="zap"></i>
-                        </div>
-                        <h3>Production Webhook Server</h3>
-                        <p>Enterprise-ready webhook server for GitHub events. Secure, scalable, and high-performance with Express.js and distributed architecture.</p>
-                        <ul class="feature-list">
-                            <li>HMAC signature verification</li>
-                            <li>Multi-event processing pipeline</li>
-                            <li>Health monitoring & alerting</li>
-                            <li>Distributed event processing</li>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="README.md">Documentation</a></li>
+                            <li><a href="TASKS.md">Roadmap</a></li>
+                            <li><a href="https://github.com">GitHub API</a></li>
                         </ul>
                     </div>
                 </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2025 GitHub Mastery. Engineered for enterprise-scale
+                        DevOps automation.
+                    </p>
+                </div>
             </div>
-        </section>
-    </main>
+        </footer>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>GitHub Mastery</h4>
-                    <p>Enterprise GitHub automation platform built by Principal Software Architects for modern DevOps teams.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Architecture</h4>
-                    <ul>
-                        <li><a href="#metrics">Production Metrics</a></li>
-                        <li><a href="#architecture">System Architecture</a></li>
-                        <li><a href="#features">Enterprise Features</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="README.md">Documentation</a></li>
-                        <li><a href="TASKS.md">Roadmap</a></li>
-                        <li><a href="https://github.com">GitHub API</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 GitHub Mastery. Engineered for enterprise-scale DevOps automation.</p>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-        
-        // Initialize Feather Icons
-        feather.replace();
-        
-        // Initialize Mermaid
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'dark',
-            themeVariables: {
-                primaryColor: '#58a6ff',
-                primaryTextColor: '#e6edf3',
-                primaryBorderColor: '#30363d',
-                lineColor: '#8b949e',
-                backgroundColor: '#0d1117',
-                secondaryColor: '#161b22',
-                tertiaryColor: '#21262d'
-            }
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+        <script>
+            // Initialize AOS (Animate On Scroll)
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100,
+            });
+
+            // Initialize Feather Icons
+            feather.replace();
+
+            // Initialize Mermaid
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'dark',
+                themeVariables: {
+                    primaryColor: '#58a6ff',
+                    primaryTextColor: '#e6edf3',
+                    primaryBorderColor: '#30363d',
+                    lineColor: '#8b949e',
+                    backgroundColor: '#0d1117',
+                    secondaryColor: '#161b22',
+                    tertiaryColor: '#21262d',
+                },
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                        });
+                    }
+                });
+            });
+
+            // Data Flow Animation for Hero Background
+            function initDataFlow() {
+                const canvas = document.getElementById('data-flow-canvas');
+                if (!canvas) return;
+
+                const ctx = canvas.getContext('2d');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                window.addEventListener('resize', () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                });
+
+                const nodes = [];
+                const connections = [];
+                const nodeCount = 50;
+
+                // Create nodes
+                for (let i = 0; i < nodeCount; i++) {
+                    nodes.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        radius: Math.random() * 3 + 1,
+                        opacity: Math.random() * 0.5 + 0.2,
                     });
                 }
-            });
-        });
-        
-        // Data Flow Animation for Hero Background
-        function initDataFlow() {
-            const canvas = document.getElementById('data-flow-canvas');
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
-            
-            const nodes = [];
-            const connections = [];
-            const nodeCount = 50;
-            
-            // Create nodes
-            for (let i = 0; i < nodeCount; i++) {
-                nodes.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.5,
-                    vy: (Math.random() - 0.5) * 0.5,
-                    radius: Math.random() * 3 + 1,
-                    opacity: Math.random() * 0.5 + 0.2
-                });
-            }
-            
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                // Update and draw nodes
-                nodes.forEach(node => {
-                    node.x += node.vx;
-                    node.y += node.vy;
-                    
-                    if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
-                    if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
-                    
-                    // Draw node
-                    ctx.beginPath();
-                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(88, 166, 255, ${node.opacity})`;
-                    ctx.fill();
-                });
-                
-                // Draw connections
-                for (let i = 0; i < nodes.length; i++) {
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const dx = nodes[i].x - nodes[j].x;
-                        const dy = nodes[i].y - nodes[j].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < 150) {
-                            ctx.beginPath();
-                            ctx.moveTo(nodes[i].x, nodes[i].y);
-                            ctx.lineTo(nodes[j].x, nodes[j].y);
-                            ctx.strokeStyle = `rgba(88, 166, 255, ${0.3 * (1 - distance / 150)})`;
-                            ctx.lineWidth = 1;
-                            ctx.stroke();
-                        }
-                    }
-                }
-                
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-        }
-        
-        // Matrix Rain Effect
-        function initMatrixRain() {
-            const canvas = document.getElementById('matrix-canvas');
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
-            
-            const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ{}[]|\\:";\'<>?,.!@#$%^&*()_+-=';
-            const chars = matrixChars.split('');
-            const fontSize = 14;
-            const columns = canvas.width / fontSize;
-            const drops = [];
-            
-            for (let i = 0; i < columns; i++) {
-                drops[i] = Math.random() * canvas.height;
-            }
-            
-            const matrixColors = ['#00ff41', '#00dc38', '#00b32f', '#58a6ff', '#38bdf8'];
-            
-            function drawMatrix() {
-                ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
-                
-                for (let i = 0; i < drops.length; i++) {
-                    const char = chars[Math.floor(Math.random() * chars.length)];
-                    const opacity = Math.random() * 0.8 + 0.2;
-                    const colorIndex = Math.floor(Math.random() * matrixColors.length);
-                    
-                    if (Math.random() > 0.98) {
-                        ctx.shadowColor = matrixColors[colorIndex];
-                        ctx.shadowBlur = 10;
-                    } else {
-                        ctx.shadowBlur = 0;
-                    }
-                    
-                    ctx.fillStyle = matrixColors[colorIndex] + Math.floor(opacity * 255).toString(16).padStart(2, '0');
-                    ctx.fillText(char, i * fontSize, drops[i]);
-                    
-                    drops[i] += fontSize;
-                    
-                    if (drops[i] > canvas.height && Math.random() > 0.975) {
-                        drops[i] = 0;
-                    }
-                }
-            }
-            
-            function animate() {
-                drawMatrix();
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-        }
-        
-        // Initialize Charts
-        function initializeCharts() {
-            // API Performance Chart
-            const apiCtx = document.getElementById('apiChart');
-            if (apiCtx) {
-                new Chart(apiCtx, {
-                    type: 'line',
-                    data: {
-                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                        datasets: [{
-                            label: 'P95 Latency (ms)',
-                            data: [28, 23, 25, 21, 23, 19],
-                            borderColor: '#58a6ff',
-                            backgroundColor: 'rgba(88, 166, 255, 0.1)',
-                            tension: 0.4,
-                            fill: true
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            y: { beginAtZero: true, grid: { color: '#30363d' }, ticks: { color: '#8b949e' } },
-                            x: { grid: { color: '#30363d' }, ticks: { color: '#8b949e' } }
-                        }
-                    }
-                });
-            }
 
-            // Usage Statistics Chart
-            const usageCtx = document.getElementById('usageChart');
-            if (usageCtx) {
-                new Chart(usageCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                        datasets: [{
-                            label: 'Requests (M)',
-                            data: [2.8, 3.2, 3.1, 3.7],
-                            backgroundColor: 'rgba(56, 189, 248, 0.8)',
-                            borderColor: '#38bdf8',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            y: { beginAtZero: true, grid: { color: '#30363d' }, ticks: { color: '#8b949e' } },
-                            x: { grid: { color: '#30363d' }, ticks: { color: '#8b949e' } }
-                        }
-                    }
-                });
-            }
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Efficiency Chart
-            const efficiencyCtx = document.getElementById('efficiencyChart');
-            if (efficiencyCtx) {
-                new Chart(efficiencyCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Automated', 'Manual'],
-                        datasets: [{
-                            data: [67, 33],
-                            backgroundColor: ['#3fb950', '#30363d'],
-                            borderWidth: 2,
-                            borderColor: '#161b22'
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'bottom',
-                                labels: { color: '#8b949e', padding: 15 }
+                    // Update and draw nodes
+                    nodes.forEach(node => {
+                        node.x += node.vx;
+                        node.y += node.vy;
+
+                        if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                        if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+
+                        // Draw node
+                        ctx.beginPath();
+                        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(88, 166, 255, ${node.opacity})`;
+                        ctx.fill();
+                    });
+
+                    // Draw connections
+                    for (let i = 0; i < nodes.length; i++) {
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            const dx = nodes[i].x - nodes[j].x;
+                            const dy = nodes[i].y - nodes[j].y;
+                            const distance = Math.sqrt(dx * dx + dy * dy);
+
+                            if (distance < 150) {
+                                ctx.beginPath();
+                                ctx.moveTo(nodes[i].x, nodes[i].y);
+                                ctx.lineTo(nodes[j].x, nodes[j].y);
+                                ctx.strokeStyle = `rgba(88, 166, 255, ${0.3 * (1 - distance / 150)})`;
+                                ctx.lineWidth = 1;
+                                ctx.stroke();
                             }
                         }
                     }
-                });
-            }
-        }
-        
-        // Initialize when page loads
-        window.addEventListener('load', () => {
-            setTimeout(initDataFlow, 500);
-            setTimeout(initMatrixRain, 700);
-            setTimeout(initializeCharts, 1000);
-        });
-    </script>
-</body>
-</html>
 
+                    requestAnimationFrame(animate);
+                }
+
+                animate();
+            }
+
+            // Matrix Rain Effect
+            function initMatrixRain() {
+                const canvas = document.getElementById('matrix-canvas');
+                if (!canvas) return;
+
+                const ctx = canvas.getContext('2d');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                window.addEventListener('resize', () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                });
+
+                const matrixChars =
+                    'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ{}[]|\\:";\'<>?,.!@#$%^&*()_+-=';
+                const chars = matrixChars.split('');
+                const fontSize = 14;
+                const columns = canvas.width / fontSize;
+                const drops = [];
+
+                for (let i = 0; i < columns; i++) {
+                    drops[i] = Math.random() * canvas.height;
+                }
+
+                const matrixColors = [
+                    '#00ff41',
+                    '#00dc38',
+                    '#00b32f',
+                    '#58a6ff',
+                    '#38bdf8',
+                ];
+
+                function drawMatrix() {
+                    ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                    ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
+
+                    for (let i = 0; i < drops.length; i++) {
+                        const char = chars[Math.floor(Math.random() * chars.length)];
+                        const opacity = Math.random() * 0.8 + 0.2;
+                        const colorIndex = Math.floor(
+                            Math.random() * matrixColors.length
+                        );
+
+                        if (Math.random() > 0.98) {
+                            ctx.shadowColor = matrixColors[colorIndex];
+                            ctx.shadowBlur = 10;
+                        } else {
+                            ctx.shadowBlur = 0;
+                        }
+
+                        ctx.fillStyle =
+                            matrixColors[colorIndex] +
+                            Math.floor(opacity * 255)
+                                .toString(16)
+                                .padStart(2, '0');
+                        ctx.fillText(char, i * fontSize, drops[i]);
+
+                        drops[i] += fontSize;
+
+                        if (drops[i] > canvas.height && Math.random() > 0.975) {
+                            drops[i] = 0;
+                        }
+                    }
+                }
+
+                function animate() {
+                    drawMatrix();
+                    requestAnimationFrame(animate);
+                }
+
+                animate();
+            }
+
+            // Initialize Charts
+            function initializeCharts() {
+                // API Performance Chart
+                const apiCtx = document.getElementById('apiChart');
+                if (apiCtx) {
+                    new Chart(apiCtx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                            datasets: [
+                                {
+                                    label: 'P95 Latency (ms)',
+                                    data: [28, 23, 25, 21, 23, 19],
+                                    borderColor: '#58a6ff',
+                                    backgroundColor: 'rgba(88, 166, 255, 0.1)',
+                                    tension: 0.4,
+                                    fill: true,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: { color: '#30363d' },
+                                    ticks: { color: '#8b949e' },
+                                },
+                                x: {
+                                    grid: { color: '#30363d' },
+                                    ticks: { color: '#8b949e' },
+                                },
+                            },
+                        },
+                    });
+                }
+
+                // Usage Statistics Chart
+                const usageCtx = document.getElementById('usageChart');
+                if (usageCtx) {
+                    new Chart(usageCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                            datasets: [
+                                {
+                                    label: 'Requests (M)',
+                                    data: [2.8, 3.2, 3.1, 3.7],
+                                    backgroundColor: 'rgba(56, 189, 248, 0.8)',
+                                    borderColor: '#38bdf8',
+                                    borderWidth: 1,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: { color: '#30363d' },
+                                    ticks: { color: '#8b949e' },
+                                },
+                                x: {
+                                    grid: { color: '#30363d' },
+                                    ticks: { color: '#8b949e' },
+                                },
+                            },
+                        },
+                    });
+                }
+
+                // Efficiency Chart
+                const efficiencyCtx = document.getElementById('efficiencyChart');
+                if (efficiencyCtx) {
+                    new Chart(efficiencyCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Automated', 'Manual'],
+                            datasets: [
+                                {
+                                    data: [67, 33],
+                                    backgroundColor: ['#3fb950', '#30363d'],
+                                    borderWidth: 2,
+                                    borderColor: '#161b22',
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: { color: '#8b949e', padding: 15 },
+                                },
+                            },
+                        },
+                    });
+                }
+            }
+
+            // Initialize when page loads
+            window.addEventListener('load', () => {
+                setTimeout(initDataFlow, 500);
+                setTimeout(initMatrixRain, 700);
+                setTimeout(initializeCharts, 1000);
+            });
+        </script>
+    </body>
+</html>

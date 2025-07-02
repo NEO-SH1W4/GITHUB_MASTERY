@@ -4,9 +4,7 @@
         "es2021": true,
         "node": true
     },
-    "extends": [
-        "eslint:recommended"
-    ],
+    "extends": ["eslint:recommended"],
     "parserOptions": {
         "ecmaVersion": 2022,
         "sourceType": "module"
@@ -23,6 +21,13 @@
         "max-len": ["warn", { "code": 100 }],
         "complexity": ["warn", 10],
         "max-depth": ["warn", 4]
-    }
+    },
+    "overrides": [
+        {
+            "files": ["tests/**/*.js", "**/*.test.js", "**/*.spec.js"],
+            "env": {
+                "jest": true
+            }
+        }
+    ]
 }
-

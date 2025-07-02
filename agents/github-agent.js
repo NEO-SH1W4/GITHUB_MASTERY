@@ -3,7 +3,7 @@
 import { Command } from 'commander';
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import { GitHubClient } from '../api/github-client.js';
+// import { GitHubClient } from '../api/github-client.js';
 import {
     initAgent,
     executeAutomatedContribution,

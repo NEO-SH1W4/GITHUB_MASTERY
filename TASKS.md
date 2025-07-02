@@ -3,6 +3,7 @@
 ## 🚀 Backlog Priorizado
 
 ### 📋 TODO
+
 - [ ] Implementar testes automatizados (Jest)
 - [ ] Criar operações avançadas de PRs (merge, review)
 - [ ] Implementar manipulação de branches via API
@@ -15,12 +16,14 @@
 - [ ] Documentar boas práticas de segurança
 
 ### 🔄 IN PROGRESS
+
 - [ ] Finalizar implementação do REST adapter
 - [x] Melhorar tratamento de eventos no webhook server
 - [x] Adicionar mais comandos interativos no CLI
 - [x] Implementar operações avançadas de issues
 
 ### ✅ DONE
+
 - [x] Criar estrutura de pastas
 - [x] Criar README.md inicial
 - [x] Criar arquivo TASKS.md
@@ -38,24 +41,28 @@
 ## 📊 Progresso por Área
 
 ### API (0/4)
+
 - [ ] Autenticação e configuração
 - [ ] Operações básicas (repos, issues, PRs)
 - [ ] Operações avançadas (teams, orgs)
 - [ ] Rate limiting e tratamento de erros
 
 ### Automations (0/3)
-- [ ] GitHub Actions básico  
+
+- [ ] GitHub Actions básico
 - [ ] Workflows complexos
 - [ ] Automações customizadas
 
 ### CLI Tools (0/2)
+
 - [ ] Ferramenta básica
 - [ ] Comandos avançados
 
 ### Integrations (0/2)
+
 - [ ] Webhook server
 - [ ] Integração com outras APIs
 
 ---
-*Atualizado em: 02/07/2025 19:46 UTC*
 
+_Atualizado em: 02/07/2025 19:46 UTC_

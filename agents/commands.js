@@ -36,7 +36,7 @@ export async function executeWeeklyContribution() {
 }
 
 // Mostrar estatísticas
-export async function showStatistics(days, format) {
+export async function showStatistics(days) {
     console.log(chalk.blue(`📊 Exibindo estatísticas dos últimos ${days} dias...`));
     // Aqui é necessário implementar o código para exibir as estatísticas
 }
@@ -48,7 +48,7 @@ export async function setupGitHubProfile(template) {
 }
 
 // Sincronizar repositórios
-export async function syncAllRepositories(pullOnly) {
+export async function syncAllRepositories() {
     console.log(chalk.blue('🔄 Sincronizando todos os repositórios...'));
     // Aqui é necessário implementar o código de sincronização
 }

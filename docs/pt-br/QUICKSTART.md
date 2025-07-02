@@ -4,7 +4,7 @@
 
 **Comece com GitHub Mastery em minutos**
 
-*Get started with GitHub Mastery in minutes*
+_Get started with GitHub Mastery in minutes_
 
 🇧🇷 Português | [🇺🇸 English](../en/QUICKSTART.md) | [🇪🇸 Español](../es/QUICKSTART.md)
 
@@ -29,22 +29,22 @@ Antes de começar, certifique-se de ter:
 2. Clique em **"Generate new token (classic)"**
 3. Dê um nome descritivo: `GitHub Mastery CLI`
 4. Selecione os escopos necessários:
-   - ✅ `repo` (Controle total de repositórios privados)
-   - ✅ `user` (Atualizar dados do usuário)
-   - ✅ `notifications` (Acessar notificações)
-   - ✅ `workflow` (Atualizar workflows do GitHub Actions)
+    - ✅ `repo` (Controle total de repositórios privados)
+    - ✅ `user` (Atualizar dados do usuário)
+    - ✅ `notifications` (Acessar notificações)
+    - ✅ `workflow` (Atualizar workflows do GitHub Actions)
 5. Clique em **"Generate token"**
 6. **Copie o token imediatamente** (você não verá novamente!)
 
 ### 2. Permissões do Token Explicadas
 
-| Escopo | Propósito | Obrigatório |
-|--------|-----------|-------------|
-| `repo` | Operações de repositório (criar, listar, gerenciar) | ✅ Sim |
-| `user` | Informações do perfil do usuário | ✅ Sim |
-| `notifications` | Acesso a notificações | 🔶 Opcional |
-| `workflow` | Gerenciamento do GitHub Actions | 🔶 Opcional |
-| `gist` | Gerenciamento de gists | 🔶 Opcional |
+| Escopo          | Propósito                                           | Obrigatório |
+| --------------- | --------------------------------------------------- | ----------- |
+| `repo`          | Operações de repositório (criar, listar, gerenciar) | ✅ Sim      |
+| `user`          | Informações do perfil do usuário                    | ✅ Sim      |
+| `notifications` | Acesso a notificações                               | 🔶 Opcional |
+| `workflow`      | Gerenciamento do GitHub Actions                     | 🔶 Opcional |
+| `gist`          | Gerenciamento de gists                              | 🔶 Opcional |
 
 ## 🚀 Instalação
 
@@ -197,41 +197,49 @@ npm run validate
 
 ### Referência de Comandos CLI
 
-| Comando | Descrição | Exemplo |
-|---------|-----------|---------|
-| `auth` | Verificar autenticação | `npm start auth` |
-| `status` | Visão geral da conta | `npm start status` |
-| `repos` | Listar repositórios | `npm start repos --limit 10` |
-| `repo` | Detalhes do repositório | `npm start repo owner nome` |
-| `issues` | Listar issues | `npm start issues owner repo` |
-| `create-repo` | Criar repositório | `npm start create-repo` |
+| Comando       | Descrição               | Exemplo                       |
+| ------------- | ----------------------- | ----------------------------- |
+| `auth`        | Verificar autenticação  | `npm start auth`              |
+| `status`      | Visão geral da conta    | `npm start status`            |
+| `repos`       | Listar repositórios     | `npm start repos --limit 10`  |
+| `repo`        | Detalhes do repositório | `npm start repo owner nome`   |
+| `issues`      | Listar issues           | `npm start issues owner repo` |
+| `create-repo` | Criar repositório       | `npm start create-repo`       |
 
 ## 🐛 Solução de Problemas
 
 ### Problemas Comuns
 
 #### ❌ Falha na Autenticação
+
 ```bash
 # Erro: Request failed with status code 401
 ```
+
 **Solução**: Verifique seu token GitHub no arquivo `.env`
 
 #### ❌ Limite de Taxa Excedido
+
 ```bash
 # Erro: API rate limit exceeded
 ```
+
 **Solução**: Aguarde o reset do limite de taxa ou use solicitações autenticadas
 
 #### ❌ Comando Não Encontrado
+
 ```bash
 # Erro: node: command not found
 ```
+
 **Solução**: Instale Node.js de [nodejs.org](https://nodejs.org/)
 
 #### ❌ Permissão Negada
+
 ```bash
 # Erro: EACCES: permission denied
 ```
+
 **Solução**: Verifique permissões de arquivo ou execute com privilégios apropriados
 
 ### Modo Debug
@@ -269,4 +277,3 @@ Agora que você está configurado, explore mais recursos:
 [🏠 Homepage](https://github.com/NEO-SH1W4/GITHUB_MASTERY) • [📖 Documentação Completa](../../README.md)
 
 </div>
-

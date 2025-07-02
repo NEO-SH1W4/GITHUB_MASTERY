@@ -4,7 +4,7 @@
  * @fileoverview Test configuration with ES modules support and coverage
  */
 
-module.exports = {
+export default {
     // Test environment
     testEnvironment: 'node',
 

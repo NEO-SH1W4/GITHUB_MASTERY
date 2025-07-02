@@ -8,6 +8,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 
 ### Added
+
 - 📚 Documentação híbrida EN/PT-BR estilo DOCSYNC
 - 📖 Quick Start Guide completo em ambos idiomas
 - 🤝 Contributing Guide híbrido com seções bilíngues
@@ -15,6 +16,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - 📋 Badges informativos e design profissional
 
 ### Planned
+
 - Testes automatizados com Jest
 - Dashboard web interativo
 - Comandos Git avançados
@@ -25,6 +27,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.0.0] - 2025-07-02
 
 ### Added
+
 - **API Client**: Cliente GitHub API completo com autenticação e rate limiting
 - **CLI Tools**: Interface de linha de comando interativa com commander/inquirer
 - **Webhook Server**: Servidor para receber eventos GitHub com verificação HMAC
@@ -33,6 +36,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - **Estrutura Base**: Organização de pastas e configuração do ambiente
 
 ### Features Implementadas
+
 - ✅ Autenticação via Personal Access Token
 - ✅ Listagem e criação de repositórios
 - ✅ Gerenciamento básico de issues
@@ -44,12 +48,14 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - ✅ Configuração de ambiente com .env
 
 ### Technical Details
+
 - **Dependencies**: @octokit/rest, commander, inquirer, express, chalk
 - **Dev Dependencies**: eslint, prettier, nodemon, jest (ready)
 - **Node.js**: >= 18.0.0
 - **License**: MIT
 
 ### Project Structure
+
 ```
 ├── api/               # GitHub API client
 ├── cli-tools/         # Command line tools
@@ -60,6 +66,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ```
 
 ### Next Steps
+
 - Implementar testes automatizados
 - Expandir funcionalidades de PR management
 - Criar dashboard web
@@ -69,6 +76,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ---
 
 ### Convenções de Commit
+
 - `feat:` Nova funcionalidade
 - `fix:` Correção de bug
 - `docs:` Documentação
@@ -79,4 +87,3 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 [Unreleased]: https://github.com/NEO-SH1W4/GITHUB_MASTERY/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/NEO-SH1W4/GITHUB_MASTERY/releases/tag/v1.0.0
-

@@ -4,7 +4,7 @@
 
 **Help us build the definitive GitHub automation toolkit!**
 
-*Ajude-nos a construir o toolkit definitivo de automação do GitHub!*
+_Ajude-nos a construir o toolkit definitivo de automação do GitHub!_
 
 [🇧🇷 Português](#contribuindo-em-português) | [🇪🇸 Español](#contribuyendo-en-español) | 🇺🇸 English
 
@@ -28,24 +28,28 @@ Thank you for your interest in contributing to GitHub Mastery! This project aims
 ## 📋 Ways to Contribute
 
 ### 🐛 Bug Reports
+
 - Use the issue template
 - Include reproduction steps
 - Provide environment details
 - Add screenshots if relevant
 
 ### 💡 Feature Requests
+
 - Describe the use case
 - Explain the expected behavior
 - Consider implementation complexity
 - Check existing issues first
 
 ### 🔧 Code Contributions
+
 - Follow our coding standards
 - Add tests for new features
 - Update documentation
 - Keep PRs focused and small
 
 ### 📚 Documentation
+
 - Fix typos and grammar
 - Improve examples
 - Add missing documentation
@@ -54,6 +58,7 @@ Thank you for your interest in contributing to GitHub Mastery! This project aims
 ## 🛠️ Development Setup
 
 ### Prerequisites
+
 ```bash
 # Required tools
 - Node.js >= 18.0.0
@@ -63,6 +68,7 @@ Thank you for your interest in contributing to GitHub Mastery! This project aims
 ```
 
 ### Local Development
+
 ```bash
 # Clone your fork
 git clone https://github.com/YOUR_USERNAME/github-mastery.git
@@ -82,6 +88,7 @@ npm run dev
 ## 📏 Code Standards
 
 ### JavaScript/Node.js
+
 - Use ESLint configuration provided
 - Follow Prettier formatting
 - Use meaningful variable names
@@ -89,6 +96,7 @@ npm run dev
 - Handle errors properly
 
 ### Git Conventions
+
 ```bash
 # Commit message format
 type(scope): description
@@ -104,6 +112,7 @@ chore:    Maintenance
 ```
 
 ### Examples
+
 ```bash
 feat(cli): add bulk repository operations
 fix(webhook): resolve HMAC verification issue
@@ -119,6 +128,7 @@ docs(api): update authentication guide
 5. **Describe Changes**: Clear PR description
 
 ### PR Template Checklist
+
 - [ ] Follows coding standards
 - [ ] Includes tests (when applicable)
 - [ ] Updates documentation
@@ -146,6 +156,7 @@ npm run validate
 ## 🌍 Internationalization
 
 We support multiple languages:
+
 - **English**: Primary documentation
 - **Português**: Complete translation
 - **Others**: Welcome contributions!
@@ -159,18 +170,21 @@ Bem-vindos contribuidores brasileiros e lusófonos! Sua participação é fundam
 ### 🎯 Como Contribuir
 
 #### 🐛 Relatórios de Bug
+
 - Use o template de issue
 - Inclua passos para reprodução
 - Forneça detalhes do ambiente
 - Adicione screenshots se relevante
 
 #### 💡 Solicitações de Funcionalidade
+
 - Descreva o caso de uso
 - Explique o comportamento esperado
 - Considere a complexidade de implementação
 - Verifique issues existentes primeiro
 
 #### 🔧 Contribuições de Código
+
 - Siga nossos padrões de código
 - Adicione testes para novas funcionalidades
 - Atualize a documentação
@@ -197,6 +211,7 @@ npm run dev
 ### 📏 Padrões de Código
 
 #### Convenções Git
+
 ```bash
 # Formato da mensagem de commit
 tipo(escopo): descrição
@@ -212,6 +227,7 @@ chore:    Manutenção
 ```
 
 #### Exemplos
+
 ```bash
 feat(cli): adicionar operações em massa de repositórios
 fix(webhook): resolver problema de verificação HMAC
@@ -235,18 +251,21 @@ docs(api): atualizar guia de autenticação
 ### 🎯 Cómo Contribuir
 
 #### 🐛 Reportes de Errores
+
 - Usa la plantilla de issue
 - Incluye pasos para reproducir
 - Proporciona detalles del entorno
 - Añade capturas de pantalla si es relevante
 
 #### 💡 Solicitudes de Funcionalidad
+
 - Describe el caso de uso
 - Explica el comportamiento esperado
 - Considera la complejidad de implementación
 - Verifica issues existentes primero
 
 #### 🔧 Contribuciones de Código
+
 - Sigue nuestros estándares de código
 - Añade pruebas para nuevas funcionalidades
 - Actualiza la documentación
@@ -273,6 +292,7 @@ npm run dev
 ### 📏 Estándares de Código
 
 #### Convenciones Git
+
 ```bash
 # Formato del mensaje de commit
 tipo(alcance): descripción
@@ -288,6 +308,7 @@ chore:    Mantenimiento
 ```
 
 #### Ejemplos
+
 ```bash
 feat(cli): añadir operaciones en lote de repositorios
 fix(webhook): resolver problema de verificación HMAC
@@ -315,12 +336,14 @@ This project follows the [Contributor Covenant](https://www.contributor-covenant
 ### Our Standards
 
 ✅ **Positive Environment**
+
 - Respectful communication
 - Constructive feedback
 - Inclusive language
 - Professional behavior
 
 ❌ **Unacceptable Behavior**
+
 - Harassment or discrimination
 - Trolling or insulting comments
 - Personal attacks
@@ -337,4 +360,3 @@ This project follows the [Contributor Covenant](https://www.contributor-covenant
 [🏠 Homepage](https://github.com/NEO-SH1W4/github-mastery) • [📖 Docs](https://github.com/NEO-SH1W4/github-mastery#readme) • [🐛 Issues](https://github.com/NEO-SH1W4/github-mastery/issues)
 
 </div>
-

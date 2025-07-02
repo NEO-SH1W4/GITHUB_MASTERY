@@ -4,7 +4,7 @@
 
 **Comienza con GitHub Mastery en minutos**
 
-*Get started with GitHub Mastery in minutes*
+_Get started with GitHub Mastery in minutes_
 
 🇪🇸 Español | [🇺🇸 English](../en/QUICKSTART.md) | [🇧🇷 Português](../pt-br/QUICKSTART.md)
 
@@ -29,22 +29,22 @@ Antes de comenzar, asegúrate de tener:
 2. Haz clic en **"Generate new token (classic)"**
 3. Dale un nombre descriptivo: `GitHub Mastery CLI`
 4. Selecciona los scopes necesarios:
-   - ✅ `repo` (Control total de repositorios privados)
-   - ✅ `user` (Actualizar datos del usuario)
-   - ✅ `notifications` (Acceder a notificaciones)
-   - ✅ `workflow` (Actualizar flujos de trabajo de GitHub Actions)
+    - ✅ `repo` (Control total de repositorios privados)
+    - ✅ `user` (Actualizar datos del usuario)
+    - ✅ `notifications` (Acceder a notificaciones)
+    - ✅ `workflow` (Actualizar flujos de trabajo de GitHub Actions)
 5. Haz clic en **"Generate token"**
 6. **Copia el token inmediatamente** (¡no lo verás de nuevo!)
 
 ### 2. Permisos del Token Explicados
 
-| Scope | Propósito | Requerido |
-|-------|-----------|-----------|
-| `repo` | Operaciones de repositorio (crear, listar, gestionar) | ✅ Sí |
-| `user` | Información del perfil del usuario | ✅ Sí |
-| `notifications` | Acceso a notificaciones | 🔶 Opcional |
-| `workflow` | Gestión de GitHub Actions | 🔶 Opcional |
-| `gist` | Gestión de gists | 🔶 Opcional |
+| Scope           | Propósito                                             | Requerido   |
+| --------------- | ----------------------------------------------------- | ----------- |
+| `repo`          | Operaciones de repositorio (crear, listar, gestionar) | ✅ Sí       |
+| `user`          | Información del perfil del usuario                    | ✅ Sí       |
+| `notifications` | Acceso a notificaciones                               | 🔶 Opcional |
+| `workflow`      | Gestión de GitHub Actions                             | 🔶 Opcional |
+| `gist`          | Gestión de gists                                      | 🔶 Opcional |
 
 ## 🚀 Instalación
 
@@ -197,41 +197,49 @@ npm run validate
 
 ### Referencia de Comandos CLI
 
-| Comando | Descripción | Ejemplo |
-|---------|-------------|---------|
-| `auth` | Verificar autenticación | `npm start auth` |
-| `status` | Resumen de la cuenta | `npm start status` |
-| `repos` | Listar repositorios | `npm start repos --limit 10` |
-| `repo` | Detalles del repositorio | `npm start repo owner nombre` |
-| `issues` | Listar issues | `npm start issues owner repo` |
-| `create-repo` | Crear repositorio | `npm start create-repo` |
+| Comando       | Descripción              | Ejemplo                       |
+| ------------- | ------------------------ | ----------------------------- |
+| `auth`        | Verificar autenticación  | `npm start auth`              |
+| `status`      | Resumen de la cuenta     | `npm start status`            |
+| `repos`       | Listar repositorios      | `npm start repos --limit 10`  |
+| `repo`        | Detalles del repositorio | `npm start repo owner nombre` |
+| `issues`      | Listar issues            | `npm start issues owner repo` |
+| `create-repo` | Crear repositorio        | `npm start create-repo`       |
 
 ## 🐛 Solución de Problemas
 
 ### Problemas Comunes
 
 #### ❌ Fallo en la Autenticación
+
 ```bash
 # Error: Request failed with status code 401
 ```
+
 **Solución**: Verifica tu token de GitHub en el archivo `.env`
 
 #### ❌ Límite de Velocidad Excedido
+
 ```bash
 # Error: API rate limit exceeded
 ```
+
 **Solución**: Espera a que se restablezca el límite de velocidad o usa solicitudes autenticadas
 
 #### ❌ Comando No Encontrado
+
 ```bash
 # Error: node: command not found
 ```
+
 **Solución**: Instala Node.js desde [nodejs.org](https://nodejs.org/)
 
 #### ❌ Permiso Denegado
+
 ```bash
 # Error: EACCES: permission denied
 ```
+
 **Solución**: Verifica los permisos de archivo o ejecuta con privilegios apropiados
 
 ### Modo Debug
@@ -269,4 +277,3 @@ Ahora que estás configurado, explora más funcionalidades:
 [🏠 Homepage](https://github.com/NEO-SH1W4/GITHUB_MASTERY) • [📖 Documentación Completa](../../README.md)
 
 </div>
-

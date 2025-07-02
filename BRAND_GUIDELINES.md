@@ -1,4 +1,5 @@
 # GitHub Mastery - Brand Application Guidelines
+
 ## Practical Implementation Guide
 
 ---
@@ -8,24 +9,29 @@
 ### Logo Variations
 
 #### Primary Logo
+
 ```
 GitHub Mastery
 ```
+
 - **Font:** Inter, 700 weight
 - **Color:** #58a6ff (primary) or #ffffff (white)
 - **Usage:** Headers, navigation, primary placement
 
 #### Compact Logo
+
 ```
 GM
 ```
-- **Font:** Space Grotesk, 800 weight  
+
+- **Font:** Space Grotesk, 800 weight
 - **Color:** #58a6ff with subtle gradient
 - **Usage:** Favicons, social media avatars, mobile nav
 
 ### Typography Hierarchy
 
 #### Headlines (H1)
+
 ```css
 font-family: 'Inter', sans-serif;
 font-weight: 700;
@@ -36,6 +42,7 @@ color: var(--text-primary);
 ```
 
 #### Subheadings (H2-H3)
+
 ```css
 font-family: 'Inter', sans-serif;
 font-weight: 600;
@@ -44,6 +51,7 @@ letter-spacing: -0.01em;
 ```
 
 #### Technical Content
+
 ```css
 font-family: 'JetBrains Mono', monospace;
 font-weight: 500;
@@ -56,13 +64,16 @@ background: var(--code-bg);
 ## 🌈 Color Applications
 
 ### Primary Color Usage
+
 **#58a6ff** - GitHub Blue
+
 - CTAs and primary actions
 - Links and interactive elements
 - Data visualization highlights
 - Status indicators (positive)
 
 ### Background Treatments
+
 ```css
 /* Hero Background */
 background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1c2128 100%);
@@ -75,12 +86,23 @@ background: rgba(88, 166, 255, 0.1);
 ```
 
 ### Status Color System
+
 ```css
-.status-excellent { color: #3fb950; }  /* Green - Success */
-.status-growing   { color: #58a6ff; }  /* Blue - Progress */
-.status-optimal   { color: #38bdf8; }  /* Light Blue - Achievement */
-.status-warning   { color: #d29922; }  /* Yellow - Caution */
-.status-critical  { color: #f85149; }  /* Red - Error */
+.status-excellent {
+    color: #3fb950;
+} /* Green - Success */
+.status-growing {
+    color: #58a6ff;
+} /* Blue - Progress */
+.status-optimal {
+    color: #38bdf8;
+} /* Light Blue - Achievement */
+.status-warning {
+    color: #d29922;
+} /* Yellow - Caution */
+.status-critical {
+    color: #f85149;
+} /* Red - Error */
 ```
 
 ---
@@ -90,6 +112,7 @@ background: rgba(88, 166, 255, 0.1);
 ### Buttons
 
 #### Primary Button
+
 ```css
 .btn-primary {
     background: var(--primary-color);
@@ -109,6 +132,7 @@ background: rgba(88, 166, 255, 0.1);
 ```
 
 #### Secondary Button
+
 ```css
 .btn-secondary {
     background: transparent;
@@ -124,6 +148,7 @@ background: rgba(88, 166, 255, 0.1);
 ### Cards
 
 #### Metric Card
+
 ```css
 .metric-card {
     background: var(--gradient-card);
@@ -154,6 +179,7 @@ background: rgba(88, 166, 255, 0.1);
 ```
 
 ### Form Elements
+
 ```css
 .form-input {
     background: var(--card-background);
@@ -175,6 +201,7 @@ background: rgba(88, 166, 255, 0.1);
 ## 🎭 Animation Guidelines
 
 ### Transition Timing
+
 ```css
 /* Standard transitions */
 --transition-fast: 0.15s ease;
@@ -189,6 +216,7 @@ transition: opacity var(--transition-slow);
 ```
 
 ### Hover Animations
+
 ```css
 /* Card hover */
 .card:hover {
@@ -208,10 +236,16 @@ transition: opacity var(--transition-slow);
 ```
 
 ### Loading States
+
 ```css
 @keyframes pulse {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 1; }
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 .loading {
@@ -224,6 +258,7 @@ transition: opacity var(--transition-slow);
 ## 📊 Data Visualization
 
 ### Chart Colors
+
 ```css
 /* Primary data series */
 --chart-primary: #58a6ff;
@@ -239,6 +274,7 @@ transition: opacity var(--transition-slow);
 ```
 
 ### Metric Display
+
 ```css
 .metric-value {
     font-family: 'Space Grotesk', sans-serif;
@@ -260,11 +296,13 @@ transition: opacity var(--transition-slow);
 ## 🔍 Accessibility Standards
 
 ### Color Contrast
+
 - **Primary text:** 4.5:1 minimum contrast ratio
 - **Secondary text:** 3:1 minimum contrast ratio
 - **Interactive elements:** 3:1 minimum contrast ratio
 
 ### Focus States
+
 ```css
 .focusable:focus {
     outline: 2px solid var(--primary-color);
@@ -274,14 +312,17 @@ transition: opacity var(--transition-slow);
 ```
 
 ### Screen Reader Support
+
 ```html
 <!-- Semantic structure -->
 <main role="main">
-<section aria-labelledby="section-title">
-<button aria-label="Download documentation">
-
-<!-- Skip navigation -->
-<a href="#main-content" class="skip-nav">Skip to main content</a>
+    <section aria-labelledby="section-title">
+        <button aria-label="Download documentation">
+            <!-- Skip navigation -->
+            <a href="#main-content" class="skip-nav">Skip to main content</a>
+        </button>
+    </section>
+</main>
 ```
 
 ---
@@ -289,31 +330,43 @@ transition: opacity var(--transition-slow);
 ## 📐 Spacing System
 
 ### Base Unit: 1rem (16px)
+
 ```css
---space-xs: 0.25rem;  /* 4px */
---space-sm: 0.5rem;   /* 8px */
---space-md: 1rem;     /* 16px */
---space-lg: 1.5rem;   /* 24px */
---space-xl: 2rem;     /* 32px */
---space-2xl: 3rem;    /* 48px */
---space-3xl: 4rem;    /* 64px */
---space-4xl: 5rem;    /* 80px */
+--space-xs: 0.25rem; /* 4px */
+--space-sm: 0.5rem; /* 8px */
+--space-md: 1rem; /* 16px */
+--space-lg: 1.5rem; /* 24px */
+--space-xl: 2rem; /* 32px */
+--space-2xl: 3rem; /* 48px */
+--space-3xl: 4rem; /* 64px */
+--space-4xl: 5rem; /* 80px */
 ```
 
 ### Component Spacing
+
 ```css
 /* Section padding */
-section { padding: var(--space-4xl) 0; }
+section {
+    padding: var(--space-4xl) 0;
+}
 
 /* Card padding */
-.card { padding: var(--space-xl); }
+.card {
+    padding: var(--space-xl);
+}
 
 /* Button padding */
-.btn { padding: var(--space-sm) var(--space-xl); }
+.btn {
+    padding: var(--space-sm) var(--space-xl);
+}
 
 /* Text spacing */
-h2 { margin-bottom: var(--space-lg); }
-p { margin-bottom: var(--space-md); }
+h2 {
+    margin-bottom: var(--space-lg);
+}
+p {
+    margin-bottom: var(--space-md);
+}
 ```
 
 ---
@@ -321,18 +374,21 @@ p { margin-bottom: var(--space-md); }
 ## 🖼️ Image Guidelines
 
 ### Photography Style
+
 - **Tone:** Professional, clean, minimal
 - **Color:** Desaturated with blue accent highlights
 - **Composition:** Geometric, architectural, technical
 - **Avoid:** People, consumer products, bright colors
 
 ### Icon System
+
 - **Style:** Feather icons or similar linear style
 - **Weight:** 2px stroke width
 - **Size:** 24px standard, scalable
 - **Color:** Primary or secondary text colors
 
 ### Illustrations
+
 - **Style:** Minimal, geometric, data-focused
 - **Colors:** Brand palette only
 - **Purpose:** Support technical concepts
@@ -343,29 +399,34 @@ p { margin-bottom: var(--space-md); }
 ## 🌍 Multi-Channel Applications
 
 ### Social Media
+
 #### LinkedIn
+
 - **Profile banner:** Dark background with data flow animation
 - **Post graphics:** Metric cards with professional insights
 - **Colors:** Primary blue with dark background
 
 #### Twitter
+
 - **Header:** Matrix rain effect with logo
 - **Tweet graphics:** Technical metrics and performance data
 - **Tone:** Authoritative, technical, helpful
 
 ### Email Templates
+
 ```html
 <table style="background: #0d1117; color: #e6edf3;">
-  <tr>
-    <td style="padding: 2rem;">
-      <h1 style="color: #58a6ff;">GitHub Mastery</h1>
-      <!-- Content -->
-    </td>
-  </tr>
+    <tr>
+        <td style="padding: 2rem;">
+            <h1 style="color: #58a6ff;">GitHub Mastery</h1>
+            <!-- Content -->
+        </td>
+    </tr>
 </table>
 ```
 
 ### Presentations
+
 - **Template:** Dark background with blue accents
 - **Typography:** Inter for headings, JetBrains Mono for code
 - **Charts:** Brand color palette with clear data hierarchy
@@ -376,6 +437,7 @@ p { margin-bottom: var(--space-md); }
 ## 🎯 Brand Voice Examples
 
 ### Professional Tone
+
 ```
 ❌ "Amazing GitHub tool that will blow your mind!"
 ✅ "Enterprise-grade GitHub automation framework with proven scalability"
@@ -388,6 +450,7 @@ p { margin-bottom: var(--space-md); }
 ```
 
 ### Technical Communication
+
 ```
 ❌ "Lightning fast performance"
 ✅ "P95 latency maintained under 23ms at scale"
@@ -404,6 +467,7 @@ p { margin-bottom: var(--space-md); }
 ## ✅ Implementation Checklist
 
 ### Design Review
+
 - [ ] Colors match exact brand palette
 - [ ] Typography follows hierarchy system
 - [ ] Spacing uses consistent units
@@ -411,6 +475,7 @@ p { margin-bottom: var(--space-md); }
 - [ ] Contrast ratios meet accessibility standards
 
 ### Content Review
+
 - [ ] Tone matches professional voice
 - [ ] Technical accuracy verified
 - [ ] Metrics are authentic and current
@@ -418,6 +483,7 @@ p { margin-bottom: var(--space-md); }
 - [ ] No consumer-focused messaging
 
 ### Technical Review
+
 - [ ] CSS variables implemented correctly
 - [ ] Performance optimized for loading
 - [ ] Responsive design tested
@@ -427,5 +493,4 @@ p { margin-bottom: var(--space-md); }
 ---
 
 **GitHub Mastery Brand Guidelines v1.0**  
-*Professional implementation standards for enterprise positioning*
-
+_Professional implementation standards for enterprise positioning_

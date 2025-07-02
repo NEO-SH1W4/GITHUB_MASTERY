@@ -10,7 +10,7 @@
 
 **Domínio completo do GitHub através de API, automações, integrações e ferramentas avançadas**
 
-*Complete GitHub mastery through API automation, integrations, webhooks, and advanced CLI tools*
+_Complete GitHub mastery through API automation, integrations, webhooks, and advanced CLI tools_
 
 🇧🇷 Português | [🇺🇸 English](../../README.md) | [🇪🇸 Español](../es/README.md)
 
@@ -23,12 +23,12 @@
 🔗 **Servidor de Webhooks**: Servidor robusto para eventos GitHub com segurança HMAC  
 🔄 **Pipeline CI/CD**: Workflows automatizados com GitHub Actions  
 🛡️ **Segurança em Primeiro Lugar**: Verificação HMAC, gerenciamento de tokens e melhores práticas  
-🎨 **UX Rica**: Saídas coloridas e interfaces amigáveis ao usuário  
+🎨 **UX Rica**: Saídas coloridas e interfaces amigáveis ao usuário
 
 ## 📊 Potencial de Desenvolvimento
 
 - **Mercado Alvo**: Desenvolvedores, equipes DevOps, usuários avançados do GitHub
-- **Casos de Uso**: Automação, operações em massa, integrações customizadas  
+- **Casos de Uso**: Automação, operações em massa, integrações customizadas
 - **Caminho de Crescimento**: CLI → Dashboard Web → Soluções Enterprise
 
 📋 [Ver roadmap completo do projeto](#-roadmap)
@@ -52,6 +52,7 @@ npm start
 ## 💡 Início Rápido
 
 ### 1. Configuração de Autenticação
+
 ```bash
 # Verificar autenticação GitHub
 node cli-tools/gh-cli.js auth
@@ -61,6 +62,7 @@ node cli-tools/gh-cli.js status
 ```
 
 ### 2. Operações de Repositório
+
 ```bash
 # Listar repositórios
 node cli-tools/gh-cli.js repos --limit 10
@@ -73,6 +75,7 @@ node cli-tools/gh-cli.js create-repo
 ```
 
 ### 3. Servidor de Webhooks
+
 ```bash
 # Iniciar servidor de webhook
 npm run webhook
@@ -83,14 +86,14 @@ npm run dev
 
 ## 🧩 Operações Suportadas
 
-| Categoria | Status | Funcionalidades |
-|-----------|--------|-----------------|
-| 🔌 **Cliente API** | ✅ Completo | Autenticação, rate limiting, repositórios, issues |
-| ⚡ **Ferramentas CLI** | ✅ Completo | Comandos interativos, saída colorida, amigável |
-| 🔗 **Webhooks** | ✅ Completo | Tratamento de eventos, verificação HMAC, monitoramento |
-| 🔄 **CI/CD** | ✅ Completo | GitHub Actions, testes automatizados, deploy |
-| 🧪 **Testes** | 📋 Planejado | Testes unitários, de integração, relatórios de cobertura |
-| 🌐 **Dashboard** | 📋 Planejado | Interface web, analytics, monitoramento visual |
+| Categoria              | Status       | Funcionalidades                                          |
+| ---------------------- | ------------ | -------------------------------------------------------- |
+| 🔌 **Cliente API**     | ✅ Completo  | Autenticação, rate limiting, repositórios, issues        |
+| ⚡ **Ferramentas CLI** | ✅ Completo  | Comandos interativos, saída colorida, amigável           |
+| 🔗 **Webhooks**        | ✅ Completo  | Tratamento de eventos, verificação HMAC, monitoramento   |
+| 🔄 **CI/CD**           | ✅ Completo  | GitHub Actions, testes automatizados, deploy             |
+| 🧪 **Testes**          | 📋 Planejado | Testes unitários, de integração, relatórios de cobertura |
+| 🌐 **Dashboard**       | 📋 Planejado | Interface web, analytics, monitoramento visual           |
 
 ## 📚 Documentação
 
@@ -104,6 +107,7 @@ npm run dev
 ## 🛠️ Para Desenvolvedores
 
 ### Qualidade de Código
+
 ```bash
 # Linting e formatação
 npm run lint && npm run format
@@ -116,6 +120,7 @@ npm run dev
 ```
 
 ### Estrutura do Projeto
+
 ```
 github-mastery/
 ├── api/                  # Cliente da API GitHub
@@ -145,24 +150,28 @@ Veja o [guia completo de contribuição](../../CONTRIBUTING.md).
 ## 🎯 Roadmap
 
 ### v1.1.0 (✅ Lançada - Julho 2025)
+
 - ✅ Documentação trilíngue profissional (EN/PT-BR/ES)
 - ✅ Design estilo DOCSYNC com badges
 - ✅ Guias de Início Rápido abrangentes
 - ✅ Sistema de contribuição multilíngue
 
 ### v1.2.0 (Q3 2025)
+
 - 🧪 Suíte de testes automatizados
 - 🔄 Operações avançadas de PR
 - 📊 Analytics e métricas
 - 🔧 Operações em massa
 
 ### v1.3.0 (Q4 2025)
+
 - 🌐 Dashboard web
 - 🤖 Automações avançadas
 - 🔗 Integrações com terceiros
 - 📋 Templates de projeto
 
 ### v2.0.0 (2026)
+
 - 🏢 Recursos enterprise
 - 🧩 Ecossistema de plugins
 - ☁️ Deploy em nuvem
@@ -183,4 +192,3 @@ Criado com ❤️ para a comunidade de desenvolvedores. Se este projeto te ajudo
 **[🏠 Homepage](https://github.com/NEO-SH1W4/GITHUB_MASTERY) • [📖 Docs](https://github.com/NEO-SH1W4/GITHUB_MASTERY#readme) • [🐛 Issues](https://github.com/NEO-SH1W4/GITHUB_MASTERY/issues) • [💬 Discussions](https://github.com/NEO-SH1W4/GITHUB_MASTERY/discussions)**
 
 </div>
-

@@ -4,7 +4,7 @@
 
 **Get started with GitHub Mastery in minutes**
 
-*Comece com GitHub Mastery em minutos*
+_Comece com GitHub Mastery em minutos_
 
 [🇧🇷 Português](../pt-br/QUICKSTART.md) | [🇪🇸 Español](../es/QUICKSTART.md) | 🇺🇸 English
 
@@ -29,22 +29,22 @@ Before you begin, make sure you have:
 2. Click **"Generate new token (classic)"**
 3. Give it a descriptive name: `GitHub Mastery CLI`
 4. Select required scopes:
-   - ✅ `repo` (Full control of private repositories)
-   - ✅ `user` (Update user data)
-   - ✅ `notifications` (Access notifications)
-   - ✅ `workflow` (Update GitHub Action workflows)
+    - ✅ `repo` (Full control of private repositories)
+    - ✅ `user` (Update user data)
+    - ✅ `notifications` (Access notifications)
+    - ✅ `workflow` (Update GitHub Action workflows)
 5. Click **"Generate token"**
 6. **Copy the token immediately** (you won't see it again!)
 
 ### 2. Token Permissions Explained
 
-| Scope | Purpose | Required |
-|-------|---------|----------|
-| `repo` | Repository operations (create, list, manage) | ✅ Yes |
-| `user` | User profile information | ✅ Yes |
-| `notifications` | Access to notifications | 🔶 Optional |
-| `workflow` | GitHub Actions management | 🔶 Optional |
-| `gist` | Gist management | 🔶 Optional |
+| Scope           | Purpose                                      | Required    |
+| --------------- | -------------------------------------------- | ----------- |
+| `repo`          | Repository operations (create, list, manage) | ✅ Yes      |
+| `user`          | User profile information                     | ✅ Yes      |
+| `notifications` | Access to notifications                      | 🔶 Optional |
+| `workflow`      | GitHub Actions management                    | 🔶 Optional |
+| `gist`          | Gist management                              | 🔶 Optional |
 
 ## 🚀 Installation
 
@@ -197,41 +197,49 @@ npm run validate
 
 ### CLI Commands Reference
 
-| Command | Description | Example |
-|---------|-------------|---------|
-| `auth` | Verify authentication | `npm start auth` |
-| `status` | Account overview | `npm start status` |
-| `repos` | List repositories | `npm start repos --limit 10` |
-| `repo` | Repository details | `npm start repo owner name` |
-| `issues` | List issues | `npm start issues owner repo` |
-| `create-repo` | Create repository | `npm start create-repo` |
+| Command       | Description           | Example                       |
+| ------------- | --------------------- | ----------------------------- |
+| `auth`        | Verify authentication | `npm start auth`              |
+| `status`      | Account overview      | `npm start status`            |
+| `repos`       | List repositories     | `npm start repos --limit 10`  |
+| `repo`        | Repository details    | `npm start repo owner name`   |
+| `issues`      | List issues           | `npm start issues owner repo` |
+| `create-repo` | Create repository     | `npm start create-repo`       |
 
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
 #### ❌ Authentication Failed
+
 ```bash
 # Error: Request failed with status code 401
 ```
+
 **Solution**: Check your GitHub token in `.env` file
 
 #### ❌ Rate Limit Exceeded
+
 ```bash
 # Error: API rate limit exceeded
 ```
+
 **Solution**: Wait for rate limit reset or use authenticated requests
 
 #### ❌ Command Not Found
+
 ```bash
 # Error: node: command not found
 ```
+
 **Solution**: Install Node.js from [nodejs.org](https://nodejs.org/)
 
 #### ❌ Permission Denied
+
 ```bash
 # Error: EACCES: permission denied
 ```
+
 **Solution**: Check file permissions or run with appropriate privileges
 
 ### Debug Mode
@@ -269,4 +277,3 @@ Now that you're set up, explore more features:
 [🏠 Homepage](https://github.com/NEO-SH1W4/GITHUB_MASTERY) • [📖 Full Documentation](../../README.md)
 
 </div>
-

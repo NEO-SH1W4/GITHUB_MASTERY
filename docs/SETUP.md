@@ -5,11 +5,13 @@ Este documento detalha o processo de configuração do ambiente de desenvolvimen
 ## Pré-requisitos
 
 ### Hardware Recomendado
+
 - 8 GB RAM (mínimo)
 - SSD com pelo menos 20 GB de espaço livre
 - Processador multi-core recente
 
 ### Software Necessário
+
 - **Git ≥2.40**
 - **Node.js ≥18** (LTS recomendado)
 - **Python ≥3.10**
@@ -72,6 +74,7 @@ pwsh -File health.ps1
 ```
 
 O script verificará:
+
 - Versões corretas de software
 - Disponibilidade de portas
 - Configurações de ambiente
@@ -130,13 +133,13 @@ github-mastery/
 
 ## Ferramentas de Qualidade
 
-| Ferramenta | Propósito | Configuração |
-|------------|-----------|--------------|
-| ESLint     | Linting JS/TS | AirBnB + TypeScript |
-| Prettier   | Formatação de código | 2 espaços, sem ponto-e-vírgula |
-| Jest       | Testes unitários | `jest.config.js` |
-| Black      | Formatação Python | 88 caracteres |
-| isort      | Organização de imports | Configurado com Black |
+| Ferramenta | Propósito              | Configuração                   |
+| ---------- | ---------------------- | ------------------------------ |
+| ESLint     | Linting JS/TS          | AirBnB + TypeScript            |
+| Prettier   | Formatação de código   | 2 espaços, sem ponto-e-vírgula |
+| Jest       | Testes unitários       | `jest.config.js`               |
+| Black      | Formatação Python      | 88 caracteres                  |
+| isort      | Organização de imports | Configurado com Black          |
 
 ## Resolução de Problemas
 
@@ -160,19 +163,19 @@ $env:Path -split ';'
 
 ## Checklist de Primeiro Dia
 
-1. [  ] Acessar repositório (verificar acesso ao GitHub Org)
-2. [  ] Clonar e rodar `./scripts/setup.ps1`
-3. [  ] Executar `pwsh -File health.ps1` para validar ambiente
-4. [  ] Criar primeiro PR (simulação de correção no README)
+1. [ ] Acessar repositório (verificar acesso ao GitHub Org)
+2. [ ] Clonar e rodar `./scripts/setup.ps1`
+3. [ ] Executar `pwsh -File health.ps1` para validar ambiente
+4. [ ] Criar primeiro PR (simulação de correção no README)
 
 ## Próximos Passos
 
 Após a configuração, consulte:
+
 - `README.md` para visão geral do projeto
 - `docs/CONTRIBUTING.md` para diretrizes de contribuição
 - `docs/ARCHITECTURE.md` para detalhes da arquitetura MCP
 
 ---
 
-*Documento atualizado em: 2025-07-02*
-
+_Documento atualizado em: 2025-07-02_

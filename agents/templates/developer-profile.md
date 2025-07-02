@@ -44,4 +44,3 @@
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username={{username}}&style=flat-square" alt="Visualizações de perfil" />
 </div>
-

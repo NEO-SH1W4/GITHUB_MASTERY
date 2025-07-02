@@ -10,7 +10,7 @@
 
 **Complete GitHub mastery through API automation, integrations, webhooks, and advanced CLI tools**
 
-*Domínio completo do GitHub através de API, automações, integrações e ferramentas avançadas*
+_Domínio completo do GitHub através de API, automações, integrações e ferramentas avançadas_
 
 [🌐 **Visit Homepage**](https://neo-sh1w4.github.io/github_mastery/) | [🇧🇷 Português](./docs/pt-br/README.md) | [🇪🇸 Español](./docs/es/README.md) | 🇺🇸 English
 
@@ -23,12 +23,12 @@
 🔗 **Webhook Server**: Robust server for GitHub events with HMAC security  
 🔄 **CI/CD Pipeline**: Automated workflows with GitHub Actions  
 🛡️ **Security First**: HMAC verification, token management, and best practices  
-🎨 **Rich UX**: Colorful outputs and user-friendly interfaces  
+🎨 **Rich UX**: Colorful outputs and user-friendly interfaces
 
 ## 📊 Development Potential
 
 - **Target Market**: Developers, DevOps teams, GitHub power users
-- **Use Cases**: Automation, bulk operations, custom integrations  
+- **Use Cases**: Automation, bulk operations, custom integrations
 - **Growth Path**: CLI → Web Dashboard → Enterprise Solutions
 
 📋 [View complete project roadmap](#-roadmap)
@@ -57,6 +57,7 @@ npm start
 ## 💡 Quick Start
 
 ### 1. Authentication Setup
+
 ```bash
 # Verify GitHub authentication
 node cli-tools/gh-cli.js auth
@@ -66,6 +67,7 @@ node cli-tools/gh-cli.js status
 ```
 
 ### 2. Repository Operations
+
 ```bash
 # List repositories
 node cli-tools/gh-cli.js repos --limit 10
@@ -78,6 +80,7 @@ node cli-tools/gh-cli.js create-repo
 ```
 
 ### 3. Webhook Server
+
 ```bash
 # Start webhook server
 npm run webhook
@@ -88,14 +91,14 @@ npm run dev
 
 ## 🧩 Supported Operations
 
-| Category | Status | Features |
-|----------|--------|----------|
-| 🔌 **API Client** | ✅ Complete | Authentication, rate limiting, repositories, issues |
-| ⚡ **CLI Tools** | ✅ Complete | Interactive commands, colorful output, user-friendly |
-| 🔗 **Webhooks** | ✅ Complete | Event handling, HMAC verification, monitoring |
-| 🔄 **CI/CD** | ✅ Complete | GitHub Actions, automated testing, deployment |
-| 🧪 **Testing** | 📋 Planned | Unit tests, integration tests, coverage reports |
-| 🌐 **Dashboard** | 📋 Planned | Web interface, analytics, visual monitoring |
+| Category          | Status      | Features                                             |
+| ----------------- | ----------- | ---------------------------------------------------- |
+| 🔌 **API Client** | ✅ Complete | Authentication, rate limiting, repositories, issues  |
+| ⚡ **CLI Tools**  | ✅ Complete | Interactive commands, colorful output, user-friendly |
+| 🔗 **Webhooks**   | ✅ Complete | Event handling, HMAC verification, monitoring        |
+| 🔄 **CI/CD**      | ✅ Complete | GitHub Actions, automated testing, deployment        |
+| 🧪 **Testing**    | 📋 Planned  | Unit tests, integration tests, coverage reports      |
+| 🌐 **Dashboard**  | 📋 Planned  | Web interface, analytics, visual monitoring          |
 
 ## 📚 Documentation
 
@@ -110,6 +113,7 @@ npm run dev
 ## 🛠️ For Developers
 
 ### Code Quality
+
 ```bash
 # Linting and formatting
 npm run lint && npm run format
@@ -122,6 +126,7 @@ npm run dev
 ```
 
 ### Project Structure
+
 ```
 github-mastery/
 ├── index.html           # Project homepage
@@ -153,24 +158,28 @@ See the [complete contribution guide](./CONTRIBUTING.md).
 ## 🎯 Roadmap
 
 ### v1.1.0 (✅ Released - July 2025)
+
 - ✅ Professional trilingual documentation (EN/PT-BR/ES)
 - ✅ DOCSYNC-style design with badges
 - ✅ Comprehensive Quick Start guides
 - ✅ Multilingual contributing system
 
 ### v1.2.0 (Q3 2025)
+
 - 🧪 Automated testing suite
 - 🔄 Advanced PR operations
 - 📊 Analytics and metrics
 - 🔧 Bulk operations
 
 ### v1.3.0 (Q4 2025)
+
 - 🌐 Web dashboard
 - 🤖 Advanced automations
 - 🔗 Third-party integrations
 - 📋 Project templates
 
 ### v2.0.0 (2026)
+
 - 🏢 Enterprise features
 - 🧩 Plugin ecosystem
 - ☁️ Cloud deployment
@@ -191,4 +200,3 @@ Built with ❤️ for the developer community. If this project helped you, consi
 **[🌐 Local Homepage](./index.html) • [🏠 GitHub](https://github.com/NEO-SH1W4/github-mastery) • [📖 Docs](https://github.com/NEO-SH1W4/github-mastery#readme) • [🐛 Issues](https://github.com/NEO-SH1W4/github-mastery/issues) • [💬 Discussions](https://github.com/NEO-SH1W4/github-mastery/discussions)**
 
 </div>
-

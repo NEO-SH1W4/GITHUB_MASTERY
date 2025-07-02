@@ -1,5 +1,5 @@
 const { Octokit } = require('@octokit/rest');
-const { createTokenAuth } = require('@octokit/auth-token');
+// const { createTokenAuth } = require('@octokit/auth-token');
 const dotenv = require('dotenv');
 const chalk = require('chalk');
 
@@ -20,7 +20,7 @@ class GitHubClient {
         }
 
         // Configurar autenticação
-        const auth = createTokenAuth(this.token);
+        // const auth = createTokenAuth(this.token);
 
         // Inicializar cliente Octokit
         this.octokit = new Octokit({
