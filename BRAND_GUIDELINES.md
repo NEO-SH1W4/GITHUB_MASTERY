@@ -89,19 +89,19 @@ background: rgba(88, 166, 255, 0.1);
 
 ```css
 .status-excellent {
-    color: #3fb950;
+  color: #3fb950;
 } /* Green - Success */
 .status-growing {
-    color: #58a6ff;
+  color: #58a6ff;
 } /* Blue - Progress */
 .status-optimal {
-    color: #38bdf8;
+  color: #38bdf8;
 } /* Light Blue - Achievement */
 .status-warning {
-    color: #d29922;
+  color: #d29922;
 } /* Yellow - Caution */
 .status-critical {
-    color: #f85149;
+  color: #f85149;
 } /* Red - Error */
 ```
 
@@ -115,19 +115,19 @@ background: rgba(88, 166, 255, 0.1);
 
 ```css
 .btn-primary {
-    background: var(--primary-color);
-    color: #ffffff;
-    padding: 0.875rem 2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    border: none;
-    transition: all 0.3s ease;
+  background: var(--primary-color);
+  color: #ffffff;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 ```
 
@@ -135,13 +135,13 @@ background: rgba(88, 166, 255, 0.1);
 
 ```css
 .btn-secondary {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 0.875rem 2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 ```
 
@@ -151,30 +151,30 @@ background: rgba(88, 166, 255, 0.1);
 
 ```css
 .metric-card {
-    background: var(--gradient-card);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+  background: var(--gradient-card);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .metric-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gradient-primary);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .metric-card:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 ```
 
@@ -182,17 +182,17 @@ background: rgba(88, 166, 255, 0.1);
 
 ```css
 .form-input {
-    background: var(--card-background);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
 }
 
 .form-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
 }
 ```
 
@@ -220,18 +220,18 @@ transition: opacity var(--transition-slow);
 ```css
 /* Card hover */
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-hover);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
 }
 
 /* Button hover */
 .btn:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 /* Icon hover */
 .icon:hover {
-    transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1) rotate(5deg);
 }
 ```
 
@@ -239,17 +239,17 @@ transition: opacity var(--transition-slow);
 
 ```css
 @keyframes pulse {
-    0%,
-    100% {
-        opacity: 0.8;
-    }
-    50% {
-        opacity: 1;
-    }
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .loading {
-    animation: pulse 2s ease-in-out infinite;
+  animation: pulse 2s ease-in-out infinite;
 }
 ```
 
@@ -277,17 +277,17 @@ transition: opacity var(--transition-slow);
 
 ```css
 .metric-value {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: var(--primary-color);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--primary-color);
 }
 
 .metric-label {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
 }
 ```
 
@@ -305,9 +305,9 @@ transition: opacity var(--transition-slow);
 
 ```css
 .focusable:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-    border-radius: 4px;
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 ```
 
@@ -316,12 +316,12 @@ transition: opacity var(--transition-slow);
 ```html
 <!-- Semantic structure -->
 <main role="main">
-    <section aria-labelledby="section-title">
-        <button aria-label="Download documentation">
-            <!-- Skip navigation -->
-            <a href="#main-content" class="skip-nav">Skip to main content</a>
-        </button>
-    </section>
+  <section aria-labelledby="section-title">
+    <button aria-label="Download documentation">
+      <!-- Skip navigation -->
+      <a href="#main-content" class="skip-nav">Skip to main content</a>
+    </button>
+  </section>
 </main>
 ```
 
@@ -347,25 +347,25 @@ transition: opacity var(--transition-slow);
 ```css
 /* Section padding */
 section {
-    padding: var(--space-4xl) 0;
+  padding: var(--space-4xl) 0;
 }
 
 /* Card padding */
 .card {
-    padding: var(--space-xl);
+  padding: var(--space-xl);
 }
 
 /* Button padding */
 .btn {
-    padding: var(--space-sm) var(--space-xl);
+  padding: var(--space-sm) var(--space-xl);
 }
 
 /* Text spacing */
 h2 {
-    margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-lg);
 }
 p {
-    margin-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
 }
 ```
 
@@ -416,12 +416,12 @@ p {
 
 ```html
 <table style="background: #0d1117; color: #e6edf3;">
-    <tr>
-        <td style="padding: 2rem;">
-            <h1 style="color: #58a6ff;">GitHub Mastery</h1>
-            <!-- Content -->
-        </td>
-    </tr>
+  <tr>
+    <td style="padding: 2rem;">
+      <h1 style="color: #58a6ff;">GitHub Mastery</h1>
+      <!-- Content -->
+    </td>
+  </tr>
 </table>
 ```
 

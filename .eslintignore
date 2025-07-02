@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production builds
+dist/
+build/
+coverage/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache directories
+.eslintcache
+.stylelintcache
+
+# External libraries
+github-agent-core/
+landing-page/
+
+# Generated files
+*.min.js
+bundle.js
+
+# Documentation
+docs/**/*.md
+
+# Config files that might contain sensitive data
+*.config.local.js
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+

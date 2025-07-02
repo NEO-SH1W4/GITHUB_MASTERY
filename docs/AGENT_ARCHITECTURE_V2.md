@@ -7,6 +7,7 @@ O GitHub Agent é um **ativo proprietário exclusivo** do projeto GitHub Mastery
 ## 🏗️ Arquitetura Híbrida
 
 ### Core Engine (Rust) 🦀
+
 ```
 ├── github-agent-core/
 │   ├── src/
@@ -22,6 +23,7 @@ O GitHub Agent é um **ativo proprietário exclusivo** do projeto GitHub Mastery
 ```
 
 ### Intelligence Layer (Python) 🐍
+
 ```
 ├── github-agent-brain/
 │   ├── src/
@@ -36,6 +38,7 @@ O GitHub Agent é um **ativo proprietário exclusivo** do projeto GitHub Mastery
 ```
 
 ### Interface Layer (Python + PyO3) 🔗
+
 ```
 ├── github-agent-interface/
 │   ├── src/
@@ -50,18 +53,21 @@ O GitHub Agent é um **ativo proprietário exclusivo** do projeto GitHub Mastery
 ## 🚀 Capacidades Avançadas
 
 ### 1. Performance Ultra-Rápida (Rust Core)
+
 - **Git Operations**: 10x mais rápido que git nativo
 - **Concurrent Processing**: Processamento paralelo massivo
 - **Memory Efficiency**: Zero-copy onde possível
 - **Network Optimization**: Connection pooling inteligente
 
 ### 2. Inteligência Artificial (Python Brain)
+
 - **Code Pattern Recognition**: Detecta padrões em bases de código
 - **Commit Message Generation**: IA gera mensagens contextuais
 - **Repo Health Prediction**: Prevê problemas antes que aconteçam
 - **Smart Scheduling**: Otimiza timing de contribuições
 
 ### 3. Automação Avançada
+
 - **Multi-Repo Orchestration**: Gerencia centenas de repos simultaneamente
 - **Intelligent Contribution**: Contribuições que fazem sentido contextual
 - **Dependency Management**: Atualiza deps automaticamente
@@ -70,10 +76,11 @@ O GitHub Agent é um **ativo proprietário exclusivo** do projeto GitHub Mastery
 ## 💎 Modelo de Exclusividade
 
 ### Acesso Limitado
+
 ```python
 class AgentAccess:
     """Sistema de acesso proprietário"""
-    
+
     def __init__(self):
         self.access_levels = {
             "demo": {
@@ -83,7 +90,7 @@ class AgentAccess:
                 "features": ["basic_analysis", "simple_commits"]
             },
             "showcase": {
-                "duration": "2 hours", 
+                "duration": "2 hours",
                 "repos": 3,
                 "commits": 20,
                 "features": ["advanced_analysis", "smart_commits", "predictions"]
@@ -98,6 +105,7 @@ class AgentAccess:
 ```
 
 ### Watermarking & Protection
+
 ```rust
 // Proteção contra reverse engineering
 pub struct AgentCore {
@@ -113,13 +121,13 @@ impl AgentCore {
             license_key: "DEMO_MODE".to_string(),
             session_token: Uuid::new_v4(),
         };
-        
+
         // Limitar tempo de sessão
         tokio::spawn(async move {
             tokio::time::sleep(Duration::from_secs(1800)).await;
             session.terminate();
         });
-        
+
         Ok(session)
     }
 }
@@ -128,6 +136,7 @@ impl AgentCore {
 ## 🔧 Implementação Técnica
 
 ### Core Rust Engine
+
 ```rust
 // github-agent-core/src/lib.rs
 use tokio;
@@ -153,7 +162,7 @@ impl GitHubAgent {
     pub async fn new(config: AgentConfig) -> Result<Self, AgentError> {
         // Initialize ultra-fast GitHub client
         let github_client = GitHub::new()?;
-        
+
         Ok(Self {
             config,
             github_client,
@@ -161,7 +170,7 @@ impl GitHubAgent {
             metrics: Arc::new(RwLock::new(Metrics::new())),
         })
     }
-    
+
     pub async fn execute_smart_contribution(&self, repo: &str) -> Result<ContributionResult, AgentError> {
         // Análise do repositório em paralelo
         let (health, patterns, suggestions) = tokio::join!(
@@ -169,7 +178,7 @@ impl GitHubAgent {
             self.detect_code_patterns(repo),
             self.generate_ai_suggestions(repo)
         );
-        
+
         // Executar contribuição otimizada
         self.perform_intelligent_commit(repo, suggestions?).await
     }
@@ -177,6 +186,7 @@ impl GitHubAgent {
 ```
 
 ### Python AI Brain
+
 ```python
 # github-agent-brain/src/ai/contribution_intelligence.py
 import torch
@@ -194,14 +204,14 @@ class ContributionContext:
 
 class ContributionAI:
     """IA avançada para contribuições inteligentes"""
-    
+
     def __init__(self, model_path: str):
         self.model = transformers.AutoModel.from_pretrained(model_path)
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_path)
-        
+
     async def generate_smart_commit(self, context: ContributionContext) -> str:
         """Gera commit message contextual usando IA"""
-        
+
         # Processar contexto com transformer
         inputs = self.tokenizer(
             f"Repo: {context.repo_language}, "
@@ -211,19 +221,19 @@ class ContributionAI:
             max_length=512,
             truncation=True
         )
-        
+
         with torch.no_grad():
             outputs = self.model(**inputs)
-            
+
         # Gerar mensagem de commit inteligente
         commit_message = self._decode_commit_message(outputs.last_hidden_state)
         return commit_message
-    
+
     def predict_optimal_timing(self, repo_stats: Dict) -> datetime:
         """Prevê melhor horário para contribuição"""
         # ML model para timing optimization
         pass
-    
+
     def analyze_contribution_impact(self, diff: str) -> float:
         """Analisa impacto potencial da contribuição"""
         # NLP analysis of code changes
@@ -231,6 +241,7 @@ class ContributionAI:
 ```
 
 ### Interface Híbrida
+
 ```python
 # github-agent-interface/src/cli.py
 import asyncio
@@ -244,35 +255,35 @@ class GitHubAgentCLI:
         self.rust_core = RustBridge()
         self.ai_brain = ContributionAI("models/github-agent-v2")
         self.session_active = False
-        
+
     @click.command()
     @click.option('--demo', is_flag=True, help='Modo demonstração (30 min)')
     @click.option('--showcase', is_flag=True, help='Modo showcase (2 horas)')
     async def start_session(self, demo: bool, showcase: bool):
         """Inicia sessão limitada do agente"""
-        
+
         if demo:
             access_level = "demo"
             duration = 1800  # 30 minutos
         elif showcase:
-            access_level = "showcase" 
+            access_level = "showcase"
             duration = 7200  # 2 horas
         else:
             click.echo("❌ Acesso negado. Use --demo ou --showcase")
             return
-            
+
         click.echo(f"🚀 Iniciando GitHub Agent - Modo {access_level}")
         click.echo(f"⏰ Sessão válida por {duration//60} minutos")
-        
+
         # Inicializar sessão protegida
         session = await self.rust_core.create_session(access_level, duration)
-        
+
         if session.success:
             click.echo("✅ Agente ativado! Digite 'help' para comandos")
             await self._interactive_loop(session)
         else:
             click.echo("❌ Falha ao inicializar agente")
-    
+
     async def _interactive_loop(self, session):
         """Loop interativo protegido"""
         while session.is_active():
@@ -281,32 +292,34 @@ class GitHubAgentCLI:
                 await self._process_command(command, session)
             except KeyboardInterrupt:
                 break
-                
+
         click.echo("⏰ Sessão expirada")
 ```
 
 ## 🛡️ Proteções e Limitações
 
 ### 1. Proteção Técnica
+
 ```rust
 // Anti-debugging e obfuscação
 #[cfg(not(debug_assertions))]
 fn check_debugging() -> bool {
     // Detecta debuggers anexados
-    unsafe { 
+    unsafe {
         std::arch::x86_64::__cpuid(1).edx & (1 << 2) != 0
     }
 }
 
 // Watermarking de outputs
 fn watermark_output(data: &str) -> String {
-    format!("{}<!--GITHUB_MASTERY_PROPRIETARY-->{}", 
-           data, 
+    format!("{}<!--GITHUB_MASTERY_PROPRIETARY-->{}",
+           data,
            generate_session_hash())
 }
 ```
 
 ### 2. Rate Limiting Inteligente
+
 ```python
 class DemoLimiter:
     def __init__(self, access_level: str):
@@ -316,13 +329,14 @@ class DemoLimiter:
             "enterprise_trial": {"ops_per_minute": 100, "max_repos": 10}
         }
         self.current_usage = {}
-        
+
     async def check_limit(self, operation: str) -> bool:
         # Verificar se operação é permitida
         return self.current_usage[operation] < self.limits[self.access_level][operation]
 ```
 
 ### 3. Telemetria e Analytics
+
 ```rust
 pub struct TelemetryCollector {
     session_id: Uuid,
@@ -334,14 +348,14 @@ impl TelemetryCollector {
     pub fn record_operation(&mut self, operation: &str, duration: Duration) {
         // Coleta métricas de uso para análise
         self.usage_metrics.entry(operation.to_string()).and_modify(|e| *e += 1).or_insert(1);
-        
+
         self.performance_data.push(PerformanceMetric {
             operation: operation.to_string(),
             duration,
             timestamp: Utc::now(),
         });
     }
-    
+
     pub async fn send_telemetry(&self) -> Result<(), TelemetryError> {
         // Enviar dados anonimizados para analytics
         let payload = serde_json::to_string(&self.usage_metrics)?;
@@ -354,18 +368,21 @@ impl TelemetryCollector {
 ## 🎯 Value Proposition
 
 ### Para Desenvolvedores
+
 - **"Experimente o futuro da automação GitHub"**
 - **30 minutos gratuitos** para sentir o poder
 - **Performance 10x superior** ao que existe
 - **IA contextual** que entende seu código
 
 ### Para Empresas
+
 - **Modo showcase de 2 horas** para decisores
 - **ROI demonstrável** em produtividade
 - **Integração enterprise** em trial de 7 dias
 - **Métricas detalhadas** de impacto
 
 ### Para Investidores
+
 - **Ativo proprietário exclusivo**
 - **Moat tecnológico** com Rust + IA
 - **Escalabilidade** comprovada
@@ -374,24 +391,28 @@ impl TelemetryCollector {
 ## 📊 Roadmap de Desenvolvimento
 
 ### Fase 1: Core Engine (Rust) - 3 meses
+
 - [ ] Git operations ultra-rápidas
 - [ ] GitHub API client otimizado
 - [ ] Sistema de proteção básico
 - [ ] Métricas de performance
 
 ### Fase 2: AI Brain (Python) - 2 meses
+
 - [ ] Modelos de ML treinados
 - [ ] Geração de commits inteligentes
 - [ ] Análise preditiva
 - [ ] Pattern recognition
 
 ### Fase 3: Integration & Demo - 1 mês
+
 - [ ] PyO3 bridge Rust↔Python
 - [ ] CLI polido e intuitivo
 - [ ] Sistema de sessões limitadas
 - [ ] Telemetria completa
 
 ### Fase 4: Go-to-Market - Ongoing
+
 - [ ] Landing page com demos
 - [ ] Developer advocacy
 - [ ] Enterprise partnerships
@@ -400,7 +421,7 @@ impl TelemetryCollector {
 ## 🏆 Diferencial Competitivo
 
 1. **Velocidade Rust**: 10x mais rápido que soluções JavaScript
-2. **IA Contextual**: Entende código e gera contribuições inteligentes  
+2. **IA Contextual**: Entende código e gera contribuições inteligentes
 3. **Exclusividade**: Não é open source, é um ativo proprietário
 4. **Experiência Demo**: "Try before you buy" excepcional
 5. **Enterprise Ready**: Segurança e escalabilidade desde o início
@@ -408,4 +429,3 @@ impl TelemetryCollector {
 ---
 
 **O GitHub Agent v2.0 não é apenas uma ferramenta - é uma demonstração tecnológica do futuro da automação de desenvolvimento, oferecida exclusivamente como ativo proprietário do GitHub Mastery.**
-

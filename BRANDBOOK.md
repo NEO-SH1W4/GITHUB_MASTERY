@@ -36,25 +36,25 @@ _"Advanced GitHub automation frameworks and distributed system patterns for ente
 
 ```css
 --primary-color: #58a6ff /* GitHub Blue - Authority */ --primary-hover: #4493f8
-    /* Interactive State */ --accent-color: #38bdf8 /* Accent - Innovation */
-    --success-color: #3fb950 /* Success - Reliability */;
+  /* Interactive State */ --accent-color: #38bdf8 /* Accent - Innovation */
+  --success-color: #3fb950 /* Success - Reliability */;
 ```
 
 #### Neutral Colors
 
 ```css
 --background-color: #0d1117 /* Deep Space - Sophistication */ --card-background: #161b22
-    /* Surface - Professional */ --border-color: #30363d /* Borders - Structure */
-    --text-primary: #e6edf3 /* Primary Text - Clarity */ --text-secondary: #8b949e
-    /* Secondary Text - Hierarchy */;
+  /* Surface - Professional */ --border-color: #30363d /* Borders - Structure */
+  --text-primary: #e6edf3 /* Primary Text - Clarity */ --text-secondary: #8b949e
+  /* Secondary Text - Hierarchy */;
 ```
 
 #### Semantic Colors
 
 ```css
 --warning-color: #d29922 /* Caution */ --error-color: #f85149 /* Critical */
-    --matrix-green: #00ff41 /* Tech - Matrix Effect */ --matrix-secondary: #00dc38
-    /* Tech Secondary */;
+  --matrix-green: #00ff41 /* Tech - Matrix Effect */ --matrix-secondary: #00dc38
+  /* Tech Secondary */;
 ```
 
 ### Typography
@@ -65,12 +65,12 @@ _"Advanced GitHub automation frameworks and distributed system patterns for ente
 
 ```css
 font-family:
-    'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    sans-serif;
+  'Inter',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  sans-serif;
 ```
 
 #### Secondary Font Family
@@ -205,11 +205,11 @@ _"Enterprise DevOps Architecture"_
 
 ```css
 .metric-card {
-    background: var(--gradient-card);
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+  background: var(--gradient-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
 }
 ```
 
@@ -217,10 +217,10 @@ _"Enterprise DevOps Architecture"_
 
 ```css
 .btn-primary {
-    background: var(--primary-color);
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  background: var(--primary-color);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 ```
 
@@ -281,23 +281,23 @@ _"Enterprise DevOps Architecture"_
 
 ```css
 :root {
-    /* Brand Colors */
-    --primary-color: #58a6ff;
-    --primary-hover: #4493f8;
-    --accent-color: #38bdf8;
+  /* Brand Colors */
+  --primary-color: #58a6ff;
+  --primary-hover: #4493f8;
+  --accent-color: #38bdf8;
 
-    /* Layout */
-    --border-radius: 8px;
-    --border-radius-large: 16px;
-    --spacing-unit: 1rem;
+  /* Layout */
+  --border-radius: 8px;
+  --border-radius-large: 16px;
+  --spacing-unit: 1rem;
 
-    /* Shadows */
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.8);
+  /* Shadows */
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.8);
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #58a6ff 0%, #4493f8 100%);
-    --gradient-card: linear-gradient(145deg, #161b22 0%, #1c2128 100%);
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #58a6ff 0%, #4493f8 100%);
+  --gradient-card: linear-gradient(145deg, #161b22 0%, #1c2128 100%);
 }
 ```
 

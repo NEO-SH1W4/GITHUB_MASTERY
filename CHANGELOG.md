@@ -8,6 +8,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 
 ### Added
+
 - Sistema PowerShell Agent MCP Enhanced v2.0.0
 - Cache inteligente com TTL configurável
 - Sistema de logging estruturado com níveis
@@ -18,12 +19,14 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Documentação completa do agente PowerShell
 
 ### Changed
+
 - Migração completa para ES modules (jest.config.js, babel.config.js)
 - Correção de variáveis não utilizadas seguindo regras ESLint
 - Aplicação das estratégias MCP para maximum robustez
 - Atualização do sistema de cache para suporte cross-session
 
 ### Fixed
+
 - Problemas de lint e indentação em múltiplos arquivos
 - Imports não utilizados em utils/env-validator.js
 - Variáveis não utilizadas em cli-tools, examples e mcp

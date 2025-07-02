@@ -16,29 +16,34 @@ Esta landing page implementa a estratégia completa de go-to-market definida em 
 ## 🎯 **Objetivos da Landing Page**
 
 ### Conversão Principal
+
 - **15%+ conversion rate** (vs 2-5% industry standard)
 - **1000+ leads qualificados** em 30 dias
 - **$25K+ MRR** em early adopters
 
 ### Segmentação de Audiência
+
 1. **Desenvolvedores individuais** → Sequence "developer"
-2. **Tech Leads/CTOs** → Sequence "manager"  
+2. **Tech Leads/CTOs** → Sequence "manager"
 3. **Empresas** → Sequence "enterprise"
 
 ## 🛠️ **Stack Técnico**
 
 ### Frontend
+
 - **HTML5** + **CSS3** (Tailwind CSS)
 - **Alpine.js** para interatividade
 - **Vanilla JavaScript** para performance
 
 ### Analytics & Tracking
+
 - **Lead Scoring System** (JavaScript)
 - **Google Analytics 4** integration
 - **Mixpanel** para behavioral tracking
 - **Hotjar** para heatmaps (opcional)
 
 ### Deploy & Hosting
+
 - **GitHub Pages** (automático via Actions)
 - **CDN global** via GitHub
 - **SSL/HTTPS** nativo
@@ -46,6 +51,7 @@ Esta landing page implementa a estratégia completa de go-to-market definida em 
 ## 📊 **Sistema de Lead Scoring**
 
 ### Pontuação por Ações
+
 ```javascript
 const scoreRules = {
   visitedPricing: 20,
@@ -53,17 +59,19 @@ const scoreRules = {
   downloadedWhitepaper: 40,
   requestedDemo: 50,
   requestedEnterprise: 60,
-  githubConnected: 80
+  githubConnected: 80,
 };
 ```
 
 ### Perfis de Lead
+
 - 🔥 **Hot** (80+ pontos) → Priority: High
-- 🟡 **Warm** (50+ pontos) → Priority: Medium  
+- 🟡 **Warm** (50+ pontos) → Priority: Medium
 - 🔵 **Cold** (20+ pontos) → Priority: Low
 - ⚪ **Unknown** (0-19 pontos) → Priority: Low
 
 ### Triggers Automáticos
+
 - **Email sequences** baseados em comportamento
 - **Real-time notifications** para high-value leads
 - **CRM sync** para sales follow-up
@@ -71,18 +79,21 @@ const scoreRules = {
 ## 📧 **Email Marketing Sequences**
 
 ### Sequence "Developer" (4 emails)
+
 1. **Day 0**: Welcome + Demo link
 2. **Day 3**: Technical deep-dive
-3. **Day 7**: Performance comparison  
+3. **Day 7**: Performance comparison
 4. **Day 14**: Early access offer
 
 ### Sequence "Enterprise" (4 emails)
+
 1. **Day 0**: ROI calculator
 2. **Day 2**: Case study
 3. **Day 5**: Schedule technical call
 4. **Day 10**: Pilot program offer
 
 ### Sequence "Manager" (4 emails)
+
 1. **Day 0**: Team productivity boost
 2. **Day 3**: Team case studies
 3. **Day 7**: Team demo
@@ -91,6 +102,7 @@ const scoreRules = {
 ## 🚀 **Como Usar**
 
 ### 1. Visualizar Localmente
+
 ```bash
 # Abrir arquivo diretamente no navegador
 open landing-page/index.html
@@ -102,6 +114,7 @@ python -m http.server 8000
 ```
 
 ### 2. Deploy Automático
+
 O deploy acontece automaticamente via GitHub Actions quando você faz push:
 
 ```bash
@@ -115,11 +128,13 @@ git push origin master
 ### 3. Configurar Analytics
 
 #### Google Analytics 4
+
 1. Criar conta GA4
 2. Substituir `GA_MEASUREMENT_ID` no workflow
 3. Re-deploy para ativar tracking
 
 #### Mixpanel (Opcional)
+
 ```javascript
 // Adicionar no <head>
 <script src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
@@ -131,17 +146,20 @@ git push origin master
 ## 📈 **Métricas de Sucesso**
 
 ### KPIs Principais
+
 - **Conversion Rate**: Landing page → Email signup
 - **Lead Quality Score**: Média dos leads capturados
 - **Time on Page**: Engajamento médio
 - **Email Open Rate**: Performance das sequences
 
 ### Dashboards
+
 - **Google Analytics**: Traffic e conversions
 - **Lead Scoring**: Real-time no localStorage
 - **Email Platform**: Open/click rates
 
 ### Targets (30 dias)
+
 - [ ] **1,000+** email signups
 - [ ] **15%+** conversion rate
 - [ ] **50+** qualified enterprise leads
@@ -150,11 +168,13 @@ git push origin master
 ## 🧪 **A/B Testing**
 
 ### Testes Ativos
+
 1. **Hero Message** (3 variantes)
-2. **CTA Button** (3 variantes)  
+2. **CTA Button** (3 variantes)
 3. **Social Proof** (3 variantes)
 
 ### Implementação
+
 ```javascript
 // Carregar variante baseado em visitor ID
 const variant = leadScoring.getABTestVariant('hero_message');
@@ -164,7 +184,9 @@ document.querySelector('.hero h1').textContent = variants[variant];
 ## 🔧 **Customização**
 
 ### Alterar Cores/Branding
+
 Editar variáveis CSS no `<style>` do `index.html`:
+
 ```css
 :root {
   --primary-color: #667eea;
@@ -174,7 +196,9 @@ Editar variáveis CSS no `<style>` do `index.html`:
 ```
 
 ### Modificar Lead Scoring
+
 Editar `js/lead-scoring.js`:
+
 ```javascript
 this.scoreRules = {
   // Adicionar novos eventos e pontuações
@@ -184,6 +208,7 @@ this.scoreRules = {
 ```
 
 ### Adicionar Nova Section
+
 ```html
 <section class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -195,12 +220,14 @@ this.scoreRules = {
 ## 🛡️ **Privacidade & GDPR**
 
 ### Compliance
+
 - ✅ **Cookie notice** implementado
 - ✅ **Data retention** configurado (30 dias)
 - ✅ **Opt-out** disponível
 - ✅ **LocalStorage** apenas para tracking essencial
 
 ### User Rights
+
 - **Access**: `leadScoring.getDebugInfo()`
 - **Delete**: `leadScoring.reset()`
 - **Export**: `JSON.stringify(leadScoring.leadData)`
@@ -208,12 +235,15 @@ this.scoreRules = {
 ## 📞 **Suporte & Manutenção**
 
 ### Debug Mode
+
 Ativar debug localmente:
+
 ```javascript
 window.leadScoring.config.debug = true;
 ```
 
 ### Monitor Performance
+
 ```bash
 # Lighthouse CI para performance
 npx @lhci/cli@0.11.x autorun
@@ -223,6 +253,7 @@ npx @lhci/cli@0.11.x autorun
 ```
 
 ### Issues Comuns
+
 1. **Analytics não tracking**: Verificar GA_MEASUREMENT_ID
 2. **Lead scoring não funciona**: Verificar localStorage permissions
 3. **Emails não enviando**: Configurar email service integration
@@ -230,16 +261,19 @@ npx @lhci/cli@0.11.x autorun
 ## 🎯 **Próximos Passos**
 
 ### Semana 1-2
+
 - [ ] Configurar domínio customizado (`github-agent.dev`)
 - [ ] Integrar com email service real (ConvertKit/Mailchimp)
 - [ ] Configurar analytics tracking
 
-### Semana 3-4  
+### Semana 3-4
+
 - [ ] Criar demos em vídeo reais
 - [ ] Implementar chat widget (Intercom/Drift)
 - [ ] A/B test hero variants
 
 ### Semana 5-6
+
 - [ ] Adicionar depoimentos reais de beta users
 - [ ] Implementar terminal demo funcional
 - [ ] Configurar webhook para CRM integration
@@ -249,7 +283,7 @@ npx @lhci/cli@0.11.x autorun
 **A landing page está pronta para validar nossa hipótese de produto e gerar leads qualificados para o GitHub Agent v2.0.**
 
 🔗 **Links Úteis**
+
 - [Estratégia de Go-to-Market](../docs/GO_TO_MARKET_STRATEGY.md)
 - [GitHub Pages Docs](https://docs.github.com/en/pages)
 - [Lead Scoring System](js/lead-scoring.js)
-

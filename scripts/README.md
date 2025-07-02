@@ -5,6 +5,7 @@ Sistema avançado de integração PowerShell com estratégias MCP para automaç�
 ## 🚀 Funcionalidades
 
 ### Comandos Principais
+
 - **`gco 'message'`** - Contribuição rápida com mensagem
 - **`gcd`** - Contribuição diária automatizada
 - **`gcw`** - Automação semanal com análise
@@ -12,6 +13,7 @@ Sistema avançado de integração PowerShell com estratégias MCP para automaç�
 - **`gchelp`** - Sistema de ajuda completo
 
 ### Funcionalidades MCP Enhanced
+
 - ✅ Sistema de cache inteligente
 - ✅ Logging estruturado com níveis
 - ✅ Validação automática de ambiente
@@ -21,17 +23,21 @@ Sistema avançado de integração PowerShell com estratégias MCP para automaç�
 ## 📋 Instalação
 
 ### 1. Carregar uma vez
+
 ```powershell
 . "scripts/load-agent-in-profile.ps1"
 ```
 
 ### 2. Carregar automaticamente
+
 Adicione ao seu perfil PowerShell (`$PROFILE`):
+
 ```powershell
 . "C:\caminho\para\scripts\load-agent-in-profile.ps1"
 ```
 
 ### 3. Verificar instalação
+
 ```powershell
 gchelp
 ```
@@ -39,11 +45,13 @@ gchelp
 ## 🔧 Configuração
 
 ### Estrutura de Cache
+
 - **Logs**: `$env:TEMP\GitHubAgent\logs\`
 - **Cache**: `$env:TEMP\GitHubAgent\cache.json`
 - **Config**: `$env:TEMP\GitHubAgent\config.json`
 
 ### Variáveis Globais
+
 ```powershell
 $Global:GitHubAgentConfig = @{
     Version = "2.0.0"
@@ -57,6 +65,7 @@ $Global:GitHubAgentConfig = @{
 ## 🎯 Uso Avançado
 
 ### Logs Estruturados
+
 ```powershell
 # Os logs são automaticamente categorizados:
 # [2025-07-02 21:00:00] [INFO] GitHub Contribution functions loaded
@@ -65,11 +74,13 @@ $Global:GitHubAgentConfig = @{
 ```
 
 ### Cache Inteligente
+
 - TTL configurável por item
 - Invalidação automática
 - Persistência entre sessões
 
 ### Métricas MCP
+
 - Rastreamento de comandos executados
 - Performance tracking
 - Error rate monitoring
@@ -79,6 +90,7 @@ $Global:GitHubAgentConfig = @{
 ### Problemas Comuns
 
 **Node.js não encontrado**
+
 ```powershell
 # Verificar instalação
 node --version
@@ -88,12 +100,14 @@ Remove-Item "$env:TEMP\GitHubAgent\cache.json" -Force
 ```
 
 **Comandos não carregados**
+
 ```powershell
 # Recarregar agente
 . "scripts/load-agent-in-profile.ps1"
 ```
 
 **Logs não aparecem**
+
 ```powershell
 # Verificar permissões de escrita
 Test-Path "$env:TEMP\GitHubAgent\logs" -PathType Container
@@ -102,16 +116,19 @@ Test-Path "$env:TEMP\GitHubAgent\logs" -PathType Container
 ## 📊 Monitoramento
 
 ### Visualizar Logs
+
 ```powershell
 Get-Content "$env:TEMP\GitHubAgent\logs\agent-$(Get-Date -Format 'yyyy-MM-dd').log" | ConvertFrom-Json
 ```
 
 ### Verificar Cache
+
 ```powershell
 Get-Content "$env:TEMP\GitHubAgent\cache.json" | ConvertFrom-Json
 ```
 
 ### Status do Agente
+
 ```powershell
 $Global:GitHubAgentConfig
 ```
@@ -119,6 +136,7 @@ $Global:GitHubAgentConfig
 ## 🔧 Desenvolvimento
 
 ### Estrutura do Código
+
 ```
 scripts/
 ├── load-agent-in-profile.ps1  # Script principal
@@ -127,6 +145,7 @@ scripts/
 ```
 
 ### Regras de Desenvolvimento
+
 - **Logging**: Usar `Write-MCPLog` para todas as operações
 - **Cache**: Implementar TTL apropriado para cada tipo de dado
 - **Error Handling**: Capturar e logar todos os erros
@@ -149,4 +168,3 @@ Este projeto está licenciado sob a [Licença MIT](../LICENSE).
 **Versão:** 2.0.0 - MCP Strategy Implementation  
 **Compatibilidade:** PowerShell 5.1+, Windows 10+  
 **Dependências:** Node.js 18+, Git 2.40+
-

@@ -29,10 +29,10 @@ Antes de começar, certifique-se de ter:
 2. Clique em **"Generate new token (classic)"**
 3. Dê um nome descritivo: `GitHub Mastery CLI`
 4. Selecione os escopos necessários:
-    - ✅ `repo` (Controle total de repositórios privados)
-    - ✅ `user` (Atualizar dados do usuário)
-    - ✅ `notifications` (Acessar notificações)
-    - ✅ `workflow` (Atualizar workflows do GitHub Actions)
+   - ✅ `repo` (Controle total de repositórios privados)
+   - ✅ `user` (Atualizar dados do usuário)
+   - ✅ `notifications` (Acessar notificações)
+   - ✅ `workflow` (Atualizar workflows do GitHub Actions)
 5. Clique em **"Generate token"**
 6. **Copie o token imediatamente** (você não verá novamente!)
 

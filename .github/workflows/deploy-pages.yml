@@ -2,12 +2,12 @@ name: Deploy Landing Page to GitHub Pages
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [master, main]
     paths:
       - 'landing-page/**'
       - '.github/workflows/deploy-pages.yml'
   pull_request:
-    branches: [ master, main ]
+    branches: [master, main]
     paths:
       - 'landing-page/**'
 
@@ -23,7 +23,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -33,15 +33,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        
+
       - name: Copy landing page files
         run: |
           mkdir -p _site
           cp -r landing-page/* _site/
-          
+
       - name: Generate sitemap
         run: |
           cat > _site/sitemap.xml << 'EOF'
@@ -55,23 +55,23 @@ jobs:
             </url>
           </urlset>
           EOF
-          
+
       - name: Generate robots.txt
         run: |
           cat > _site/robots.txt << 'EOF'
           User-agent: *
           Allow: /
-          
+
           Sitemap: https://joao.github.io/GITHUB_MASTERY/sitemap.xml
           EOF
-          
+
       - name: Add analytics tracking
         run: |
           # Add Google Analytics tracking to index.html
           if [[ -f "_site/index.html" ]]; then
             sed -i 's|</head>|<!-- Google Analytics -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag("js", new Date());\n  gtag("config", "GA_MEASUREMENT_ID");\n</script>\n</head>|' _site/index.html
           fi
-          
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
@@ -86,4 +86,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

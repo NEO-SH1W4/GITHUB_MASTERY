@@ -113,29 +113,29 @@ O arquivo `mcp-ecosystem-integration.json` define:
 
 ```json
 {
-    "integration": {
-        "name": "github-mastery",
-        "version": "1.0.0",
-        "type": "mcp-server"
-    },
-    "server": {
-        "capabilities": {
-            "tools": true,
-            "resources": true,
-            "prompts": false,
-            "sampling": false
-        }
-    },
-    "integration_points": {
-        "rules_engine": {
-            "enabled": true,
-            "rules": [
-                "github-rate-limiting",
-                "github-security-validation",
-                "github-data-sanitization"
-            ]
-        }
+  "integration": {
+    "name": "github-mastery",
+    "version": "1.0.0",
+    "type": "mcp-server"
+  },
+  "server": {
+    "capabilities": {
+      "tools": true,
+      "resources": true,
+      "prompts": false,
+      "sampling": false
     }
+  },
+  "integration_points": {
+    "rules_engine": {
+      "enabled": true,
+      "rules": [
+        "github-rate-limiting",
+        "github-security-validation",
+        "github-data-sanitization"
+      ]
+    }
+  }
 }
 ```
 
@@ -297,26 +297,26 @@ node scripts/test-ecosystem-connection.js
 
 1. **Conexão com Ecossistema Falhando**
 
-    ```bash
-    # Verificar endpoint
-    echo $MCP_ECOSYSTEM_ENDPOINT
+   ```bash
+   # Verificar endpoint
+   echo $MCP_ECOSYSTEM_ENDPOINT
 
-    # Testar conectividade
-    curl $MCP_ECOSYSTEM_ENDPOINT/health
-    ```
+   # Testar conectividade
+   curl $MCP_ECOSYSTEM_ENDPOINT/health
+   ```
 
 2. **Token GitHub Inválido**
 
-    ```bash
-    # Verificar token
-    curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/user
-    ```
+   ```bash
+   # Verificar token
+   curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/user
+   ```
 
 3. **Dependências Ausentes**
-    ```bash
-    # Reinstalar dependências
-    npm run clean && npm install
-    ```
+   ```bash
+   # Reinstalar dependências
+   npm run clean && npm install
+   ```
 
 ### Logs de Debug
 

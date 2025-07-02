@@ -45,11 +45,11 @@ Durante esta sessão, foram realizadas ações significativas que consolidaram a
 
 - **Arquivo:** `dynamic.html` (794 linhas)
 - **Características:**
-    - Dados simulados integrados
-    - Gráficos interativos (Chart.js)
-    - Interface responsiva
-    - Status de conexão em tempo real
-    - Sistema de refresh automático
+  - Dados simulados integrados
+  - Gráficos interativos (Chart.js)
+  - Interface responsiva
+  - Status de conexão em tempo real
+  - Sistema de refresh automático
 
 ## 📈 Métricas de Qualidade
 

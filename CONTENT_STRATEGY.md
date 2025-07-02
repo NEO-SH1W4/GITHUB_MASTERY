@@ -104,24 +104,24 @@ Conteúdo:
 
 ```yaml
 Intro (30 seconds):
-    - Hook: 'What if I told you...'
-    - Problem identification
-    - Solution preview
+  - Hook: 'What if I told you...'
+  - Problem identification
+  - Solution preview
 
 Demo (3-4 minutes):
-    - Live coding/usage
-    - Explain while doing
-    - Show real outputs
+  - Live coding/usage
+  - Explain while doing
+  - Show real outputs
 
 Benefits (1 minute):
-    - Why this matters
-    - Time saved
-    - Better workflows
+  - Why this matters
+  - Time saved
+  - Better workflows
 
 CTA (30 seconds):
-    - GitHub link
-    - Documentation
-    - Community invitation
+  - GitHub link
+  - Documentation
+  - Community invitation
 ```
 
 ### **Social Media Templates**
@@ -212,33 +212,33 @@ Tertiary: 'Open source, bilingual, enterprise-ready'
 
 ```yaml
 Blog Posts:
-    - Target: 500+ views per post
-    - Engagement: 5% comment rate
-    - Shares: 20+ per platform
+  - Target: 500+ views per post
+  - Engagement: 5% comment rate
+  - Shares: 20+ per platform
 
 Videos:
-    - Target: 1000+ views per video
-    - Watch time: >60
-    - Subscribers: +50 per month
+  - Target: 1000+ views per video
+  - Watch time: >60
+  - Subscribers: +50 per month
 
 Social Media:
-    - Twitter: 100+ retweets per thread
-    - LinkedIn: 50+ reactions per post
-    - Dev.to: Top 7 weekly posts
+  - Twitter: 100+ retweets per thread
+  - LinkedIn: 50+ reactions per post
+  - Dev.to: Top 7 weekly posts
 ```
 
 ### **Community Growth:**
 
 ```yaml
 GitHub:
-    - Stars: +20 per week
-    - Contributors: +2 per month
-    - Issues engagement: <24h response
+  - Stars: +20 per week
+  - Contributors: +2 per month
+  - Issues engagement: <24h response
 
 External:
-    - Stack Overflow reputation: +100/month
-    - Speaking opportunities: 1 per quarter
-    - Podcast appearances: 1 per 2 months
+  - Stack Overflow reputation: +100/month
+  - Speaking opportunities: 1 per quarter
+  - Podcast appearances: 1 per 2 months
 ```
 
 ## 🚀 **QUICK WINS (This Week)**

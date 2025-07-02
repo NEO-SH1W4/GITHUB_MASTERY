@@ -40,6 +40,7 @@ Este repositório contém:
 ## ⚡ **Setup Rápido (5 minutos)**
 
 ### 1. **Ativar GitHub Pages**
+
 1. Vá para `Settings` → `Pages` do seu repositório
 2. Source: `Deploy from a branch`
 3. Branch: `master` / `main`
@@ -47,12 +48,14 @@ Este repositório contém:
 5. Clique em **Save**
 
 ### 2. **Configurar Permissions**
+
 1. Vá para `Settings` → `Actions` → `General`
 2. Em "Workflow permissions", selecione:
    - ✅ **Read and write permissions**
    - ✅ **Allow GitHub Actions to create and approve pull requests**
 
 ### 3. **Aguardar Deploy**
+
 - O GitHub Actions vai rodar automaticamente
 - Em ~2-3 minutos, sua landing page estará live
 - URL: `https://[seu-usuario].github.io/[nome-do-repo]/`
@@ -60,15 +63,17 @@ Este repositório contém:
 ## 🎯 **Resultados Esperados**
 
 ### **Conversão & Leads**
+
 - **15%+ conversion rate** (vs 2-5% industry standard)
 - **1000+ leads qualificados** em 30 dias
 - **Segmentação automática** por perfil (dev/manager/enterprise)
 
 ### **Performance Financeira**
+
 ```
 📈 Projeção Year 1:
 Month 1-3: $0 (Build + Launch)
-Month 4-6: $15K (Early adopters)  
+Month 4-6: $15K (Early adopters)
 Month 7-9: $45K (Word of mouth)
 Month 10-12: $85K (Enterprise deals)
 
@@ -76,6 +81,7 @@ Month 10-12: $85K (Enterprise deals)
 ```
 
 ### **Lead Scoring**
+
 - 🔥 **Hot leads** (80+ pontos): Sales imediato
 - 🟡 **Warm leads** (50+ pontos): Nurturing sequence
 - 🔵 **Cold leads** (20+ pontos): Content marketing
@@ -84,10 +90,12 @@ Month 10-12: $85K (Enterprise deals)
 ## 📊 **Como Monitorar Resultados**
 
 ### **Analytics Built-in**
+
 1. **Lead Scoring Dashboard**
+
    ```javascript
    // No console do navegador
-   window.leadScoring.getDebugInfo()
+   window.leadScoring.getDebugInfo();
    ```
 
 2. **Google Analytics** (após configurar GA4)
@@ -101,14 +109,16 @@ Month 10-12: $85K (Enterprise deals)
    - Social proof testing
 
 ### **Métricas Chave**
+
 - ✅ **Conversion Rate**: Landing page → Email signup
-- ✅ **Lead Quality Score**: Média dos leads capturados  
+- ✅ **Lead Quality Score**: Média dos leads capturados
 - ✅ **Time on Page**: Engagement médio
 - ✅ **Email Open Rate**: Performance das sequences
 
 ## 🛠️ **Customização**
 
 ### **Alterar Branding**
+
 ```css
 /* Em landing-page/index.html */
 :root {
@@ -119,6 +129,7 @@ Month 10-12: $85K (Enterprise deals)
 ```
 
 ### **Modificar Lead Scoring**
+
 ```javascript
 // Em landing-page/js/lead-scoring.js
 this.scoreRules = {
@@ -129,6 +140,7 @@ this.scoreRules = {
 ```
 
 ### **Configurar Email Sequences**
+
 ```javascript
 // Personalizar sequences por audiência
 developer: {
@@ -143,29 +155,33 @@ developer: {
 ## 📧 **Integração com Email Marketing**
 
 ### **Plataformas Suportadas**
+
 - **ConvertKit** (recomendado para devs)
 - **Mailchimp** (fácil setup)
 - **HubSpot** (enterprise)
 - **Custom API** (webhook integration)
 
 ### **Setup Email Service**
+
 ```javascript
 // Configurar webhook endpoint
 window.leadScoring = new LeadScoringSystem({
   apiEndpoint: 'https://your-api.com/leads',
-  emailService: 'convertkit'
+  emailService: 'convertkit',
 });
 ```
 
 ## 🎨 **Templates de Email Inclusos**
 
 ### **Sequence "Developer" (4 emails)**
+
 1. **Day 0**: Welcome + Demo link
-2. **Day 3**: Technical deep-dive  
+2. **Day 3**: Technical deep-dive
 3. **Day 7**: Performance comparison
 4. **Day 14**: Early access offer
 
 ### **Sequence "Enterprise" (4 emails)**
+
 1. **Day 0**: ROI calculator
 2. **Day 2**: Case study
 3. **Day 5**: Schedule technical call
@@ -174,21 +190,23 @@ window.leadScoring = new LeadScoringSystem({
 ## 📈 **Otimização Contínua**
 
 ### **A/B Testing Built-in**
+
 ```javascript
 // Testar variantes automaticamente
 const experiments = [
   {
-    name: "Hero Message",
+    name: 'Hero Message',
     variants: [
-      "Meet the GitHub Agent that thinks like you do",
-      "GitHub automation just got 10x smarter", 
-      "The AI-powered GitHub experience you've been waiting for"
-    ]
-  }
+      'Meet the GitHub Agent that thinks like you do',
+      'GitHub automation just got 10x smarter',
+      "The AI-powered GitHub experience you've been waiting for",
+    ],
+  },
 ];
 ```
 
 ### **Tracking Avançado**
+
 - **Scroll depth**: Engagement por seção
 - **Click heatmaps**: Elementos mais clicados
 - **Form analytics**: Taxa de abandono
@@ -197,19 +215,22 @@ const experiments = [
 ## 🚀 **Próximos Passos**
 
 ### **Semana 1-2: Foundation**
+
 - [x] ✅ Landing page responsiva
 - [x] ✅ Lead scoring system
 - [x] ✅ GitHub Pages deploy
 - [ ] 🔄 Configurar GA4 tracking
 - [ ] 🔄 Integrar email service
 
-### **Semana 3-4: Content**  
+### **Semana 3-4: Content**
+
 - [ ] 📝 Criar demos em vídeo
 - [ ] 📝 Escrever blog posts técnicos
 - [ ] 📝 Desenvolver case studies
 - [ ] 📝 A/B test hero variants
 
 ### **Semana 5-6: Scale**
+
 - [ ] 🎯 Configurar domínio customizado
 - [ ] 🎯 Implementar chat widget
 - [ ] 🎯 Adicionar depoimentos reais
@@ -218,32 +239,36 @@ const experiments = [
 ## 🛡️ **Privacidade & GDPR**
 
 ### **Compliance Automática**
+
 - ✅ **Cookie notice** implementado
 - ✅ **Data retention** configurado (30 dias)
 - ✅ **Opt-out** disponível
 - ✅ **LocalStorage** apenas para essenciais
 
 ### **User Rights**
+
 ```javascript
 // Acessar dados do usuário
-leadScoring.getDebugInfo()
+leadScoring.getDebugInfo();
 
-// Deletar dados do usuário  
-leadScoring.reset()
+// Deletar dados do usuário
+leadScoring.reset();
 
 // Exportar dados do usuário
-JSON.stringify(leadScoring.leadData)
+JSON.stringify(leadScoring.leadData);
 ```
 
 ## 📞 **Suporte & Debug**
 
 ### **Issues Comuns**
+
 1. **GitHub Pages não carrega**: Verificar Settings → Pages
 2. **Analytics não funciona**: Configurar GA_MEASUREMENT_ID
 3. **Lead scoring falha**: Verificar localStorage permissions
 4. **Formulário não submete**: Verificar email service integration
 
 ### **Debug Mode**
+
 ```javascript
 // Ativar debug no console
 window.leadScoring.config.debug = true;
@@ -251,6 +276,7 @@ window.leadScoring.getDebugInfo();
 ```
 
 ### **Performance Check**
+
 ```bash
 # Lighthouse CI
 npx @lhci/cli@0.11.x autorun
@@ -262,6 +288,7 @@ npx @lhci/cli@0.11.x autorun
 ## 🤝 **Contribuição**
 
 ### **Como Contribuir**
+
 1. Fork este repositório
 2. Crie sua feature branch: `git checkout -b feature/nova-funcionalidade`
 3. Commit suas mudanças: `git commit -m 'feat: adicionar nova funcionalidade'`
@@ -269,6 +296,7 @@ npx @lhci/cli@0.11.x autorun
 5. Abra um Pull Request
 
 ### **Issues & Feedback**
+
 - 🐛 **Bug reports**: Use GitHub Issues
 - 💡 **Feature requests**: Discussions tab
 - 📧 **Email**: contato@github-agent.dev
@@ -289,4 +317,3 @@ npx @lhci/cli@0.11.x autorun
 **🔗 Landing page**: https://neo-sh1w4.github.io/github_mastery/
 
 **📧 Entre em contato**: Para colaborações ou consultoria em go-to-market
-

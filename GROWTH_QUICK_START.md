@@ -79,22 +79,22 @@ Tools:
 
 ```yaml
 Actions:
-    1. Research 5 similar/related projects:
-        - octokit/octokit.js (contribute to docs)
-        - tj/commander.js (answer issues)
-        - github/hub (study approach)
-        - cli/cli (competitive analysis)
-        - microsoft/vscode (extension idea)
+  1. Research 5 similar/related projects:
+    - octokit/octokit.js (contribute to docs)
+    - tj/commander.js (answer issues)
+    - github/hub (study approach)
+    - cli/cli (competitive analysis)
+    - microsoft/vscode (extension idea)
 
-    2. Reach out to maintainers:
-        - Thoughtful comments on recent releases
-        - Offer help with documentation
-        - Share GitHub Mastery as complementary tool
+  2. Reach out to maintainers:
+    - Thoughtful comments on recent releases
+    - Offer help with documentation
+    - Share GitHub Mastery as complementary tool
 
-    3. Join relevant Discord/Slack communities:
-        - Node.js community
-        - GitHub developers
-        - Open source communities
+  3. Join relevant Discord/Slack communities:
+    - Node.js community
+    - GitHub developers
+    - Open source communities
 ```
 
 ### **💬 DIA 6: Stack Overflow Strategy**
@@ -119,16 +119,16 @@ Actions:
 
 ```yaml
 Setup:
-    - Buffer/Hootsuite for social media scheduling
-    - Editorial calendar in Notion/Airtable
-    - Blog post pipeline (draft → review → publish)
-    - Video content planning
+  - Buffer/Hootsuite for social media scheduling
+  - Editorial calendar in Notion/Airtable
+  - Blog post pipeline (draft → review → publish)
+  - Video content planning
 
 Next Week Content:
-    - Blog: "GitHub API Rate Limiting: A Developer's Guide"
-    - Video: 'Building Your First GitHub Automation'
-    - Twitter: Daily tips thread
-    - LinkedIn: Professional insights
+  - Blog: "GitHub API Rate Limiting: A Developer's Guide"
+  - Video: 'Building Your First GitHub Automation'
+  - Twitter: Daily tips thread
+  - LinkedIn: Professional insights
 ```
 
 ---
@@ -139,16 +139,16 @@ Next Week Content:
 
 ```markdown
 - [ ] Add comprehensive README badges:
-    - Build status
-    - Code coverage
-    - License
-    - Version
-    - Downloads/Stars
+  - Build status
+  - Code coverage
+  - License
+  - Version
+  - Downloads/Stars
 - [ ] Enable GitHub Discussions
 - [ ] Create issue templates:
-    - Bug report
-    - Feature request
-    - Question
+  - Bug report
+  - Feature request
+  - Question
 - [ ] Add CONTRIBUTING.md guidelines
 - [ ] Set up GitHub Sponsors (optional)
 - [ ] Create project roadmap in Projects
@@ -158,23 +158,23 @@ Next Week Content:
 
 ```yaml
 GitHub Topics (add to repository):
-    - github-api
-    - cli-tool
-    - developer-tools
-    - automation
-    - webhook
-    - nodejs
-    - javascript
-    - devops
-    - git-workflow
-    - open-source
+  - github-api
+  - cli-tool
+  - developer-tools
+  - automation
+  - webhook
+  - nodejs
+  - javascript
+  - devops
+  - git-workflow
+  - open-source
 
 README Keywords:
-    - 'GitHub automation'
-    - 'CLI tool for developers'
-    - 'GitHub API client'
-    - 'Webhook handler'
-    - 'Developer productivity'
+  - 'GitHub automation'
+  - 'CLI tool for developers'
+  - 'GitHub API client'
+  - 'Webhook handler'
+  - 'Developer productivity'
 ```
 
 ### **📱 Social Media Setup**
@@ -264,21 +264,21 @@ Weekend: Community spotlights & engagement
 
 ```yaml
 Local Meetups:
-    - JavaScript meetup: 'Building Professional CLI Tools'
-    - DevOps meetup: 'GitHub Automation at Scale'
-    - Open source meetup: 'Sustainable OSS Development'
+  - JavaScript meetup: 'Building Professional CLI Tools'
+  - DevOps meetup: 'GitHub Automation at Scale'
+  - Open source meetup: 'Sustainable OSS Development'
 
 Online Events:
-    - DevChat podcast
-    - JavaScript Jabber
-    - The Changelog
-    - CodeNewbie podcast
+  - DevChat podcast
+  - JavaScript Jabber
+  - The Changelog
+  - CodeNewbie podcast
 
 Conferences (CFP submissions):
-    - Node.js Interactive
-    - GitHub Universe (community track)
-    - All Things Open
-    - DevOpsDays (local)
+  - Node.js Interactive
+  - GitHub Universe (community track)
+  - All Things Open
+  - DevOpsDays (local)
 ```
 
 ### **📚 Workshop Content**
@@ -291,28 +291,28 @@ Format: Interactive workshop
 Agenda:
 
 1. Introduction (15 min)
-    - Why automation matters
-    - GitHub API overview
+   - Why automation matters
+   - GitHub API overview
 
 2. Hands-on: CLI Basics (30 min)
-    - Installation and setup
-    - Authentication
-    - Basic operations
+   - Installation and setup
+   - Authentication
+   - Basic operations
 
 3. Hands-on: Webhooks (45 min)
-    - Setting up webhook server
-    - Event handling
-    - Security best practices
+   - Setting up webhook server
+   - Event handling
+   - Security best practices
 
 4. Hands-on: Advanced Patterns (30 min)
-    - Custom automations
-    - Integration examples
-    - Troubleshooting
+   - Custom automations
+   - Integration examples
+   - Troubleshooting
 
 5. Q&A and Next Steps (20 min)
-    - Community resources
-    - Contributing guidelines
-    - Advanced topics
+   - Community resources
+   - Contributing guidelines
+   - Advanced topics
 ```
 
 ---
@@ -323,23 +323,23 @@ Agenda:
 
 ```yaml
 GitHub Metrics:
-    - Stars: Current count + weekly growth
-    - Forks: Adoption indicator
-    - Issues: Community engagement
-    - PRs: Contributor interest
-    - Clones: Usage indicator
+  - Stars: Current count + weekly growth
+  - Forks: Adoption indicator
+  - Issues: Community engagement
+  - PRs: Contributor interest
+  - Clones: Usage indicator
 
 Content Metrics:
-    - Blog views: Reach and engagement
-    - Video views: Content effectiveness
-    - Social engagement: Community building
-    - Email subscribers: Direct audience
+  - Blog views: Reach and engagement
+  - Video views: Content effectiveness
+  - Social engagement: Community building
+  - Email subscribers: Direct audience
 
 Community Metrics:
-    - Stack Overflow reputation
-    - Reddit karma from helpful posts
-    - Discord/Slack participation
-    - Speaking opportunities
+  - Stack Overflow reputation
+  - Reddit karma from helpful posts
+  - Discord/Slack participation
+  - Speaking opportunities
 ```
 
 ### **🎯 Success Milestones (30 Days)**

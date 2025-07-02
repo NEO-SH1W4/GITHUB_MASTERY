@@ -1,544 +1,541 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>GitHub Mastery - Live Dashboard</title>
-        <!-- Importar CSS principal do projeto -->
-        <link rel="stylesheet" href="styles.css" />
-        <!-- Adicionar FontAwesome para ícones -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        />
-        <!-- Adicionar Chart.js para gráficos -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <style>
-            /* Estilos adicionais para dashboard dinâmico */
-            .dashboard-container {
-                max-width: 1200px;
-                margin: 2rem auto;
-                padding: 2rem;
-                background-color: var(--card-background);
-                border-radius: 16px;
-                border: 1px solid var(--border-color);
-                box-shadow: var(--shadow);
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Mastery - Live Dashboard</title>
+    <!-- Importar CSS principal do projeto -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Adicionar FontAwesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Adicionar Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      /* Estilos adicionais para dashboard dinâmico */
+      .dashboard-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: var(--card-background);
+        border-radius: 16px;
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow);
+      }
 
-            .dashboard-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 2rem;
-            }
+      .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
 
-            .dashboard-title {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-            }
+      .dashboard-title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
 
-            .dashboard-title h1 {
-                margin: 0;
-                font-size: 2rem;
-            }
+      .dashboard-title h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
 
-            .refresh-button {
-                background: var(--primary-color);
-                color: var(--background-color);
-                border: none;
-                border-radius: 8px;
-                padding: 0.5rem 1rem;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
+      .refresh-button {
+        background: var(--primary-color);
+        color: var(--background-color);
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
 
-            .refresh-button:hover {
-                background: var(--primary-hover);
-                transform: translateY(-2px);
-            }
+      .refresh-button:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+      }
 
-            .status-badge {
-                padding: 0.25rem 0.75rem;
-                border-radius: 20px;
-                font-size: 0.8rem;
-                font-weight: 500;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
+      .status-badge {
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-            .status-badge.online {
-                background: rgba(63, 185, 80, 0.2);
-                color: var(--success-color);
-                border: 1px solid rgba(63, 185, 80, 0.3);
-            }
+      .status-badge.online {
+        background: rgba(63, 185, 80, 0.2);
+        color: var(--success-color);
+        border: 1px solid rgba(63, 185, 80, 0.3);
+      }
 
-            .status-badge.offline {
-                background: rgba(248, 81, 73, 0.2);
-                color: var(--error-color);
-                border: 1px solid rgba(248, 81, 73, 0.3);
-            }
+      .status-badge.offline {
+        background: rgba(248, 81, 73, 0.2);
+        color: var(--error-color);
+        border: 1px solid rgba(248, 81, 73, 0.3);
+      }
 
-            .status-dot {
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                display: inline-block;
-            }
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+      }
 
-            .status-dot.online {
-                background: var(--success-color);
-                box-shadow: 0 0 5px var(--success-color);
-            }
+      .status-dot.online {
+        background: var(--success-color);
+        box-shadow: 0 0 5px var(--success-color);
+      }
 
-            .status-dot.offline {
-                background: var(--error-color);
-                box-shadow: 0 0 5px var(--error-color);
-            }
+      .status-dot.offline {
+        background: var(--error-color);
+        box-shadow: 0 0 5px var(--error-color);
+      }
 
-            .stats-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 1.5rem;
-                margin-bottom: 2rem;
-            }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
 
-            .stat-card {
-                background: var(--gradient-card);
-                padding: 1.5rem;
-                border-radius: 12px;
-                border: 1px solid var(--border-color);
-                transition: all 0.3s ease;
-            }
+      .stat-card {
+        background: var(--gradient-card);
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
 
-            .stat-card:hover {
-                transform: translateY(-5px);
-                border-color: var(--primary-color);
-                box-shadow: var(--shadow-hover);
-            }
+      .stat-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-hover);
+      }
 
-            .stat-header {
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-                margin-bottom: 1rem;
-            }
+      .stat-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+      }
 
-            .stat-icon {
-                width: 40px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: rgba(88, 166, 255, 0.1);
-                border-radius: 8px;
-                color: var(--primary-color);
-            }
+      .stat-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(88, 166, 255, 0.1);
+        border-radius: 8px;
+        color: var(--primary-color);
+      }
 
-            .stat-value {
-                font-size: 2rem;
-                font-weight: 700;
-                margin-bottom: 0.5rem;
-                color: var(--primary-color);
-            }
+      .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
 
-            .stat-label {
-                font-size: 0.9rem;
-                color: var(--text-secondary);
-            }
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
 
-            .charts-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: 2rem;
-                margin-bottom: 2rem;
-            }
+      .charts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
 
-            .chart-card {
-                background: var(--gradient-card);
-                padding: 1.5rem;
-                border-radius: 12px;
-                border: 1px solid var(--border-color);
-                transition: all 0.3s ease;
-            }
+      .chart-card {
+        background: var(--gradient-card);
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
 
-            .chart-card:hover {
-                transform: translateY(-5px);
-                border-color: var(--primary-color);
-                box-shadow: var(--shadow-hover);
-            }
+      .chart-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-hover);
+      }
 
-            .chart-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-            }
+      .chart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
 
-            .chart-header h3 {
-                margin: 0;
-                font-size: 1.2rem;
-            }
+      .chart-header h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
 
-            .chart-container {
-                height: 250px;
-                position: relative;
-            }
+      .chart-container {
+        height: 250px;
+        position: relative;
+      }
 
-            .repo-list {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 1.5rem;
-                margin-top: 2rem;
-            }
+      .repo-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
 
-            .repo-card {
-                background: var(--card-background);
-                border: 1px solid var(--border-color);
-                border-radius: 10px;
-                padding: 1.5rem;
-                transition: all 0.3s ease;
-            }
+      .repo-card {
+        background: var(--card-background);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+      }
 
-            .repo-card:hover {
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-hover);
-                border-color: var(--primary-color);
-            }
+      .repo-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--primary-color);
+      }
 
-            .repo-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 0.8rem;
-            }
+      .repo-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.8rem;
+      }
 
-            .repo-header h4 {
-                margin: 0;
-                font-size: 1.1rem;
-            }
+      .repo-header h4 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
 
-            .repo-header h4 a {
-                color: var(--primary-color);
-                text-decoration: none;
-            }
+      .repo-header h4 a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
 
-            .repo-lang {
-                background: rgba(88, 166, 255, 0.1);
-                padding: 3px 8px;
-                border-radius: 12px;
-                font-size: 0.75rem;
-            }
+      .repo-lang {
+        background: rgba(88, 166, 255, 0.1);
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+      }
 
-            .repo-stats {
-                display: flex;
-                gap: 1rem;
-                margin-top: 1rem;
-            }
+      .repo-stats {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
 
-            .repo-stats span {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                font-size: 0.8rem;
-                color: var(--text-secondary);
-            }
+      .repo-stats span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+      }
 
-            .loading-spinner {
-                width: 50px;
-                height: 50px;
-                border: 3px solid rgba(88, 166, 255, 0.3);
-                border-top: 3px solid var(--primary-color);
-                border-radius: 50%;
-                animation: spin 1s linear infinite;
-                margin: 2rem auto;
-            }
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(88, 166, 255, 0.3);
+        border-top: 3px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 2rem auto;
+      }
 
-            .loading-text {
-                text-align: center;
-                color: var(--text-secondary);
-                margin-top: 1rem;
-            }
+      .loading-text {
+        text-align: center;
+        color: var(--text-secondary);
+        margin-top: 1rem;
+      }
 
-            .error-container {
-                text-align: center;
-                padding: 2rem;
-                background: rgba(248, 81, 73, 0.1);
-                border: 1px dashed rgba(248, 81, 73, 0.3);
-                border-radius: 10px;
-                margin: 2rem 0;
-            }
+      .error-container {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(248, 81, 73, 0.1);
+        border: 1px dashed rgba(248, 81, 73, 0.3);
+        border-radius: 10px;
+        margin: 2rem 0;
+      }
 
-            .error-icon {
-                font-size: 3rem;
-                color: var(--error-color);
-                margin-bottom: 1rem;
-            }
+      .error-icon {
+        font-size: 3rem;
+        color: var(--error-color);
+        margin-bottom: 1rem;
+      }
 
-            .empty-container {
-                text-align: center;
-                padding: 2rem;
-                background: rgba(88, 166, 255, 0.1);
-                border: 1px dashed rgba(88, 166, 255, 0.3);
-                border-radius: 10px;
-                margin: 2rem 0;
-            }
+      .empty-container {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(88, 166, 255, 0.1);
+        border: 1px dashed rgba(88, 166, 255, 0.3);
+        border-radius: 10px;
+        margin: 2rem 0;
+      }
 
-            .empty-icon {
-                font-size: 3rem;
-                color: var(--primary-color);
-                margin-bottom: 1rem;
-                opacity: 0.5;
-            }
+      .empty-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        opacity: 0.5;
+      }
 
-            .highlight-updated {
-                animation: pulse 1.5s ease;
-            }
+      .highlight-updated {
+        animation: pulse 1.5s ease;
+      }
 
-            @keyframes pulse {
-                0%,
-                100% {
-                    opacity: 1;
-                }
-                50% {
-                    opacity: 0.5;
-                }
-            }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
 
-            @keyframes spin {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-            @media (max-width: 768px) {
-                .dashboard-header {
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 1rem;
-                }
+      @media (max-width: 768px) {
+        .dashboard-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
 
-                .stats-grid,
-                .charts-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <div class="navbar">
-                    <div class="logo">
-                        <h1>GitHub Mastery</h1>
-                    </div>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#" class="active">Dashboard</a></li>
-                        <li><a href="README.md">Docs</a></li>
-                    </ul>
-                </div>
+        .stats-grid,
+        .charts-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <h1>GitHub Mastery</h1>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="README.md">Docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="dashboard-container">
+          <div class="dashboard-header">
+            <div class="dashboard-title">
+              <i
+                class="fas fa-chart-line"
+                style="font-size: 2rem; color: var(--primary-color)"
+              ></i>
+              <h1>Live GitHub Dashboard</h1>
             </div>
-        </header>
-
-        <main>
-            <div class="container">
-                <div class="dashboard-container">
-                    <div class="dashboard-header">
-                        <div class="dashboard-title">
-                            <i
-                                class="fas fa-chart-line"
-                                style="font-size: 2rem; color: var(--primary-color)"
-                            ></i>
-                            <h1>Live GitHub Dashboard</h1>
-                        </div>
-                        <div class="dashboard-actions">
-                            <button id="refresh-button" class="refresh-button">
-                                <i class="fas fa-sync-alt"></i>
-                                Refresh Data
-                            </button>
-                        </div>
-                    </div>
-
-                    <div id="connection-status"></div>
-
-                    <div id="stats-container" class="stats-grid">
-                        <!-- Estatísticas serão carregadas dinamicamente -->
-                        <div class="loading-spinner"></div>
-                        <p class="loading-text">Carregando estatísticas...</p>
-                    </div>
-
-                    <div id="charts-container" class="charts-grid">
-                        <!-- Gráficos serão carregados dinamicamente -->
-                    </div>
-
-                    <h2>Your Repositories</h2>
-                    <div id="repos-container" class="repo-list">
-                        <!-- Repositórios serão carregados dinamicamente -->
-                    </div>
-                </div>
+            <div class="dashboard-actions">
+              <button id="refresh-button" class="refresh-button">
+                <i class="fas fa-sync-alt"></i>
+                Refresh Data
+              </button>
             </div>
-        </main>
+          </div>
 
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h4>GitHub Mastery</h4>
-                        <p>
-                            Technical portfolio demonstrating GitHub automation
-                            architecture and distributed systems expertise for
-                            enterprise-scale DevOps operations.
-                        </p>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Links</h4>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="README.md">Documentation</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>
-                        &copy; 2025 GitHub Mastery Technical Portfolio. Demonstrating
-                        architectural expertise in enterprise DevOps automation.
-                    </p>
-                </div>
-            </div>
-        </footer>
+          <div id="connection-status"></div>
 
-        <script>
-            // Dados simulados para demonstração
-            const mockData = {
-                status: {
-                    service: 'GitHub Mastery API',
-                    version: '1.0.0',
-                    status: 'online',
-                    timestamp: new Date().toISOString(),
-                },
-                githubStats: {
-                    users: '100M+',
-                    repositories: '420M+',
-                    api_requests_per_min: '15K+',
-                    timestamp: new Date().toISOString(),
-                },
-                performance: {
-                    api_uptime: '99.95%',
-                    api_latency: '~150ms',
-                    rate_limit: {
-                        limit: 5000,
-                        remaining: 4832,
-                        reset: new Date(Date.now() + 3600000).toISOString(),
-                        used: 168,
-                    },
-                    historical_data: [
-                        { year: '2019', value: 180 },
-                        { year: '2020', value: 165 },
-                        { year: '2021', value: 150 },
-                        { year: '2022', value: 145 },
-                        { year: '2023', value: 140 },
-                        { year: '2024', value: 135 },
-                    ],
-                },
-                growth: {
-                    yearly_growth: '28%',
-                    new_orgs_per_year: '4.3M',
-                    historical_data: [
-                        { year: '2019', value: 40 },
-                        { year: '2020', value: 56 },
-                        { year: '2021', value: 73 },
-                        { year: '2022', value: 83 },
-                        { year: '2023', value: 90 },
-                        { year: '2024', value: 100 },
-                    ],
-                },
-                automation: {
-                    automation_rate: '73%',
-                    avg_deploy_time: '44min',
-                    chart_data: {
-                        labels: ['Automated', 'Manual'],
-                        values: [73, 27],
-                    },
-                },
-                repositories: {
-                    count: 3,
-                    repositories: [
-                        {
-                            name: 'github-mastery',
-                            full_name: 'NEO-SH1W4/github-mastery',
-                            description:
-                                'Domínio completo do GitHub através de API, automações, integrações e ferramentas avançadas',
-                            language: 'JavaScript',
-                            stars: 45,
-                            forks: 12,
-                            issues: 5,
-                            url: 'https://github.com/NEO-SH1W4/github-mastery',
-                        },
-                        {
-                            name: 'api-toolkit',
-                            full_name: 'NEO-SH1W4/api-toolkit',
-                            description:
-                                'Conjunto de ferramentas para trabalhar com APIs RESTful',
-                            language: 'TypeScript',
-                            stars: 28,
-                            forks: 8,
-                            issues: 3,
-                            url: 'https://github.com/NEO-SH1W4/api-toolkit',
-                        },
-                        {
-                            name: 'devops-patterns',
-                            full_name: 'NEO-SH1W4/devops-patterns',
-                            description:
-                                'Padrões e práticas recomendadas para automação DevOps',
-                            language: 'Python',
-                            stars: 67,
-                            forks: 21,
-                            issues: 7,
-                            url: 'https://github.com/NEO-SH1W4/devops-patterns',
-                        },
-                    ],
-                },
-            };
+          <div id="stats-container" class="stats-grid">
+            <!-- Estatísticas serão carregadas dinamicamente -->
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Carregando estatísticas...</p>
+          </div>
 
-            // Referências aos elementos DOM
-            const connectionStatus = document.getElementById('connection-status');
-            const statsContainer = document.getElementById('stats-container');
-            const chartsContainer = document.getElementById('charts-container');
-            const reposContainer = document.getElementById('repos-container');
-            const refreshButton = document.getElementById('refresh-button');
+          <div id="charts-container" class="charts-grid">
+            <!-- Gráficos serão carregados dinamicamente -->
+          </div>
 
-            // Gráficos
-            let apiChart = null;
-            let growthChart = null;
-            let automationChart = null;
+          <h2>Your Repositories</h2>
+          <div id="repos-container" class="repo-list">
+            <!-- Repositórios serão carregados dinamicamente -->
+          </div>
+        </div>
+      </div>
+    </main>
 
-            // Mostrar status de conexão
-            function updateConnectionStatus(online = true) {
-                connectionStatus.innerHTML = `
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>GitHub Mastery</h4>
+            <p>
+              Technical portfolio demonstrating GitHub automation architecture and
+              distributed systems expertise for enterprise-scale DevOps operations.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="README.md">Documentation</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 GitHub Mastery Technical Portfolio. Demonstrating architectural
+            expertise in enterprise DevOps automation.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Dados simulados para demonstração
+      const mockData = {
+        status: {
+          service: 'GitHub Mastery API',
+          version: '1.0.0',
+          status: 'online',
+          timestamp: new Date().toISOString(),
+        },
+        githubStats: {
+          users: '100M+',
+          repositories: '420M+',
+          api_requests_per_min: '15K+',
+          timestamp: new Date().toISOString(),
+        },
+        performance: {
+          api_uptime: '99.95%',
+          api_latency: '~150ms',
+          rate_limit: {
+            limit: 5000,
+            remaining: 4832,
+            reset: new Date(Date.now() + 3600000).toISOString(),
+            used: 168,
+          },
+          historical_data: [
+            { year: '2019', value: 180 },
+            { year: '2020', value: 165 },
+            { year: '2021', value: 150 },
+            { year: '2022', value: 145 },
+            { year: '2023', value: 140 },
+            { year: '2024', value: 135 },
+          ],
+        },
+        growth: {
+          yearly_growth: '28%',
+          new_orgs_per_year: '4.3M',
+          historical_data: [
+            { year: '2019', value: 40 },
+            { year: '2020', value: 56 },
+            { year: '2021', value: 73 },
+            { year: '2022', value: 83 },
+            { year: '2023', value: 90 },
+            { year: '2024', value: 100 },
+          ],
+        },
+        automation: {
+          automation_rate: '73%',
+          avg_deploy_time: '44min',
+          chart_data: {
+            labels: ['Automated', 'Manual'],
+            values: [73, 27],
+          },
+        },
+        repositories: {
+          count: 3,
+          repositories: [
+            {
+              name: 'github-mastery',
+              full_name: 'NEO-SH1W4/github-mastery',
+              description:
+                'Domínio completo do GitHub através de API, automações, integrações e ferramentas avançadas',
+              language: 'JavaScript',
+              stars: 45,
+              forks: 12,
+              issues: 5,
+              url: 'https://github.com/NEO-SH1W4/github-mastery',
+            },
+            {
+              name: 'api-toolkit',
+              full_name: 'NEO-SH1W4/api-toolkit',
+              description: 'Conjunto de ferramentas para trabalhar com APIs RESTful',
+              language: 'TypeScript',
+              stars: 28,
+              forks: 8,
+              issues: 3,
+              url: 'https://github.com/NEO-SH1W4/api-toolkit',
+            },
+            {
+              name: 'devops-patterns',
+              full_name: 'NEO-SH1W4/devops-patterns',
+              description: 'Padrões e práticas recomendadas para automação DevOps',
+              language: 'Python',
+              stars: 67,
+              forks: 21,
+              issues: 7,
+              url: 'https://github.com/NEO-SH1W4/devops-patterns',
+            },
+          ],
+        },
+      };
+
+      // Referências aos elementos DOM
+      const connectionStatus = document.getElementById('connection-status');
+      const statsContainer = document.getElementById('stats-container');
+      const chartsContainer = document.getElementById('charts-container');
+      const reposContainer = document.getElementById('repos-container');
+      const refreshButton = document.getElementById('refresh-button');
+
+      // Gráficos
+      let apiChart = null;
+      let growthChart = null;
+      let automationChart = null;
+
+      // Mostrar status de conexão
+      function updateConnectionStatus(online = true) {
+        connectionStatus.innerHTML = `
                 <div class="status-badge ${online ? 'online' : 'offline'}">
                     <span class="status-dot ${online ? 'online' : 'offline'}"></span>
                     API ${online ? 'Online' : 'Offline'} - Last updated: ${new Date().toLocaleTimeString()}
                 </div>
             `;
-            }
+      }
 
-            // Carregar estatísticas
-            function loadStats() {
-                statsContainer.innerHTML =
-                    '<div class="loading-spinner"></div><p class="loading-text">Carregando estatísticas...</p>';
+      // Carregar estatísticas
+      function loadStats() {
+        statsContainer.innerHTML =
+          '<div class="loading-spinner"></div><p class="loading-text">Carregando estatísticas...</p>';
 
-                // Simular requisição
-                setTimeout(() => {
-                    statsContainer.innerHTML = `
+        // Simular requisição
+        setTimeout(() => {
+          statsContainer.innerHTML = `
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon">
@@ -583,12 +580,12 @@
                         <div class="stat-label">Annual growth</div>
                     </div>
                 `;
-                }, 1000);
-            }
+        }, 1000);
+      }
 
-            // Carregar gráficos
-            function loadCharts() {
-                chartsContainer.innerHTML = `
+      // Carregar gráficos
+      function loadCharts() {
+        chartsContainer.innerHTML = `
                 <div class="chart-card">
                     <div class="chart-header">
                         <h3>API Response Time (ms)</h3>
@@ -620,162 +617,148 @@
                 </div>
             `;
 
-                // API Chart
-                const apiCtx = document.getElementById('apiChart').getContext('2d');
-                apiChart = new Chart(apiCtx, {
-                    type: 'line',
-                    data: {
-                        labels: mockData.performance.historical_data.map(
-                            item => item.year
-                        ),
-                        datasets: [
-                            {
-                                label: 'API Response Time (ms)',
-                                data: mockData.performance.historical_data.map(
-                                    item => item.value
-                                ),
-                                backgroundColor: 'rgba(88, 166, 255, 0.2)',
-                                borderColor: 'rgba(88, 166, 255, 1)',
-                                borderWidth: 2,
-                                pointBackgroundColor: 'rgba(88, 166, 255, 1)',
-                                pointBorderColor: '#fff',
-                                pointHoverBackgroundColor: '#fff',
-                                pointHoverBorderColor: 'rgba(88, 166, 255, 1)',
-                                tension: 0.4,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: false,
-                                grid: {
-                                    color: 'rgba(255, 255, 255, 0.1)',
-                                },
-                                ticks: {
-                                    color: 'rgba(255, 255, 255, 0.7)',
-                                },
-                            },
-                            x: {
-                                grid: {
-                                    color: 'rgba(255, 255, 255, 0.1)',
-                                },
-                                ticks: {
-                                    color: 'rgba(255, 255, 255, 0.7)',
-                                },
-                            },
-                        },
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: 'rgba(255, 255, 255, 0.7)',
-                                },
-                            },
-                        },
-                    },
-                });
+        // API Chart
+        const apiCtx = document.getElementById('apiChart').getContext('2d');
+        apiChart = new Chart(apiCtx, {
+          type: 'line',
+          data: {
+            labels: mockData.performance.historical_data.map(item => item.year),
+            datasets: [
+              {
+                label: 'API Response Time (ms)',
+                data: mockData.performance.historical_data.map(item => item.value),
+                backgroundColor: 'rgba(88, 166, 255, 0.2)',
+                borderColor: 'rgba(88, 166, 255, 1)',
+                borderWidth: 2,
+                pointBackgroundColor: 'rgba(88, 166, 255, 1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(88, 166, 255, 1)',
+                tension: 0.4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: false,
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)',
+                },
+                ticks: {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              },
+              x: {
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)',
+                },
+                ticks: {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                labels: {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              },
+            },
+          },
+        });
 
-                // Growth Chart
-                const growthCtx = document
-                    .getElementById('growthChart')
-                    .getContext('2d');
-                growthChart = new Chart(growthCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: mockData.growth.historical_data.map(item => item.year),
-                        datasets: [
-                            {
-                                label: 'Ecosystem Growth',
-                                data: mockData.growth.historical_data.map(
-                                    item => item.value
-                                ),
-                                backgroundColor: 'rgba(63, 185, 80, 0.2)',
-                                borderColor: 'rgba(63, 185, 80, 1)',
-                                borderWidth: 2,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                grid: {
-                                    color: 'rgba(255, 255, 255, 0.1)',
-                                },
-                                ticks: {
-                                    color: 'rgba(255, 255, 255, 0.7)',
-                                },
-                            },
-                            x: {
-                                grid: {
-                                    color: 'rgba(255, 255, 255, 0.1)',
-                                },
-                                ticks: {
-                                    color: 'rgba(255, 255, 255, 0.7)',
-                                },
-                            },
-                        },
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: 'rgba(255, 255, 255, 0.7)',
-                                },
-                            },
-                        },
-                    },
-                });
+        // Growth Chart
+        const growthCtx = document.getElementById('growthChart').getContext('2d');
+        growthChart = new Chart(growthCtx, {
+          type: 'bar',
+          data: {
+            labels: mockData.growth.historical_data.map(item => item.year),
+            datasets: [
+              {
+                label: 'Ecosystem Growth',
+                data: mockData.growth.historical_data.map(item => item.value),
+                backgroundColor: 'rgba(63, 185, 80, 0.2)',
+                borderColor: 'rgba(63, 185, 80, 1)',
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)',
+                },
+                ticks: {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              },
+              x: {
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)',
+                },
+                ticks: {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                labels: {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              },
+            },
+          },
+        });
 
-                // Automation Chart
-                const automationCtx = document
-                    .getElementById('automationChart')
-                    .getContext('2d');
-                automationChart = new Chart(automationCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: mockData.automation.chart_data.labels,
-                        datasets: [
-                            {
-                                data: mockData.automation.chart_data.values,
-                                backgroundColor: [
-                                    'rgba(63, 185, 80, 0.7)',
-                                    'rgba(255, 138, 101, 0.7)',
-                                ],
-                                borderColor: [
-                                    'rgba(63, 185, 80, 1)',
-                                    'rgba(255, 138, 101, 1)',
-                                ],
-                                borderWidth: 1,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'bottom',
-                                labels: {
-                                    color: 'rgba(255, 255, 255, 0.7)',
-                                },
-                            },
-                        },
-                    },
-                });
-            }
+        // Automation Chart
+        const automationCtx = document
+          .getElementById('automationChart')
+          .getContext('2d');
+        automationChart = new Chart(automationCtx, {
+          type: 'doughnut',
+          data: {
+            labels: mockData.automation.chart_data.labels,
+            datasets: [
+              {
+                data: mockData.automation.chart_data.values,
+                backgroundColor: ['rgba(63, 185, 80, 0.7)', 'rgba(255, 138, 101, 0.7)'],
+                borderColor: ['rgba(63, 185, 80, 1)', 'rgba(255, 138, 101, 1)'],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              },
+            },
+          },
+        });
+      }
 
-            // Carregar repositórios
-            function loadRepositories() {
-                reposContainer.innerHTML =
-                    '<div class="loading-spinner"></div><p class="loading-text">Carregando repositórios...</p>';
+      // Carregar repositórios
+      function loadRepositories() {
+        reposContainer.innerHTML =
+          '<div class="loading-spinner"></div><p class="loading-text">Carregando repositórios...</p>';
 
-                // Simular requisição
-                setTimeout(() => {
-                    if (mockData.repositories.count === 0) {
-                        reposContainer.innerHTML = `
+        // Simular requisição
+        setTimeout(() => {
+          if (mockData.repositories.count === 0) {
+            reposContainer.innerHTML = `
                         <div class="empty-container">
                             <div class="empty-icon">
                                 <i class="fas fa-folder-open"></i>
@@ -785,12 +768,12 @@
                             <button class="btn btn-secondary">Criar repositório</button>
                         </div>
                     `;
-                        return;
-                    }
+            return;
+          }
 
-                    reposContainer.innerHTML = mockData.repositories.repositories
-                        .map(
-                            repo => `
+          reposContainer.innerHTML = mockData.repositories.repositories
+            .map(
+              repo => `
                     <div class="repo-card">
                         <div class="repo-header">
                             <h4><a href="${repo.url}" target="_blank">${repo.name}</a></h4>
@@ -804,34 +787,34 @@
                         </div>
                     </div>
                 `
-                        )
-                        .join('');
-                }, 1500);
-            }
+            )
+            .join('');
+        }, 1500);
+      }
 
-            // Inicializar dashboard
-            function initDashboard() {
-                updateConnectionStatus(true);
-                loadStats();
-                setTimeout(loadCharts, 500);
-                setTimeout(loadRepositories, 1000);
-            }
+      // Inicializar dashboard
+      function initDashboard() {
+        updateConnectionStatus(true);
+        loadStats();
+        setTimeout(loadCharts, 500);
+        setTimeout(loadRepositories, 1000);
+      }
 
-            // Evento de refresh
-            refreshButton.addEventListener('click', function () {
-                this.disabled = true;
-                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
+      // Evento de refresh
+      refreshButton.addEventListener('click', function () {
+        this.disabled = true;
+        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
 
-                // Simular refresh
-                setTimeout(() => {
-                    initDashboard();
-                    this.disabled = false;
-                    this.innerHTML = '<i class="fas fa-sync-alt"></i> Refresh Data';
-                }, 1000);
-            });
+        // Simular refresh
+        setTimeout(() => {
+          initDashboard();
+          this.disabled = false;
+          this.innerHTML = '<i class="fas fa-sync-alt"></i> Refresh Data';
+        }, 1000);
+      });
 
-            // Inicializar quando a página carregar
-            document.addEventListener('DOMContentLoaded', initDashboard);
-        </script>
-    </body>
+      // Inicializar quando a página carregar
+      document.addEventListener('DOMContentLoaded', initDashboard);
+    </script>
+  </body>
 </html>

@@ -5,10 +5,10 @@
 
 import chalk from 'chalk';
 import {
-    executeAutomatedContribution,
-    executeDailyContribution,
-    executeWeeklyContribution,
-    showStatistics,
+  executeAutomatedContribution,
+  executeDailyContribution,
+  executeWeeklyContribution,
+  showStatistics,
 } from './commands.js';
 
 // Registrar funções globalmente
@@ -27,8 +27,8 @@ console.log(`  ${chalk.cyan('gcstats')}        - View statistics`);
 
 // Exportar funções para uso em outros módulos
 export {
-    executeAutomatedContribution as gco,
-    executeDailyContribution as gcd,
-    executeWeeklyContribution as gcw,
-    showStatistics as gcstats,
+  executeAutomatedContribution as gco,
+  executeDailyContribution as gcd,
+  executeWeeklyContribution as gcw,
+  showStatistics as gcstats,
 };

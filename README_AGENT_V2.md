@@ -4,7 +4,7 @@
 
 ## 🚀 **O Futuro da Automação GitHub**
 
-O GitHub Agent v2.0 é um **ativo tecnológico exclusivo** do projeto GitHub Mastery, construído com Rust para performance máxima e Python para inteligência artificial avançada. 
+O GitHub Agent v2.0 é um **ativo tecnológico exclusivo** do projeto GitHub Mastery, construído com Rust para performance máxima e Python para inteligência artificial avançada.
 
 **Não é open source** - é uma demonstração tecnológica oferecida apenas para testes limitados, similar ao modelo do Warp Terminal.
 
@@ -13,8 +13,9 @@ O GitHub Agent v2.0 é um **ativo tecnológico exclusivo** do projeto GitHub Mas
 ## ⚡ **Performance Ultra-Rápida**
 
 ### Benchmarks (vs. soluções Node.js/Python tradicionais)
+
 - **Git Operations**: **10x mais rápido**
-- **API Calls**: **5x mais eficiente** 
+- **API Calls**: **5x mais eficiente**
 - **Memory Usage**: **70% menor**
 - **Startup Time**: **15x mais rápido**
 
@@ -23,10 +24,10 @@ O GitHub Agent v2.0 é um **ativo tecnológico exclusivo** do projeto GitHub Mas
 pub async fn execute_smart_contribution(&self, repo: &str) -> Result<ContributionResult> {
     let (health, patterns, suggestions) = tokio::try_join!(
         self.analyzer.analyze_repo_health(repo),
-        self.analyzer.detect_code_patterns(repo), 
+        self.analyzer.detect_code_patterns(repo),
         self.automation.generate_ai_suggestions(repo)
     )?;
-    
+
     self.automation.perform_intelligent_commit(repo, suggestions).await
 }
 ```
@@ -36,6 +37,7 @@ pub async fn execute_smart_contribution(&self, repo: &str) -> Result<Contributio
 ## 🧠 **Inteligência Artificial Contextual**
 
 ### Capacidades de IA
+
 - **Code Pattern Recognition**: Detecta padrões arquiteturais automaticamente
 - **Smart Commit Messages**: Gera mensagens contextuais baseadas em mudanças
 - **Predictive Analysis**: Prevê problemas antes que aconteçam
@@ -46,10 +48,10 @@ pub async fn execute_smart_contribution(&self, repo: &str) -> Result<Contributio
 class ContributionAI:
     async def generate_smart_commit(self, context: ContributionContext) -> str:
         inputs = self.tokenizer(context.build_prompt(), return_tensors="pt")
-        
+
         with torch.no_grad():
             outputs = self.model(**inputs)
-            
+
         return self._decode_commit_message(outputs.last_hidden_state)
 ```
 
@@ -59,13 +61,14 @@ class ContributionAI:
 
 ### Níveis de Acesso Demo
 
-| Nível | Duração | Repos | Operações | Features |
-|-------|---------|-------|-----------|----------|
-| **Demo** | 30 min | 1 | 5 | Análise básica, commits simples |
-| **Showcase** | 2 horas | 3 | 20 | IA avançada, predições, métricas |
-| **Enterprise Trial** | 7 dias | 10 | 100 | Suite completa, modelos custom |
+| Nível                | Duração | Repos | Operações | Features                         |
+| -------------------- | ------- | ----- | --------- | -------------------------------- |
+| **Demo**             | 30 min  | 1     | 5         | Análise básica, commits simples  |
+| **Showcase**         | 2 horas | 3     | 20        | IA avançada, predições, métricas |
+| **Enterprise Trial** | 7 dias  | 10    | 100       | Suite completa, modelos custom   |
 
 ### Proteções Integradas
+
 ```rust
 // Anti-debugging e watermarking
 pub struct AgentCore {
@@ -88,12 +91,14 @@ impl AgentCore {
 ## 🎯 **Como Experimentar**
 
 ### Requisitos
+
 - **Rust**: 1.70+ (para compilar o core)
-- **Python**: 3.11+ (para IA brain)  
+- **Python**: 3.11+ (para IA brain)
 - **Git**: 2.40+
 - **GitHub Token**: Personal access token
 
 ### Instalação Rápida
+
 ```bash
 # Clone o projeto
 git clone https://github.com/github-mastery/agent-v2
@@ -120,11 +125,12 @@ print(f'Demo session created: {session_id}')
 ```
 
 ### Demo Interativo
+
 ```bash
 # Modo demo (30 minutos)
 ./github-agent --demo
 
-# Modo showcase (2 horas) 
+# Modo showcase (2 horas)
 ./github-agent --showcase
 
 # Enterprise trial (7 dias)
@@ -136,6 +142,7 @@ print(f'Demo session created: {session_id}')
 ## 💎 **Funcionalidades Exclusivas**
 
 ### 1. **Smart Contributions**
+
 ```bash
 github-agent> smart-commit my-repo "Implement user authentication"
 🤖 Analyzing repository patterns...
@@ -146,6 +153,7 @@ github-agent> smart-commit my-repo "Implement user authentication"
 ```
 
 ### 2. **Repo Health Prediction**
+
 ```bash
 github-agent> health-check owner/repo
 🔍 Deep analysis running...
@@ -159,12 +167,13 @@ github-agent> health-check owner/repo
 ```
 
 ### 3. **Multi-Repo Orchestration**
+
 ```bash
 github-agent> sync-all --pattern="microservice-*"
 🔄 Discovered 12 matching repositories
 ⚡ Parallel sync initiated...
 ✅ microservice-auth: synced (142ms)
-✅ microservice-user: synced (156ms) 
+✅ microservice-user: synced (156ms)
 ✅ microservice-order: synced (134ms)
 📊 Total: 12 repos synced in 1.2s (avg 98ms/repo)
 ```
@@ -174,6 +183,7 @@ github-agent> sync-all --pattern="microservice-*"
 ## 🏗️ **Arquitetura Técnica**
 
 ### Core Engine (Rust)
+
 ```
 ├── Ultra-fast Git operations (libgit2 + custom optimizations)
 ├── Concurrent GitHub API client (connection pooling)
@@ -182,7 +192,8 @@ github-agent> sync-all --pattern="microservice-*"
 └── Performance telemetry & monitoring
 ```
 
-### AI Brain (Python) 
+### AI Brain (Python)
+
 ```
 ├── Transformer models (GPT-based commit generation)
 ├── Code pattern recognition (tree-sitter + ML)
@@ -192,9 +203,10 @@ github-agent> sync-all --pattern="microservice-*"
 ```
 
 ### Integration Layer (PyO3)
+
 ```
 ├── Seamless Rust ↔ Python bridge
-├── Session management & rate limiting  
+├── Session management & rate limiting
 ├── CLI interface & interactive mode
 └── Telemetry collection & analytics
 ```
@@ -204,6 +216,7 @@ github-agent> sync-all --pattern="microservice-*"
 ## 📊 **Métricas e Telemetria**
 
 ### Performance Dashboard
+
 ```bash
 github-agent> stats
 📊 Agent Performance Statistics
@@ -217,11 +230,12 @@ github-agent> stats
 
 🚀 Top Operations by Speed:
   • smart-commit:     89ms avg
-  • repo-analysis:   156ms avg  
+  • repo-analysis:   156ms avg
   • health-check:    234ms avg
 ```
 
 ### Session Analytics
+
 ```bash
 github-agent> session-info
 🕐 Session: demo-a1b2c3d4
@@ -237,16 +251,19 @@ github-agent> session-info
 ## 🎯 **Casos de Uso Reais**
 
 ### Para Desenvolvedores Individual
+
 - **"Sinta o futuro da automação"**: 30 minutos para experimentar IA contextual
 - **Performance 10x superior**: Veja a diferença na velocidade
 - **Commits inteligentes**: IA que entende seu código
 
 ### Para Equipes/Empresas
+
 - **Showcase de 2 horas**: Demonstre ROI para decisores
 - **Trial enterprise**: 7 dias com suite completa
 - **Métricas de produtividade**: Dados quantificáveis de melhoria
 
 ### Para Investidores
+
 - **Ativo proprietário**: IP protegido, não é commodity
 - **Diferencial tecnológico**: Rust + IA = moat competitivo
 - **Escalabilidade provada**: Arquitetura enterprise-ready
@@ -256,6 +273,7 @@ github-agent> session-info
 ## 🚫 **Limitações Intencionais**
 
 ### Proteções Anti-Pirataria
+
 - ✅ Sessions com timeout automático
 - ✅ Rate limiting baseado em access level
 - ✅ Watermarking de todos os outputs
@@ -264,6 +282,7 @@ github-agent> session-info
 - ✅ Validação de integridade contínua
 
 ### Não Disponível
+
 - ❌ Código fonte completo
 - ❌ Modelos de IA para download
 - ❌ Licença comercial independente
@@ -275,6 +294,7 @@ github-agent> session-info
 ## 🎪 **Demonstrações ao Vivo**
 
 ### Schedule a Demo
+
 ```bash
 # Agendar demonstração personalizada
 curl -X POST https://api.github-mastery.com/demo/schedule \
@@ -288,6 +308,7 @@ curl -X POST https://api.github-mastery.com/demo/schedule \
 ```
 
 ### Self-Service Trial
+
 ```bash
 # Trial imediato (requer GitHub OAuth)
 github-agent auth --github
@@ -298,24 +319,26 @@ github-agent trial --level=showcase --duration=2h
 
 ## 🏆 **Comparação Competitiva**
 
-| Feature | GitHub Agent v2.0 | GitHub CLI | GitKraken | Outros |
-|---------|-------------------|------------|-----------|--------|
-| **Performance** | 🟢 10x faster | 🟡 Standard | 🟡 Standard | 🔴 Slow |
-| **AI Integration** | 🟢 Advanced | ❌ None | ❌ None | 🟡 Basic |
-| **Multi-repo** | 🟢 Parallel | 🟡 Serial | 🟡 Manual | 🟡 Limited |
-| **Predictive** | 🟢 ML-powered | ❌ None | ❌ None | ❌ None |
-| **Enterprise** | 🟢 Ready | 🟡 Limited | 🟢 Yes | 🟡 Varies |
+| Feature            | GitHub Agent v2.0 | GitHub CLI  | GitKraken   | Outros     |
+| ------------------ | ----------------- | ----------- | ----------- | ---------- |
+| **Performance**    | 🟢 10x faster     | 🟡 Standard | 🟡 Standard | 🔴 Slow    |
+| **AI Integration** | 🟢 Advanced       | ❌ None     | ❌ None     | 🟡 Basic   |
+| **Multi-repo**     | 🟢 Parallel       | 🟡 Serial   | 🟡 Manual   | 🟡 Limited |
+| **Predictive**     | 🟢 ML-powered     | ❌ None     | ❌ None     | ❌ None    |
+| **Enterprise**     | 🟢 Ready          | 🟡 Limited  | 🟢 Yes      | 🟡 Varies  |
 
 ---
 
 ## 📞 **Contato e Acesso**
 
 ### Request Access
+
 - **Email**: agent-access@github-mastery.com
 - **Demo Form**: https://github-mastery.com/agent-v2-demo
 - **Enterprise**: enterprise@github-mastery.com
 
 ### Community
+
 - **Discord**: https://discord.gg/github-mastery
 - **Twitter**: @GitHubMastery
 - **LinkedIn**: GitHub Mastery Project
@@ -325,7 +348,7 @@ github-agent trial --level=showcase --duration=2h
 ## ⚖️ **Termos de Uso**
 
 - ✅ **Demo/Trial**: Livre para testes limitados
-- ✅ **Avaliação**: Empresas podem solicitar trials estendidos  
+- ✅ **Avaliação**: Empresas podem solicitar trials estendidos
 - ❌ **Redistribuição**: Proibida sem autorização expressa
 - ❌ **Reverse Engineering**: Protegido por IP e contratos
 - ❌ **Commercial Use**: Requer licenciamento específico
@@ -335,4 +358,3 @@ github-agent trial --level=showcase --duration=2h
 > **O GitHub Agent v2.0 representa o futuro da automação de desenvolvimento. Não é apenas uma ferramenta - é uma demonstração do que é possível quando performance extrema encontra inteligência artificial avançada.**
 
 **🚀 Ready to experience the future? [Request your demo access now.](mailto:agent-access@github-mastery.com)**
-

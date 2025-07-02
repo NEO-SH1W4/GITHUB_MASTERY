@@ -32,6 +32,7 @@ _Domínio completo do GitHub através de API, automações, integrações e ferr
 **🚀 [Live Demo](https://neo-sh1w4.github.io/github_mastery/)** - Professional landing page with advanced lead scoring
 
 ### What's Included:
+
 - 📄 **Professional Landing Page** with conversion optimization
 - 🧠 **Advanced Lead Scoring System** with behavioral tracking
 - 📧 **Email Marketing Sequences** for different user personas
