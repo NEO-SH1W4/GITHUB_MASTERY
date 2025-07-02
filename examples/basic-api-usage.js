@@ -35,14 +35,15 @@ async function basicApiUsage() {
 
             // 5. Listar issues do primeiro repositório (se houver)
             console.log(chalk.yellow('=== 5. Issues do Primeiro Repositório ==='));
-            await client.listIssues(firstRepo.owner.login, firstRepo.name, { per_page: 3 });
+            await client.listIssues(firstRepo.owner.login, firstRepo.name, {
+                per_page: 3,
+            });
         }
 
         console.log(chalk.green('✅ Exemplo concluído com sucesso!'));
-
     } catch (error) {
         console.error(chalk.red('❌ Erro no exemplo:'), error.message);
-        
+
         if (error.message.includes('GitHub token')) {
             console.log(chalk.yellow('💡 Dica: Configure o token GitHub:'));
             console.log(chalk.cyan('   1. Copie .env.example para .env'));
@@ -56,4 +57,3 @@ async function basicApiUsage() {
 if (import.meta.url === `file://${process.argv[1]}`) {
     basicApiUsage();
 }
-

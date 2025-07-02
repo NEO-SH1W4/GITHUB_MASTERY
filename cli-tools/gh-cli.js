@@ -37,12 +37,12 @@ program
     .description('Listar repositórios do usuário')
     .option('-l, --limit <number>', 'Número máximo de repositórios', '10')
     .option('-s, --sort <field>', 'Campo para ordenação', 'updated')
-    .action(async (options) => {
+    .action(async options => {
         try {
             const client = new GitHubClient();
             await client.listRepositories({
                 per_page: parseInt(options.limit),
-                sort: options.sort
+                sort: options.sort,
             });
         } catch (error) {
             console.error(chalk.red('❌ Erro:'), error.message);
@@ -79,7 +79,7 @@ program
             const client = new GitHubClient();
             await client.listIssues(owner, repo, {
                 state: options.state,
-                per_page: parseInt(options.limit)
+                per_page: parseInt(options.limit),
             });
         } catch (error) {
             console.error(chalk.red('❌ Erro:'), error.message);
@@ -102,42 +102,42 @@ program
                     type: 'input',
                     name: 'name',
                     message: 'Nome do repositório:',
-                    validate: (input) => input.length > 0 || 'Nome é obrigatório'
+                    validate: input => input.length > 0 || 'Nome é obrigatório',
                 },
                 {
                     type: 'input',
                     name: 'description',
-                    message: 'Descrição (opcional):'
+                    message: 'Descrição (opcional):',
                 },
                 {
                     type: 'confirm',
                     name: 'private',
                     message: 'Repositório privado?',
-                    default: false
+                    default: false,
                 },
                 {
                     type: 'confirm',
                     name: 'has_issues',
                     message: 'Habilitar Issues?',
-                    default: true
+                    default: true,
                 },
                 {
                     type: 'confirm',
                     name: 'has_projects',
                     message: 'Habilitar Projects?',
-                    default: true
+                    default: true,
                 },
                 {
                     type: 'confirm',
                     name: 'has_wiki',
                     message: 'Habilitar Wiki?',
-                    default: true
+                    default: true,
                 },
                 {
                     type: 'confirm',
                     name: 'auto_init',
                     message: 'Inicializar com README?',
-                    default: true
+                    default: true,
                 },
                 {
                     type: 'list',
@@ -148,9 +148,9 @@ program
                         { name: 'MIT', value: 'mit' },
                         { name: 'Apache 2.0', value: 'apache-2.0' },
                         { name: 'GPL v3', value: 'gpl-3.0' },
-                        { name: 'BSD 3-Clause', value: 'bsd-3-clause' }
-                    ]
-                }
+                        { name: 'BSD 3-Clause', value: 'bsd-3-clause' },
+                    ],
+                },
             ]);
 
             // Remover campos nulos/vazios
@@ -160,7 +160,6 @@ program
 
             const client = new GitHubClient();
             await client.createRepository(repoData);
-
         } catch (error) {
             console.error(chalk.red('❌ Erro:'), error.message);
             process.exit(1);
@@ -178,7 +177,7 @@ program
             console.log(chalk.magenta('📊 Status Geral da Conta GitHub\n'));
 
             const client = new GitHubClient();
-            
+
             // Autenticação
             console.log(chalk.yellow('=== Autenticação ==='));
             const user = await client.authenticate();
@@ -192,14 +191,14 @@ program
             // Resumo dos repositórios
             console.log(chalk.yellow('=== Resumo dos Repositórios ==='));
             const repos = await client.listRepositories({ per_page: 100 });
-            
+
             const stats = {
                 total: repos.length,
                 private: repos.filter(r => r.private).length,
                 public: repos.filter(r => !r.private).length,
                 totalStars: repos.reduce((sum, r) => sum + r.stargazers_count, 0),
                 totalForks: repos.reduce((sum, r) => sum + r.forks_count, 0),
-                languages: [...new Set(repos.map(r => r.language).filter(Boolean))]
+                languages: [...new Set(repos.map(r => r.language).filter(Boolean))],
             };
 
             console.log(chalk.cyan(`📦 Total de repositórios: ${stats.total}`));
@@ -208,7 +207,6 @@ program
             console.log(chalk.cyan(`🌟 Total de stars: ${stats.totalStars}`));
             console.log(chalk.cyan(`🍴 Total de forks: ${stats.totalForks}`));
             console.log(chalk.cyan(`💻 Linguagens: ${stats.languages.join(', ')}`));
-
         } catch (error) {
             console.error(chalk.red('❌ Erro:'), error.message);
             process.exit(1);
@@ -217,4 +215,3 @@ program
 
 // Executar CLI
 program.parse();
-

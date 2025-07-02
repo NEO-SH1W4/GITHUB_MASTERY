@@ -1,6 +1,6 @@
 /**
  * Professional logging system for GitHub Mastery
- * 
+ *
  * @fileoverview Centralized logging with structured output, levels, and transports
  * @author GitHub Mastery Team
  * @version 1.0.0
@@ -18,21 +18,21 @@ const __dirname = dirname(__filename);
  */
 const logFormat = winston.format.combine(
     winston.format.timestamp({
-        format: 'YYYY-MM-DD HH:mm:ss'
+        format: 'YYYY-MM-DD HH:mm:ss',
     }),
     winston.format.errors({ stack: true }),
     winston.format.json(),
     winston.format.printf(({ timestamp, level, message, stack, ...meta }) => {
         let log = `${timestamp} [${level.toUpperCase()}]: ${message}`;
-        
+
         if (Object.keys(meta).length > 0) {
             log += ` ${JSON.stringify(meta)}`;
         }
-        
+
         if (stack) {
             log += `\n${stack}`;
         }
-        
+
         return log;
     })
 );
@@ -60,31 +60,33 @@ const logger = winston.createLogger({
             filename: join(__dirname, '..', 'logs', 'error.log'),
             level: 'error',
             maxsize: 5242880, // 5MB
-            maxFiles: 5
+            maxFiles: 5,
         }),
         new winston.transports.File({
             filename: join(__dirname, '..', 'logs', 'combined.log'),
             maxsize: 5242880, // 5MB
-            maxFiles: 5
-        })
+            maxFiles: 5,
+        }),
     ],
     exceptionHandlers: [
         new winston.transports.File({
-            filename: join(__dirname, '..', 'logs', 'exceptions.log')
-        })
+            filename: join(__dirname, '..', 'logs', 'exceptions.log'),
+        }),
     ],
     rejectionHandlers: [
         new winston.transports.File({
-            filename: join(__dirname, '..', 'logs', 'rejections.log')
-        })
-    ]
+            filename: join(__dirname, '..', 'logs', 'rejections.log'),
+        }),
+    ],
 });
 
 // Add console transport in development
 if (process.env.NODE_ENV !== 'production') {
-    logger.add(new winston.transports.Console({
-        format: consoleFormat
-    }));
+    logger.add(
+        new winston.transports.Console({
+            format: consoleFormat,
+        })
+    );
 }
 
 /**
@@ -97,7 +99,7 @@ export function createLogger(module) {
         debug: (message, meta = {}) => logger.debug(message, { module, ...meta }),
         info: (message, meta = {}) => logger.info(message, { module, ...meta }),
         warn: (message, meta = {}) => logger.warn(message, { module, ...meta }),
-        error: (message, meta = {}) => logger.error(message, { module, ...meta })
+        error: (message, meta = {}) => logger.error(message, { module, ...meta }),
     };
 }
 
@@ -109,7 +111,7 @@ export function createLogger(module) {
  */
 export function httpLogger(req, res, next) {
     const start = Date.now();
-    
+
     res.on('finish', () => {
         const duration = Date.now() - start;
         logger.info('HTTP Request', {
@@ -119,12 +121,11 @@ export function httpLogger(req, res, next) {
             status: res.statusCode,
             duration: `${duration}ms`,
             userAgent: req.get('User-Agent'),
-            ip: req.ip
+            ip: req.ip,
         });
     });
-    
+
     next();
 }
 
 export default logger;
-
