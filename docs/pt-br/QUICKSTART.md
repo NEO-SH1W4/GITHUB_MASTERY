@@ -6,7 +6,7 @@
 
 *Get started with GitHub Mastery in minutes*
 
-🇧🇷 Português | [🇺🇸 English](../en/QUICKSTART.md)
+🇧🇷 Português | [🇺🇸 English](../en/QUICKSTART.md) | [🇪🇸 Español](../es/QUICKSTART.md)
 
 </div>
 

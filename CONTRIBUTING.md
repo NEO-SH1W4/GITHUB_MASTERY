@@ -6,7 +6,7 @@
 
 *Ajude-nos a construir o toolkit definitivo de automação do GitHub!*
 
-[🇧🇷 Português](#contribuindo-em-português) | 🇺🇸 English
+[🇧🇷 Português](#contribuindo-em-português) | [🇪🇸 Español](#contribuyendo-en-español) | 🇺🇸 English
 
 </div>
 
@@ -225,6 +225,82 @@ docs(api): atualizar guia de autenticação
 3. **Siga Convenções**: Use commits convencionais
 4. **Mantenha Pequeno**: Foque em uma funcionalidade/correção
 5. **Descreva Mudanças**: Descrição clara do PR
+
+---
+
+## Contribuyendo en Español 🇪🇸
+
+¡Bienvenidos contribuyentes hispanohablantes! Su participación es fundamental para hacer este proyecto verdaderamente inclusivo.
+
+### 🎯 Cómo Contribuir
+
+#### 🐛 Reportes de Errores
+- Usa la plantilla de issue
+- Incluye pasos para reproducir
+- Proporciona detalles del entorno
+- Añade capturas de pantalla si es relevante
+
+#### 💡 Solicitudes de Funcionalidad
+- Describe el caso de uso
+- Explica el comportamiento esperado
+- Considera la complejidad de implementación
+- Verifica issues existentes primero
+
+#### 🔧 Contribuciones de Código
+- Sigue nuestros estándares de código
+- Añade pruebas para nuevas funcionalidades
+- Actualiza la documentación
+- Mantén los PRs enfocados y pequeños
+
+### 🛠️ Configuración de Desarrollo
+
+```bash
+# Clona tu fork
+git clone https://github.com/TU_USUARIO/GITHUB_MASTERY.git
+cd GITHUB_MASTERY
+
+# Instala dependencias
+npm install
+
+# Configura el entorno
+cp .env.example .env
+# Añade tu token de GitHub
+
+# Inicia desarrollo
+npm run dev
+```
+
+### 📏 Estándares de Código
+
+#### Convenciones Git
+```bash
+# Formato del mensaje de commit
+tipo(alcance): descripción
+
+# Tipos
+feat:     Nueva funcionalidad
+fix:      Corrección de error
+docs:     Documentación
+style:    Formateo
+refactor: Reestructuración de código
+test:     Añadir pruebas
+chore:    Mantenimiento
+```
+
+#### Ejemplos
+```bash
+feat(cli): añadir operaciones en lote de repositorios
+fix(webhook): resolver problema de verificación HMAC
+docs(api): actualizar guía de autenticación
+```
+
+### 🔍 Proceso de Pull Request
+
+1. **Actualiza Documentación**: Incluye docs relevantes
+2. **Añade Pruebas**: Cuando el framework de pruebas esté disponible
+3. **Sigue Convenciones**: Usa commits convencionales
+4. **Mantenlo Pequeño**: Enfócate en una funcionalidad/corrección
+5. **Describe Cambios**: Descripción clara del PR
 
 ## 🤔 Questions?
 

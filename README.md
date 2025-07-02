@@ -12,7 +12,7 @@
 
 *Domínio completo do GitHub através de API, automações, integrações e ferramentas avançadas*
 
-[🇧🇷 Português](./docs/pt-br/README.md) | 🇺🇸 English
+[🇧🇷 Português](./docs/pt-br/README.md) | [🇪🇸 Español](./docs/es/README.md) | 🇺🇸 English
 
 </div>
 
@@ -124,7 +124,8 @@ github-mastery/
 ├── examples/            # Usage examples
 ├── docs/                # Documentation
 │   ├── en/             # English docs
-│   └── pt-br/          # Portuguese docs
+│   ├── pt-br/          # Portuguese docs
+│   └── es/             # Spanish docs
 ├── .github/workflows/   # CI/CD pipelines
 └── tests/               # Test suites (planned)
 ```
@@ -144,10 +145,10 @@ See the [complete contribution guide](./CONTRIBUTING.md).
 ## 🎯 Roadmap
 
 ### v1.1.0 (✅ Released - July 2025)
-- ✅ Professional hybrid documentation (EN/PT-BR)
+- ✅ Professional trilingual documentation (EN/PT-BR/ES)
 - ✅ DOCSYNC-style design with badges
 - ✅ Comprehensive Quick Start guides
-- ✅ Bilingual contributing system
+- ✅ Multilingual contributing system
 
 ### v1.2.0 (Q3 2025)
 - 🧪 Automated testing suite

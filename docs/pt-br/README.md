@@ -12,7 +12,7 @@
 
 *Complete GitHub mastery through API automation, integrations, webhooks, and advanced CLI tools*
 
-🇧🇷 Português | [🇺🇸 English](../../README.md)
+🇧🇷 Português | [🇺🇸 English](../../README.md) | [🇪🇸 Español](../es/README.md)
 
 </div>
 
@@ -124,7 +124,8 @@ github-mastery/
 ├── examples/            # Exemplos de uso
 ├── docs/                # Documentação
 │   ├── en/             # Documentos em inglês
-│   └── pt-br/          # Documentos em português
+│   ├── pt-br/          # Documentos em português
+│   └── es/             # Documentos em espanhol
 ├── .github/workflows/   # Pipelines CI/CD
 └── tests/               # Suítes de teste (planejado)
 ```
@@ -144,10 +145,10 @@ Veja o [guia completo de contribuição](../../CONTRIBUTING.md).
 ## 🎯 Roadmap
 
 ### v1.1.0 (✅ Lançada - Julho 2025)
-- ✅ Documentação híbrida profissional (EN/PT-BR)
+- ✅ Documentação trilíngue profissional (EN/PT-BR/ES)
 - ✅ Design estilo DOCSYNC com badges
 - ✅ Guias de Início Rápido abrangentes
-- ✅ Sistema de contribuição bilíngue
+- ✅ Sistema de contribuição multilíngue
 
 ### v1.2.0 (Q3 2025)
 - 🧪 Suíte de testes automatizados
