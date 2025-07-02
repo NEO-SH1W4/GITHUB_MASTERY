@@ -1,7 +1,7 @@
 {
   "name": "github-mastery",
-  "version": "1.0.0",
-  "description": "Domínio total do GitHub: API, automações, integrações e ferramentas avançadas",
+  "version": "0.1.0-alpha",
+  "description": "GitHub Agent MCP v0.1.0-alpha - Desenvolvimento inicial do framework de automação GitHub PowerShell",
   "main": "index.js",
   "type": "module",
   "scripts": {
