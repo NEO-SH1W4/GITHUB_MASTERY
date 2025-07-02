@@ -510,9 +510,9 @@
         <!-- GitHub Agent Section -->
         <section id="agent" class="github-agent-section">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">GitHub Agent - Automação Inteligente</h2>
+                <h2 class="section-title" data-aos="fade-up">GitHub Agent MCP v2.0.0 - PowerShell Enhanced</h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Agente automatizado para GitHub que simplifica contribuições, análises e gerenciamento de repositórios
+                    Agente PowerShell inteligente com Model Context Protocol (MCP) para automação GitHub empresarial com cache, logs estruturados e métricas em tempo real
                 </p>
                 
                 <div class="agent-demo" data-aos="fade-up" data-aos-delay="200">
@@ -534,44 +534,70 @@
                 <div class="agent-features-grid" data-aos="fade-up" data-aos-delay="300">
                     <div class="agent-feature">
                         <div class="feature-icon">⚡</div>
-                        <h3>Comandos Rápidos</h3>
-                        <p>Execute tarefas complexas com comandos simples como <code>gcd</code>, <code>gco</code> e <code>gcstats</code></p>
+                        <h3>Comandos PowerShell</h3>
+                        <p>Comandos nativos do PowerShell: <code>gco</code>, <code>gcd</code>, <code>gcstats</code>, <code>gchelp</code> com integração MCP completa</p>
                     </div>
                     <div class="agent-feature">
-                        <div class="feature-icon">🤖</div>
-                        <h3>Automação Inteligente</h3>
-                        <p>Contribuições diárias e semanais automatizadas baseadas em padrões e análise de tendências</p>
+                        <div class="feature-icon">🧠</div>
+                        <h3>Cache Inteligente</h3>
+                        <p>Sistema de cache com TTL configurável, persistência entre sessões e validação automática de Node.js</p>
+                    </div>
+                    <div class="agent-feature">
+                        <div class="feature-icon">📋</div>
+                        <h3>Logs Estruturados</h3>
+                        <p>Logs JSON com níveis (INFO, WARN, ERROR, DEBUG, METRIC), timestamps e session tracking</p>
                     </div>
                     <div class="agent-feature">
                         <div class="feature-icon">📊</div>
-                        <h3>Análise Avançada</h3>
-                        <p>Estatísticas detalhadas, verificação de saúde de repositórios e relatórios completos</p>
-                    </div>
-                    <div class="agent-feature">
-                        <div class="feature-icon">🔧</div>
-                        <h3>Configuração Fácil</h3>
-                        <p>Setup automatizado com <code>npm run setup:token</code> para começar rapidamente</p>
+                        <h3>Métricas MCP</h3>
+                        <p>Monitoramento em tempo real, performance tracking e error handling robusto com recovery automático</p>
                     </div>
                 </div>
                 
                 <div class="agent-commands" data-aos="fade-up" data-aos-delay="400">
-                    <h3>Comandos Disponíveis</h3>
+                    <h3>Comandos PowerShell MCP v2.0.0</h3>
                     <div class="commands-grid">
                         <div class="command-item">
-                            <code>npm run gcd</code>
-                            <span>Contribuição diária automática</span>
+                            <code>. "scripts/load-agent-in-profile.ps1"</code>
+                            <span>Carregar agente PowerShell MCP</span>
                         </div>
                         <div class="command-item">
-                            <code>npm run gco "mensagem"</code>
-                            <span>Contribuição rápida personalizada</span>
+                            <code>gco "feat: nova funcionalidade"</code>
+                            <span>Contribuição rápida com commit</span>
                         </div>
                         <div class="command-item">
-                            <code>npm run gcstats</code>
-                            <span>Estatísticas de contribuição</span>
+                            <code>gchelp</code>
+                            <span>Sistema de ajuda contextual</span>
                         </div>
                         <div class="command-item">
-                            <code>npm run setup:token</code>
-                            <span>Configurar token GitHub</span>
+                            <code>$Global:GitHubAgentConfig</code>
+                            <span>Configuração e status do agente</span>
+                        </div>
+                        <div class="command-item">
+                            <code>gcstats 60</code>
+                            <span>Estatísticas dos últimos 60 dias</span>
+                        </div>
+                        <div class="command-item">
+                            <code>gcd</code>
+                            <span>Contribuição diária automatizada</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mcp-specs" data-aos="fade-up" data-aos-delay="500">
+                        <h4>Especificações MCP v2.0.0</h4>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <strong>Cache TTL:</strong> Node.js (60min), Configurações (30min)
+                            </div>
+                            <div class="spec-item">
+                                <strong>Logs:</strong> JSON estruturado em <code>$env:TEMP\GitHubAgent\logs</code>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Compatibilidade:</strong> PowerShell 5.1+, Windows 10+, Node.js 18+
+                            </div>
+                            <div class="spec-item">
+                                <strong>Validação:</strong> Automática de ambiente e dependências
+                            </div>
                         </div>
                     </div>
                 </div>

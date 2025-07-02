@@ -1,0 +1,36 @@
+# GitHub Agent Brain - Python Dependencies
+# AI and Machine Learning
+torch>=2.0.0
+transformers>=4.30.0
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Natural Language Processing
+nltk>=3.8.0
+spacy>=3.6.0
+
+# Code Analysis
+tree-sitter>=0.20.0
+pygments>=2.15.0
+astunparse>=1.6.0
+
+# Performance
+numba>=0.57.0
+orjson>=3.9.0
+
+# Async Support
+asyncio>=3.4.3
+aiohttp>=3.8.0
+
+# Utilities
+python-dateutil>=2.8.0
+pydantic>=2.0.0
+rich>=13.0.0
+
+# Development
+pytest>=7.4.0
+black>=23.0.0
+isort>=5.12.0
+mypy>=1.4.0
+
