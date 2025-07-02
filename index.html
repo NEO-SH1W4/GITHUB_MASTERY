@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Mastery - Master GitHub API & Automation</title>
-    <meta name="description" content="Professional GitHub API client, CLI tools, and webhook server for mastering GitHub automation">
+    <title>GitHub Mastery - Enterprise GitHub Automation Platform</title>
+    <meta name="description" content="The most powerful GitHub API platform for enterprise automation, CI/CD integration, and developer productivity">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <!-- Modern Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -22,6 +22,9 @@
     <!-- AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Chart.js for analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -75,6 +78,255 @@
                     <div class="stat">
                         <span class="stat-number">∞</span>
                         <span class="stat-label">Possibilities</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics Dashboard Section -->
+        <section id="metrics" class="metrics-dashboard">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Enterprise Analytics</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Real-time insights and performance metrics for your GitHub operations</p>
+                
+                <div class="metrics-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="metric-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="metric-header">
+                            <h3>API Performance</h3>
+                            <span class="metric-status status-excellent">Excellent</span>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="apiChart" width="300" height="200"></canvas>
+                        </div>
+                        <div class="metric-stats">
+                            <div class="stat">
+                                <span class="stat-value">99.9%</span>
+                                <span class="stat-label">Uptime</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">45ms</span>
+                                <span class="stat-label">Avg Response</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="metric-header">
+                            <h3>Usage Statistics</h3>
+                            <span class="metric-status status-growing">Growing</span>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="usageChart" width="300" height="200"></canvas>
+                        </div>
+                        <div class="metric-stats">
+                            <div class="stat">
+                                <span class="stat-value">2.4M</span>
+                                <span class="stat-label">API Calls</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">15K</span>
+                                <span class="stat-label">Active Users</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="metric-header">
+                            <h3>Automation Efficiency</h3>
+                            <span class="metric-status status-optimal">Optimal</span>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="efficiencyChart" width="300" height="200"></canvas>
+                        </div>
+                        <div class="metric-stats">
+                            <div class="stat">
+                                <span class="stat-value">85%</span>
+                                <span class="stat-label">Time Saved</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">342</span>
+                                <span class="stat-label">Automations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="enterprise-features" data-aos="fade-up" data-aos-delay="600">
+                    <div class="enterprise-grid">
+                        <div class="enterprise-item">
+                            <i data-feather="shield" class="enterprise-icon"></i>
+                            <h4>Enterprise Security</h4>
+                            <p>Advanced authentication, audit logs, and compliance features</p>
+                        </div>
+                        <div class="enterprise-item">
+                            <i data-feather="trending-up" class="enterprise-icon"></i>
+                            <h4>Scalable Architecture</h4>
+                            <p>Built to handle millions of API calls with auto-scaling capabilities</p>
+                        </div>
+                        <div class="enterprise-item">
+                            <i data-feather="cpu" class="enterprise-icon"></i>
+                            <h4>High Performance</h4>
+                            <p>Optimized for speed with intelligent caching and rate limiting</p>
+                        </div>
+                        <div class="enterprise-item">
+                            <i data-feather="globe" class="enterprise-icon"></i>
+                            <h4>Global CDN</h4>
+                            <p>Worldwide distribution for minimal latency and maximum reliability</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enterprise Architecture Section -->
+        <section id="architecture" class="architecture-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Enterprise Architecture</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Scalable, secure, and high-performance infrastructure designed for enterprise workloads</p>
+                
+                <div class="architecture-diagram" data-aos="fade-up" data-aos-delay="200">
+                    <div class="architecture-layer" data-aos="slide-right" data-aos-delay="300">
+                        <div class="layer-title">
+                            <i data-feather="monitor" class="layer-icon"></i>
+                            <h3>Client Layer</h3>
+                        </div>
+                        <div class="layer-components">
+                            <div class="component">
+                                <i data-feather="terminal"></i>
+                                <span>CLI Tools</span>
+                            </div>
+                            <div class="component">
+                                <i data-feather="code"></i>
+                                <span>API Client</span>
+                            </div>
+                            <div class="component">
+                                <i data-feather="globe"></i>
+                                <span>Web Interface</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="architecture-arrow" data-aos="fade-in" data-aos-delay="400">
+                        <i data-feather="arrow-down"></i>
+                    </div>
+
+                    <div class="architecture-layer" data-aos="slide-left" data-aos-delay="500">
+                        <div class="layer-title">
+                            <i data-feather="server" class="layer-icon"></i>
+                            <h3>API Gateway</h3>
+                        </div>
+                        <div class="layer-components">
+                            <div class="component">
+                                <i data-feather="shield"></i>
+                                <span>Authentication</span>
+                            </div>
+                            <div class="component">
+                                <i data-feather="zap"></i>
+                                <span>Rate Limiting</span>
+                            </div>
+                            <div class="component">
+                                <i data-feather="activity"></i>
+                                <span>Load Balancer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="architecture-arrow" data-aos="fade-in" data-aos-delay="600">
+                        <i data-feather="arrow-down"></i>
+                    </div>
+
+                    <div class="architecture-layer" data-aos="slide-right" data-aos-delay="700">
+                        <div class="layer-title">
+                            <i data-feather="cpu" class="layer-icon"></i>
+                            <h3>Processing Layer</h3>
+                        </div>
+                        <div class="layer-components">
+                            <div class="component">
+                                <i data-feather="git-branch"></i>
+                                <span>GitHub API</span>
+                            </div>
+                            <div class="component">
+                                <i data-feather="webhook"></i>
+                                <span>Webhook Server</span>
+                            </div>
+                            <div class="component">
+                                <i data-feather="settings"></i>
+                                <span>Automation Engine</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="architecture-arrow" data-aos="fade-in" data-aos-delay="800">
+                        <i data-feather="arrow-down"></i>
+                    </div>
+
+                    <div class="architecture-layer" data-aos="slide-left" data-aos-delay="900">
+                        <div class="layer-title">
+                            <i data-feather="database" class="layer-icon"></i>
+                            <h3>Data Layer</h3>
+                        </div>
+                        <div class="layer-components">
+                            <div class="component">
+                                <i data-feather="hard-drive"></i>
+                                <span>Cache Redis</span>
+                            </div>
+                            <div class="component">
+                                <i data-feather="file-text"></i>
+                                <span>Logs</span>
+                            </div>
+                            <div class="component">
+                                <i data-feather="bar-chart"></i>
+                                <span>Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack" data-aos="fade-up" data-aos-delay="1000">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-logo">⚡</div>
+                            <div class="tech-info">
+                                <h4>Node.js</h4>
+                                <p>High-performance runtime</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">🐳</div>
+                            <div class="tech-info">
+                                <h4>Docker</h4>
+                                <p>Containerized deployment</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">☁️</div>
+                            <div class="tech-info">
+                                <h4>Cloud Native</h4>
+                                <p>Kubernetes orchestration</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">🔥</div>
+                            <div class="tech-info">
+                                <h4>Redis</h4>
+                                <p>Ultra-fast caching</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">📊</div>
+                            <div class="tech-info">
+                                <h4>Prometheus</h4>
+                                <p>Advanced monitoring</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">🔒</div>
+                            <div class="tech-info">
+                                <h4>OAuth 2.0</h4>
+                                <p>Enterprise security</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -457,6 +709,117 @@
         if (heroSection) {
             heroObserver.observe(heroSection);
         }
+        
+        // Initialize Charts
+        function initializeCharts() {
+            // API Performance Chart
+            const apiCtx = document.getElementById('apiChart');
+            if (apiCtx) {
+                new Chart(apiCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Response Time (ms)',
+                            data: [50, 45, 48, 42, 45, 40],
+                            borderColor: '#58a6ff',
+                            backgroundColor: 'rgba(88, 166, 255, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: '#30363d' },
+                                ticks: { color: '#8b949e' }
+                            },
+                            x: {
+                                grid: { color: '#30363d' },
+                                ticks: { color: '#8b949e' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Usage Statistics Chart
+            const usageCtx = document.getElementById('usageChart');
+            if (usageCtx) {
+                new Chart(usageCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                        datasets: [{
+                            label: 'API Calls (K)',
+                            data: [420, 580, 680, 750],
+                            backgroundColor: 'rgba(56, 189, 248, 0.8)',
+                            borderColor: '#38bdf8',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: '#30363d' },
+                                ticks: { color: '#8b949e' }
+                            },
+                            x: {
+                                grid: { color: '#30363d' },
+                                ticks: { color: '#8b949e' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Efficiency Chart
+            const efficiencyCtx = document.getElementById('efficiencyChart');
+            if (efficiencyCtx) {
+                new Chart(efficiencyCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Automated', 'Manual'],
+                        datasets: [{
+                            data: [85, 15],
+                            backgroundColor: ['#3fb950', '#30363d'],
+                            borderWidth: 2,
+                            borderColor: '#161b22'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: '#8b949e',
+                                    padding: 15
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // Initialize charts when page loads
+        window.addEventListener('load', () => {
+            setTimeout(initializeCharts, 1000); // Delay to ensure AOS animations complete
+        });
         
     </script>
 </body>
