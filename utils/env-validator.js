@@ -5,7 +5,6 @@
 
 import chalk from 'chalk';
 import { existsSync } from 'fs';
-import { join } from 'path';
 
 /**
  * Validar variáveis de ambiente obrigatórias

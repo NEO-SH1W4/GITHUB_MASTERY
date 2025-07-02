@@ -13,7 +13,7 @@ async function basicApiUsage() {
 
         // 1. Autenticar e verificar usuário
         console.log(chalk.yellow('=== 1. Autenticação ==='));
-        const user = await client.authenticate();
+        await client.authenticate();
         console.log('\n');
 
         // 2. Verificar rate limit

@@ -120,14 +120,16 @@ header {
 
 /* Hero Section */
 .hero {
-    background: var(--gradient-primary);
+    background: var(--background-color);
     color: var(--text-primary);
-    padding: 5rem 0;
-    text-align: center;
+    padding: 3rem 0;
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid var(--border-color);
     z-index: 1;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero::before {
@@ -976,6 +978,226 @@ footer {
     .getting-started {
         padding: 3rem 0;
     }
+}
+
+/* ==========================================================================
+   GITHUB AGENT SECTION
+   ========================================================================== */
+
+.github-agent-section {
+    padding: 5rem 0;
+    background: var(--card-background);
+    border-top: 1px solid var(--border-color);
+}
+
+.agent-demo {
+    max-width: 800px;
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.terminal-window {
+    background: #1e2124;
+    border-radius: 12px;
+    box-shadow: var(--shadow-hover);
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+}
+
+.terminal-header {
+    background: #36393f;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #40444b;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+}
+
+.btn-close {
+    background: #ff5f57;
+}
+
+.btn-minimize {
+    background: #ffbd2e;
+}
+
+.btn-maximize {
+    background: #28ca42;
+}
+
+.terminal-title {
+    color: #dcddde;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.terminal-body {
+    padding: 20px;
+    background: #2f3136;
+    color: #dcddde;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.prompt {
+    color: #58a6ff;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.terminal-output {
+    margin: 16px 0;
+    padding-left: 16px;
+}
+
+.output-line {
+    margin-bottom: 4px;
+    color: #b9bbbe;
+}
+
+.output-line.success {
+    color: #3fb950;
+    font-weight: 600;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: #58a6ff;
+    animation: blink 1s infinite;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.agent-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.agent-feature {
+    background: var(--gradient-card);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.agent-feature:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-hover);
+}
+
+.agent-feature .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.3));
+}
+
+.agent-feature h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.agent-feature p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.agent-feature code {
+    background: var(--code-bg);
+    color: var(--primary-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+}
+
+.agent-commands {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.agent-commands h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.command-item {
+    background: var(--gradient-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: var(--shadow);
+}
+
+.command-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-hover);
+}
+
+.command-item code {
+    background: var(--code-bg);
+    color: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    display: block;
+}
+
+.command-item span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 /* ==========================================================================

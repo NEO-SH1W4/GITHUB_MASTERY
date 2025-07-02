@@ -1,7 +1,7 @@
-const { Octokit } = require('@octokit/rest');
-// const { createTokenAuth } = require('@octokit/auth-token');
-const dotenv = require('dotenv');
-const chalk = require('chalk');
+import { Octokit } from '@octokit/rest';
+// import { createTokenAuth } from '@octokit/auth-token';
+import dotenv from 'dotenv';
+import chalk from 'chalk';
 
 // Carregar variáveis de ambiente
 dotenv.config();
@@ -227,4 +227,4 @@ class GitHubClient {
     }
 }
 
-module.exports = { GitHubClient };
+export { GitHubClient };

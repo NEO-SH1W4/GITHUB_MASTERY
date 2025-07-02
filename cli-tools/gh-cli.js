@@ -155,7 +155,7 @@ program
 
             // Remover campos nulos/vazios
             const repoData = Object.fromEntries(
-                Object.entries(answers).filter(([_, v]) => v !== null && v !== '')
+                Object.entries(answers).filter(([, v]) => v !== null && v !== '')
             );
 
             const client = new GitHubClient();
@@ -180,7 +180,7 @@ program
 
             // Autenticação
             console.log(chalk.yellow('=== Autenticação ==='));
-            const user = await client.authenticate();
+            await client.authenticate();
             console.log('');
 
             // Rate Limit

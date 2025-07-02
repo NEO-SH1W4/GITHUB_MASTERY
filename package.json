@@ -38,7 +38,9 @@
         "deploy:ecosystem": "node scripts/deploy-to-ecosystem.js",
         "deploy:check": "node scripts/deploy-to-ecosystem.js --dry-run",
         "deploy:rollback": "node scripts/deploy-to-ecosystem.js --rollback",
-        "ecosystem:status": "node -e \"import('./mcp/ecosystem-adapter.js').then(m => new m.GitHubMCPEcosystemAdapter().getStatus()).then(console.log)\""
+        "ecosystem:status": "node -e \"import('./mcp/ecosystem-adapter.js').then(m => new m.GitHubMCPEcosystemAdapter().getStatus()).then(console.log)\"",
+        "setup:token": "powershell -ExecutionPolicy Bypass -File scripts\\setup-github-token.ps1 -Interactive",
+        "setup:quick": "powershell -ExecutionPolicy Bypass -File scripts\\setup-github-token.ps1"
     },
     "keywords": [
         "github",

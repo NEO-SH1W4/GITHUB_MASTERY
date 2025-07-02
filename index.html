@@ -43,6 +43,7 @@
                         <li><a href="#home">Portfolio</a></li>
                         <li><a href="#analysis">Market Analysis</a></li>
                         <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#agent">GitHub Agent</a></li>
                         <li><a href="#features">Features</a></li>
                         <li>
                             <a href="https://github.com" class="btn-primary">GitHub</a>
@@ -56,39 +57,107 @@
             <!-- Hero Section -->
             <section id="home" class="hero">
                 <div class="container">
-                    <!-- Data Flow Background Animation -->
-                    <canvas id="data-flow-canvas" class="data-flow-canvas"></canvas>
-
                     <div class="hero-content">
-                        <h1>GitHub Automation Architecture</h1>
-                        <p class="hero-subtitle">
-                            Technical portfolio demonstrating enterprise-scale GitHub
-                            automation frameworks and distributed system patterns.
-                            Showcasing architectural expertise in CI/CD ecosystems and
-                            DevOps infrastructure optimization.
+                        <div class="hero-badge">
+                            <span class="badge-icon">⚡</span>
+                            <span class="badge-text">Enterprise GitHub Automation</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            Build the next generation of
+                            <span class="gradient-text">GitHub automation</span>
+                        </h1>
+                        
+                        <p class="hero-description">
+                            A complete automation framework that transforms how developers interact with GitHub. 
+                            Built for teams who demand speed, reliability, and scale.
                         </p>
+                        
                         <div class="hero-buttons">
-                            <a href="#analysis" class="btn btn-primary"
-                                >View Analysis</a
-                            >
-                            <a href="#architecture" class="btn btn-secondary"
-                                >Architecture</a
-                            >
+                            <a href="#agent" class="btn btn-primary">
+                                <span class="btn-icon">🚀</span>
+                                Try GitHub Agent
+                            </a>
+                            <a href="#architecture" class="btn btn-secondary">
+                                <span class="btn-icon">📖</span>
+                                View Architecture
+                            </a>
+                        </div>
+                        
+                        <div class="hero-features">
+                            <div class="feature-pill">
+                                <span class="pill-icon">⚡</span>
+                                <span>Lightning Fast</span>
+                            </div>
+                            <div class="feature-pill">
+                                <span class="pill-icon">🔒</span>
+                                <span>Enterprise Security</span>
+                            </div>
+                            <div class="feature-pill">
+                                <span class="pill-icon">🤖</span>
+                                <span>AI-Powered</span>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">100M+</span>
-                            <span class="stat-label">GitHub Users</span>
+                    
+                    <div class="hero-visual">
+                        <div class="code-window">
+                            <div class="window-header">
+                                <div class="window-controls">
+                                    <span class="control control-close"></span>
+                                    <span class="control control-minimize"></span>
+                                    <span class="control control-maximize"></span>
+                                </div>
+                                <div class="window-title">GitHub Agent</div>
+                            </div>
+                            <div class="window-content">
+                                <div class="code-line">
+                                    <span class="line-number">1</span>
+                                    <span class="code-text">
+                                        <span class="keyword">import</span> { <span class="variable">GitHubAgent</span> } <span class="keyword">from</span> <span class="string">'./agent'</span>
+                                    </span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">2</span>
+                                    <span class="code-text"></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">3</span>
+                                    <span class="code-text">
+                                        <span class="keyword">const</span> <span class="variable">agent</span> = <span class="keyword">new</span> <span class="function">GitHubAgent</span>()
+                                    </span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">4</span>
+                                    <span class="code-text">
+                                        <span class="keyword">await</span> <span class="variable">agent</span>.<span class="function">dailyContribution</span>()
+                                    </span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">5</span>
+                                    <span class="code-text">
+                                        <span class="comment">// ✅ Automated contribution complete!</span>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">420M+</span>
-                            <span class="stat-label">Repositories</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">15K+</span>
-                            <span class="stat-label">API Requests/Min</span>
+                        
+                        <div class="stats-cards">
+                            <div class="stat-card">
+                                <div class="stat-icon">📈</div>
+                                <div class="stat-number">99.9%</div>
+                                <div class="stat-label">Uptime</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">⚡</div>
+                                <div class="stat-number">150ms</div>
+                                <div class="stat-label">Response</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">🚀</div>
+                                <div class="stat-number">10x</div>
+                                <div class="stat-label">Faster</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -438,11 +507,82 @@
                 </div>
             </section>
 
-            <!-- Features Section -->
-            <section id="features" class="features">
-                <div class="container">
-                    <h2 class="section-title">Technical Capabilities</h2>
-                    <div class="features-grid">
+        <!-- GitHub Agent Section -->
+        <section id="agent" class="github-agent-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">GitHub Agent - Automação Inteligente</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Agente automatizado para GitHub que simplifica contribuições, análises e gerenciamento de repositórios
+                </p>
+                
+                <div class="agent-demo" data-aos="fade-up" data-aos-delay="200">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">GitHub Agent CLI</div>
+                        </div>
+                        <div class="terminal-body" id="agent-terminal">
+                            <!-- Terminal content will be dynamically updated -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="agent-features-grid" data-aos="fade-up" data-aos-delay="300">
+                    <div class="agent-feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Comandos Rápidos</h3>
+                        <p>Execute tarefas complexas com comandos simples como <code>gcd</code>, <code>gco</code> e <code>gcstats</code></p>
+                    </div>
+                    <div class="agent-feature">
+                        <div class="feature-icon">🤖</div>
+                        <h3>Automação Inteligente</h3>
+                        <p>Contribuições diárias e semanais automatizadas baseadas em padrões e análise de tendências</p>
+                    </div>
+                    <div class="agent-feature">
+                        <div class="feature-icon">📊</div>
+                        <h3>Análise Avançada</h3>
+                        <p>Estatísticas detalhadas, verificação de saúde de repositórios e relatórios completos</p>
+                    </div>
+                    <div class="agent-feature">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Configuração Fácil</h3>
+                        <p>Setup automatizado com <code>npm run setup:token</code> para começar rapidamente</p>
+                    </div>
+                </div>
+                
+                <div class="agent-commands" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Comandos Disponíveis</h3>
+                    <div class="commands-grid">
+                        <div class="command-item">
+                            <code>npm run gcd</code>
+                            <span>Contribuição diária automática</span>
+                        </div>
+                        <div class="command-item">
+                            <code>npm run gco "mensagem"</code>
+                            <span>Contribuição rápida personalizada</span>
+                        </div>
+                        <div class="command-item">
+                            <code>npm run gcstats</code>
+                            <span>Estatísticas de contribuição</span>
+                        </div>
+                        <div class="command-item">
+                            <code>npm run setup:token</code>
+                            <span>Configurar token GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title" id="features-title">Technical Capabilities</h2>
+                <div class="features-grid" role="region" aria-labelledby="features-title">
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <i data-feather="cpu"></i>
@@ -822,11 +962,155 @@
                 }
             }
 
+            // GitHub Agent Terminal Simulation
+            function initAgentTerminal() {
+                const terminal = document.getElementById('agent-terminal');
+                if (!terminal) return;
+
+                const commands = [
+                    {
+                        input: 'npm run agent',
+                        output: [
+                            { text: '🤖 GitHub Agent - Menu Interativo', class: 'success' },
+                            { text: '✨ Contribuição rápida', class: '' },
+                            { text: '📅 Contribuição diária', class: '' },
+                            { text: '📊 Visualizar estatísticas', class: '' },
+                            { text: '🔄 Sincronizar repositórios', class: '' }
+                        ]
+                    },
+                    {
+                        input: 'gcd',
+                        output: [
+                            { text: '📅 Executando contribuição diária...', class: 'success' },
+                            { text: '✅ Commit criado: "feat: daily automation update"', class: '' },
+                            { text: '🚀 Push realizado com sucesso!', class: '' }
+                        ]
+                    },
+                    {
+                        input: 'gcstats',
+                        output: [
+                            { text: '📊 Estatísticas dos últimos 30 dias:', class: 'success' },
+                            { text: '📦 Total de commits: 47', class: '' },
+                            { text: '🌟 Repositories ativos: 12', class: '' },
+                            { text: '⚡ Streak atual: 15 dias', class: '' }
+                        ]
+                    },
+                    {
+                        input: 'gco "feat: implement new feature"',
+                        output: [
+                            { text: '📦 Realizando contribuição automatizada...', class: 'success' },
+                            { text: '✅ Arquivo atualizado: README.md', class: '' },
+                            { text: '🎯 Commit: "feat: implement new feature"', class: '' },
+                            { text: '🚀 Push concluído!', class: '' }
+                        ]
+                    }
+                ];
+
+                let currentCommandIndex = 0;
+                let isTyping = false;
+
+                function createLine(content, isInput = false, className = '') {
+                    const line = document.createElement('div');
+                    line.className = isInput ? 'terminal-line' : `output-line ${className}`;
+                    
+                    if (isInput) {
+                        line.innerHTML = `<span class="prompt">$</span> ${content}`;
+                    } else {
+                        line.textContent = content;
+                    }
+                    
+                    return line;
+                }
+
+                function typeText(element, text, speed = 50) {
+                    return new Promise(resolve => {
+                        let i = 0;
+                        const prompt = element.querySelector('.prompt');
+                        const textSpan = document.createElement('span');
+                        element.appendChild(textSpan);
+                        
+                        function type() {
+                            if (i < text.length) {
+                                textSpan.textContent += text.charAt(i);
+                                i++;
+                                setTimeout(type, speed + Math.random() * 30);
+                            } else {
+                                resolve();
+                            }
+                        }
+                        
+                        if (prompt) {
+                            textSpan.textContent = ' ';
+                        }
+                        type();
+                    });
+                }
+
+                async function executeCommand(commandData) {
+                    if (isTyping) return;
+                    isTyping = true;
+
+                    // Create input line
+                    const inputLine = createLine('', true);
+                    terminal.appendChild(inputLine);
+                    
+                    // Type the command
+                    await typeText(inputLine, commandData.input, 80);
+                    
+                    // Wait a bit before showing output
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    
+                    // Show output lines with delay
+                    for (const output of commandData.output) {
+                        const outputLine = createLine(output.text, false, output.class);
+                        terminal.appendChild(outputLine);
+                        await new Promise(resolve => setTimeout(resolve, 300));
+                    }
+                    
+                    // Wait before next command
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    isTyping = false;
+                }
+
+                async function runDemo() {
+                    // Clear terminal
+                    terminal.innerHTML = '';
+                    currentCommandIndex = 0;
+                    
+                    // Run all commands in sequence
+                    for (const command of commands) {
+                        await executeCommand(command);
+                    }
+                    
+                    // Add cursor at the end
+                    const cursorLine = createLine('', true);
+                    cursorLine.innerHTML = '<span class="prompt">$</span> <span class="cursor"></span>';
+                    terminal.appendChild(cursorLine);
+                    
+                    // Restart demo after a pause
+                    setTimeout(() => {
+                        runDemo();
+                    }, 5000);
+                }
+
+                // Start the demo
+                runDemo();
+                
+                // Add click handler to restart demo
+                terminal.addEventListener('click', () => {
+                    if (!isTyping) {
+                        runDemo();
+                    }
+                });
+            }
+
             // Initialize when page loads
             window.addEventListener('load', () => {
                 setTimeout(initDataFlow, 500);
                 setTimeout(initMatrixRain, 700);
                 setTimeout(initializeCharts, 1000);
+                setTimeout(initAgentTerminal, 1500);
             });
         </script>
     </body>

@@ -154,6 +154,54 @@ program
         }
     });
 
+// Comandos de Monetização
+program
+    .command('subscription')
+    .description('Gerenciar assinatura GHMAS')
+    .option('-c, --check', 'Verificar status da assinatura')
+    .option('-b, --buy <tier>', 'Comprar assinatura (developer, team, enterprise)')
+    .option('-m, --months <number>', 'Número de meses', '1')
+    .action(async (options) => {
+        try {
+            const { manageSubscription } = await import('./commands.js');
+            await manageSubscription(options);
+        } catch (error) {
+            console.error(chalk.red('❌ Erro:'), error.message);
+            process.exit(1);
+        }
+    });
+
+program
+    .command('stake')
+    .description('Gerenciar staking de tokens GHMAS')
+    .option('-a, --amount <number>', 'Quantidade de tokens para stake')
+    .option('-r, --rewards', 'Ver recompensas pendentes')
+    .option('-c, --claim', 'Reivindicar recompensas')
+    .action(async (options) => {
+        try {
+            const { manageStaking } = await import('./commands.js');
+            await manageStaking(options);
+        } catch (error) {
+            console.error(chalk.red('❌ Erro:'), error.message);
+            process.exit(1);
+        }
+    });
+
+program
+    .command('wallet')
+    .description('Gerenciar carteira GHMAS')
+    .option('-b, --balance', 'Ver saldo de tokens')
+    .option('-h, --history', 'Ver histórico de transações')
+    .action(async (options) => {
+        try {
+            const { manageWallet } = await import('./commands.js');
+            await manageWallet(options);
+        } catch (error) {
+            console.error(chalk.red('❌ Erro:'), error.message);
+            process.exit(1);
+        }
+    });
+
 // Executar CLI
 program.parse();
 

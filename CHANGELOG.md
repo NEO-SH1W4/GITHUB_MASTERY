@@ -1,11 +1,34 @@
 # Changelog
 
-Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
+Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Added
+- Sistema PowerShell Agent MCP Enhanced v2.0.0
+- Cache inteligente com TTL configurável
+- Sistema de logging estruturado com níveis
+- Comando `gchelp` para ajuda contextual
+- Métricas de uso e performance tracking
+- Validação automática de ambiente Node.js
+- Error handling robusto com recovery automático
+- Documentação completa do agente PowerShell
+
+### Changed
+- Migração completa para ES modules (jest.config.js, babel.config.js)
+- Correção de variáveis não utilizadas seguindo regras ESLint
+- Aplicação das estratégias MCP para maximum robustez
+- Atualização do sistema de cache para suporte cross-session
+
+### Fixed
+- Problemas de lint e indentação em múltiplos arquivos
+- Imports não utilizados em utils/env-validator.js
+- Variáveis não utilizadas em cli-tools, examples e mcp
+- Configuração ESLint para arquivos de teste Jest
+- Formatação Prettier em blockchain/payment-gateway.js
 
 ### Added
 
