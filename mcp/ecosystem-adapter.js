@@ -207,7 +207,7 @@ export class GitHubMCPEcosystemAdapter extends EventEmitter {
                     name: 'GitHub Security Validation',
                     description: 'Validar permissões e segurança nas operações GitHub',
                     condition: context => context.tool === 'github_create_repo',
-                    action: async (context, result) => {
+                    action: async (context) => {
                         // Validar se criação de repositório está dentro das políticas
                         if (context.params?.private === false) {
                             this.logger.info(

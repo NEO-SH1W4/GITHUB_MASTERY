@@ -190,29 +190,29 @@ class GitHubMCPServer {
                 }
 
                 switch (name) {
-                    case 'github_authenticate':
-                        return await this.handleAuthenticate();
+                case 'github_authenticate':
+                    return await this.handleAuthenticate();
 
-                    case 'github_list_repos':
-                        return await this.handleListRepos(args);
+                case 'github_list_repos':
+                    return await this.handleListRepos(args);
 
-                    case 'github_get_repo':
-                        return await this.handleGetRepo(args);
+                case 'github_get_repo':
+                    return await this.handleGetRepo(args);
 
-                    case 'github_list_issues':
-                        return await this.handleListIssues(args);
+                case 'github_list_issues':
+                    return await this.handleListIssues(args);
 
-                    case 'github_create_repo':
-                        return await this.handleCreateRepo(args);
+                case 'github_create_repo':
+                    return await this.handleCreateRepo(args);
 
-                    case 'github_rate_limit':
-                        return await this.handleRateLimit();
+                case 'github_rate_limit':
+                    return await this.handleRateLimit();
 
-                    default:
-                        throw new McpError(
-                            ErrorCode.MethodNotFound,
-                            `Unknown tool: ${name}`
-                        );
+                default:
+                    throw new McpError(
+                        ErrorCode.MethodNotFound,
+                        `Unknown tool: ${name}`
+                    );
                 }
             } catch (error) {
                 this.logger.error(`Error executing tool ${name}:`, error);

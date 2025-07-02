@@ -187,7 +187,7 @@ export async function manageWallet(options) {
     try {
         if (options.balance) {
             console.log(chalk.blue('💰 Verificando saldo...'));
-        await paymentGateway.checkBalance(userAddress, 0);
+            await paymentGateway.checkBalance(userAddress, 0);
             
             // Mostrar informações adicionais da carteira
             console.log(chalk.cyan(`📍 Endereço: ${userAddress}`));

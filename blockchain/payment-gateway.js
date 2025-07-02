@@ -103,7 +103,7 @@ export class GitHubMasteryPaymentGateway {
     /**
      * Verificar assinatura ativa (versão demo)
      */
-    async verifySubscription(userAddress) {
+    async verifySubscription() {
         try {
             const subscription = this.demoData.subscription;
             const now = Math.floor(Date.now() / 1000);
@@ -217,27 +217,27 @@ export class GitHubMasteryPaymentGateway {
     /**
      * Simulação de transações (mockup)
      */
-    async deductTokens(userAddress, amount) {
+    async deductTokens() {
         // Em produção, seria uma transação real na blockchain
         return `0x${Math.random().toString(16).substr(2, 64)}`;
     }
 
-    async purchaseSubscriptionTx(userAddress, tier, months) {
+    async purchaseSubscriptionTx() {
         // Em produção, chamaria o smart contract
         return `0x${Math.random().toString(16).substr(2, 64)}`;
     }
 
-    async stakeTokensTx(userAddress, amount) {
+    async stakeTokensTx() {
         // Em produção, chamaria o smart contract de staking
         return `0x${Math.random().toString(16).substr(2, 64)}`;
     }
 
-    async getStakedAmount(userAddress) {
+    async getStakedAmount() {
         // Simular consulta ao smart contract
         return Math.random() * 1000; // Random staked amount
     }
 
-    async getStakingDuration(userAddress) {
+    async getStakingDuration() {
         // Simular duração em dias
         return Math.floor(Math.random() * 365);
     }

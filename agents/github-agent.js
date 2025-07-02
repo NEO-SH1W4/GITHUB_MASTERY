@@ -236,74 +236,77 @@ async function showInteractiveMenu() {
     ]);
 
     switch (command) {
-        case 'init':
-            await initAgent();
-            break;
-        case 'quick':
-            const { message } = await inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'message',
-                    message: 'Mensagem de commit:',
-                    default: `feat: automated update ${new Date().toISOString().split('T')[0]}`,
-                },
-            ]);
-            await executeAutomatedContribution(message);
-            break;
-        case 'daily':
-            await executeDailyContribution();
-            break;
-        case 'stats':
-            await showStatistics(30, 'console');
-            break;
-        case 'profile':
-            await setupGitHubProfile('developer');
-            break;
-        case 'sync':
-            await syncAllRepositories(false);
-            break;
-        case 'health':
-            const healthRepo = await inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'owner',
-                    message: 'Proprietário do repositório:',
-                },
-                {
-                    type: 'input',
-                    name: 'repo',
-                    message: 'Nome do repositório:',
-                },
-            ]);
-            await runRepoHealthCheck(healthRepo.owner, healthRepo.repo);
-            break;
-        case 'report':
-            const reportRepo = await inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'owner',
-                    message: 'Proprietário do repositório:',
-                },
-                {
-                    type: 'input',
-                    name: 'repo',
-                    message: 'Nome do repositório:',
-                },
-                {
-                    type: 'input',
-                    name: 'output',
-                    message: 'Caminho do arquivo de saída:',
-                    default: './report.md',
-                },
-            ]);
-            await generateRepoReport(
-                reportRepo.owner,
-                reportRepo.repo,
-                reportRepo.output
-            );
-            break;
-        case 'exit':
-            console.log(chalk.green('👋 Até logo!'));
-            process.exit(0);
+    case 'init':
+        await initAgent();
+        break;
+    case 'quick': {
+        const { message } = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'message',
+                message: 'Mensagem de commit:',
+                default: `feat: automated update ${new Date().toISOString().split('T')[0]}`,
+            },
+        ]);
+        await executeAutomatedContribution(message);
+        break;
+    }
+    case 'daily':
+        await executeDailyContribution();
+        break;
+    case 'stats':
+        await showStatistics(30, 'console');
+        break;
+    case 'profile':
+        await setupGitHubProfile('developer');
+        break;
+    case 'sync':
+        await syncAllRepositories(false);
+        break;
+    case 'health': {
+        const healthRepo = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'owner',
+                message: 'Proprietário do repositório:',
+            },
+            {
+                type: 'input',
+                name: 'repo',
+                message: 'Nome do repositório:',
+            },
+        ]);
+        await runRepoHealthCheck(healthRepo.owner, healthRepo.repo);
+        break;
+    }
+    case 'report': {
+        const reportRepo = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'owner',
+                message: 'Proprietário do repositório:',
+            },
+            {
+                type: 'input',
+                name: 'repo',
+                message: 'Nome do repositório:',
+            },
+            {
+                type: 'input',
+                name: 'output',
+                message: 'Caminho do arquivo de saída:',
+                default: './report.md',
+            },
+        ]);
+        await generateRepoReport(
+            reportRepo.owner,
+            reportRepo.repo,
+            reportRepo.output
+        );
+        break;
+    }
+    case 'exit':
+        console.log(chalk.green('👋 Até logo!'));
+        process.exit(0);
     }
 }

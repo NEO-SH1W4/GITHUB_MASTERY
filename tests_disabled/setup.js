@@ -4,6 +4,8 @@
  * @fileoverview Global test configuration and utilities
  */
 
+/* global beforeAll, afterAll, beforeEach, afterEach, jest */
+
 const dotenv = require('dotenv');
 
 // Load test environment variables
