@@ -4,8 +4,7 @@
  * @fileoverview Global test configuration and utilities
  */
 
-import { beforeAll, afterAll, beforeEach, afterEach } from '@jest/globals';
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 
 // Load test environment variables
 dotenv.config({ path: '.env.test' });

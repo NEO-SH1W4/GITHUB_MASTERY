@@ -43,6 +43,7 @@
   "author": "João",
   "license": "MIT",
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.3",
     "@octokit/auth-token": "^4.0.0",
     "@octokit/rest": "^20.0.2",
     "chalk": "^5.3.0",
