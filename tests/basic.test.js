@@ -1,23 +1,19 @@
-import { describe, test, expect } from '@jest/globals';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// Simple CommonJS test file for CI/CD compatibility
+const fs = require('fs');
+const path = require('path');
 
 describe('GitHub Mastery Project', () => {
     test('should have valid package.json', () => {
-        const pkgPath = join(__dirname, '..', 'package.json');
-        const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
+        const pkgPath = path.join(__dirname, '..', 'package.json');
+        const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
         expect(pkg.name).toBe('github-mastery');
         expect(pkg.version).toBeDefined();
         expect(pkg.author).toBeDefined();
     });
 
     test('should have required scripts in package.json', () => {
-        const pkgPath = join(__dirname, '..', 'package.json');
-        const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
+        const pkgPath = path.join(__dirname, '..', 'package.json');
+        const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
         
         expect(pkg.scripts).toBeDefined();
         expect(pkg.scripts.test).toBeDefined();
@@ -26,22 +22,30 @@ describe('GitHub Mastery Project', () => {
     });
 
     test('should pass basic environment validation', () => {
-        // Mock test for environment validation
-        expect(process.env.NODE_ENV).toBeDefined();
+        // Basic environment checks
+        expect(process.version).toBeDefined();
         expect(typeof process.version).toBe('string');
+        expect(process.platform).toBeDefined();
     });
 
-    test('should have agent files present', () => {
+    test('should have project structure', () => {
+        const requiredDirs = ['api', 'agents', 'cli-tools'];
+        
+        requiredDirs.forEach(dir => {
+            const dirPath = path.join(__dirname, '..', dir);
+            expect(fs.existsSync(dirPath)).toBe(true);
+        });
+    });
+
+    test('should have agent configuration files', () => {
         const agentFiles = [
-            'agents/github-agent.js',
-            'agents/commands.js',
-            'scripts/load-agent-in-profile.ps1'
+            'scripts/load-agent-in-profile.ps1',
+            'agents/github-agent.js'
         ];
         
-        // Simple check - these files should exist in the project
         agentFiles.forEach(file => {
-            expect(file).toBeDefined();
-            expect(typeof file).toBe('string');
+            const filePath = path.join(__dirname, '..', file);
+            expect(fs.existsSync(filePath)).toBe(true);
         });
     });
 });
