@@ -7,6 +7,21 @@
     <meta name="description" content="Professional GitHub API client, CLI tools, and webhook server for mastering GitHub automation">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
     <header>
@@ -30,6 +45,13 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container">
+                <div class="hero-visual">
+                    <div class="hero-logo">
+                        <div class="logo-animation">
+                            🚀
+                        </div>
+                    </div>
+                </div>
                 <div class="hero-content">
                     <h1>Master GitHub Like a Pro</h1>
                     <p class="hero-subtitle">
@@ -207,6 +229,236 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-icon" data-icon="💻"></div>
+        <div class="floating-icon" data-icon="🚀"></div>
+        <div class="floating-icon" data-icon="⚡"></div>
+        <div class="floating-icon" data-icon="🔧"></div>
+        <div class="floating-icon" data-icon="📊"></div>
+    </div>
+    
+    <!-- Interactive Scripts -->
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: ['#58a6ff', '#4493f8', '#238636']
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    }
+                },
+                opacity: {
+                    value: 0.3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#58a6ff',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Typing animation for hero title
+        function typeWriter(text, element, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+        
+        // Initialize typing animation when page loads
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                const originalText = heroTitle.textContent;
+                typeWriter(originalText, heroTitle, 80);
+            }
+        });
+        
+        // Floating icons animation
+        function animateFloatingIcons() {
+            const icons = document.querySelectorAll('.floating-icon');
+            icons.forEach((icon, index) => {
+                const delay = index * 500;
+                const duration = 3000 + (index * 200);
+                
+                setTimeout(() => {
+                    icon.style.animation = `float ${duration}ms ease-in-out infinite`;
+                    icon.style.animationDelay = `${delay}ms`;
+                }, delay);
+            });
+        }
+        
+        // Start floating animation
+        window.addEventListener('load', animateFloatingIcons);
+        
+        // Interactive feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Stats counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                if (target === '∞') return;
+                
+                const count = parseInt(target.replace('+', ''));
+                let current = 0;
+                const increment = count / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= count) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + (target.includes('+') ? '+' : '');
+                    }
+                }, 30);
+            });
+        }
+        
+        // Trigger counter animation when hero section is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        });
+        
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroObserver.observe(heroSection);
+        }
+        
+    </script>
 </body>
 </html>
 
