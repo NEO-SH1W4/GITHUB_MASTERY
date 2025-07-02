@@ -202,10 +202,10 @@ impl GitHubAgent {
         let now = Utc::now();
         
         let duration = match access_level {
-            AccessLevel::Demo => Duration::from_secs(1800),      // 30 minutes
-            AccessLevel::Showcase => Duration::from_secs(7200),  // 2 hours
-            AccessLevel::EnterpriseTrial => Duration::from_secs(604800), // 7 days
-            AccessLevel::Full => Duration::from_secs(u64::MAX), // Unlimited
+            AccessLevel::Demo => Duration::from_secs(30 * 60), // 30 minutes
+            AccessLevel::Showcase => Duration::from_secs(2 * 60 * 60), // 2 hours
+            AccessLevel::EnterpriseTrial => Duration::from_secs(7 * 24 * 60 * 60), // 7 days
+            AccessLevel::Full => Duration::from_secs(365 * 24 * 60 * 60), // 1 year
         };
         
         let session = SessionInfo {
@@ -218,15 +218,90 @@ impl GitHubAgent {
         };
         
         self.sessions.insert(session_id, session.clone());
-        
-        // Schedule session cleanup
-        let sessions = Arc::clone(&self.sessions);
-        tokio::spawn(async move {
-            tokio::time::sleep(duration).await;
-            sessions.remove(&session_id);
-        });
-        
         Ok(session)
+    }
+    
+    /// Execute smart commit operation
+    pub async fn execute_smart_commit(
+        &self, 
+        repo: &str, 
+        message: Option<String>, 
+        session_id: Uuid
+    ) -> Result<ContributionResult, AgentError> {
+        // Validate session
+        let session = self.sessions.get(&session_id)
+            .ok_or(AgentError::SessionError)?
+            .clone();
+            
+        if !session.is_active() {
+            return Err(AgentError::SessionError);
+        }
+        
+        // Perform analysis and automation
+        let (health, patterns, suggestions) = tokio::try_join!(
+            self.analyzer.analyze_repo_health(repo),
+            self.analyzer.detect_code_patterns(repo),
+            self.automation.generate_ai_suggestions(repo)
+        )?;
+        
+        // Execute intelligent commit
+        let result = self.automation.perform_intelligent_commit(repo, message, suggestions).await?;
+        
+        // Update session metrics
+        self.update_session_metrics(session_id, "smart_commit").await;
+        
+        Ok(result)
+    }
+    
+    /// Get session information
+    pub fn get_session_info(&self, session_id: Uuid) -> Option<SessionInfo> {
+        self.sessions.get(&session_id).map(|s| s.clone())
+    }
+    
+    /// Start operation processor
+    async fn start_operation_processor(&self, mut operation_rx: mpsc::Receiver<Operation>) {
+        let agent = self.clone();
+        tokio::spawn(async move {
+            while let Some(operation) = operation_rx.recv().await {
+                let _ = agent.process_operation(operation).await;
+            }
+        });
+    }
+    
+    /// Process individual operation
+    async fn process_operation(&self, operation: Operation) -> Result<(), AgentError> {
+        match operation {
+            Operation::SmartCommit { repo, message, session_id } => {
+                let _ = self.execute_smart_commit(&repo, message, session_id).await;
+            }
+            Operation::AnalyzeRepo { repo, session_id } => {
+                let _ = self.analyzer.analyze_repo_health(&repo).await;
+            }
+            Operation::SyncRepo { repo, session_id } => {
+                // Implementation for repo sync
+            }
+            Operation::HealthCheck { repo, session_id } => {
+                let _ = self.analyzer.analyze_repo_health(&repo).await;
+            }
+        }
+        Ok(())
+    }
+    
+    /// Update session metrics
+    async fn update_session_metrics(&self, session_id: Uuid, operation: &str) {
+        if let Some(mut session) = self.sessions.get_mut(&session_id) {
+            session.operations_count += 1;
+        }
+        
+        let metric = OperationMetric {
+            operation: operation.to_string(),
+            duration: Duration::from_millis(100), // Placeholder
+            timestamp: Utc::now(),
+            success: true,
+            session_id,
+        };
+        
+        self.metrics.write().push(metric);
     }
     
     /// Validate session and check permissions
@@ -273,55 +348,6 @@ impl GitHubAgent {
         Ok(())
     }
     
-    /// Execute smart contribution with AI assistance
-    pub async fn execute_smart_contribution(
-        &self,
-        repo: &str,
-        message: Option<String>,
-        session_id: Uuid,
-    ) -> Result<ContributionResult, AgentError> {
-        let start_time = Instant::now();
-        
-        // Validate session
-        self.validate_session(session_id, "smart_contribution")?;
-        
-        // Increment operation count
-        if let Some(mut session) = self.sessions.get_mut(&session_id) {
-            session.operations_count += 1;
-            if !session.repos_accessed.contains(&repo.to_string()) {
-                session.repos_accessed.push(repo.to_string());
-            }
-        }
-        
-        // Execute parallel analysis
-        let (health, patterns, suggestions) = tokio::try_join!(
-            self.analyzer.analyze_repo_health(repo),
-            self.analyzer.detect_code_patterns(repo),
-            self.automation.generate_ai_suggestions(repo)
-        )?;
-        
-        // Perform intelligent commit
-        let result = self.automation
-            .perform_intelligent_commit(repo, message, suggestions)
-            .await?;
-        
-        // Record metrics
-        self.record_metric(OperationMetric {
-            operation: "smart_contribution".to_string(),
-            duration: start_time.elapsed(),
-            timestamp: Utc::now(),
-            success: true,
-            session_id,
-        });
-        
-        Ok(result)
-    }
-    
-    /// Get session information
-    pub fn get_session_info(&self, session_id: Uuid) -> Option<SessionInfo> {
-        self.sessions.get(&session_id).map(|s| s.clone())
-    }
-    
     /// Get agent statistics
     pub fn get_statistics(&self) -> AgentStatistics {
         let metrics = self.metrics.read();
@@ -356,31 +382,21 @@ impl GitHubAgent {
             metrics.drain(0..1000);
         }
     }
-    
-    /// Start operation processor in background
-    async fn start_operation_processor(&self, mut operation_rx: mpsc::Receiver<Operation>) {
-        let agent = Arc::new(self as *const Self);
-        
-        tokio::spawn(async move {
-            while let Some(operation) = operation_rx.recv().await {
-                // Process operation in background
-                // This would contain the actual operation logic
-                match operation {
-                    Operation::SmartCommit { repo, message, session_id } => {
-                        // Process smart commit
-                    },
-                    Operation::AnalyzeRepo { repo, session_id } => {
-                        // Process repo analysis
-                    },
-                    Operation::SyncRepo { repo, session_id } => {
-                        // Process repo sync
-                    },
-                    Operation::HealthCheck { repo, session_id } => {
-                        // Process health check
-                    },
-                }
-            }
-        });
+}
+
+/// Clone implementation for GitHubAgent
+impl Clone for GitHubAgent {
+    fn clone(&self) -> Self {
+        Self {
+            config: self.config.clone(),
+            github_client: Arc::clone(&self.github_client),
+            git_engine: Arc::clone(&self.git_engine),
+            analyzer: Arc::clone(&self.analyzer),
+            automation: Arc::clone(&self.automation),
+            sessions: Arc::clone(&self.sessions),
+            metrics: Arc::clone(&self.metrics),
+            operation_tx: self.operation_tx.clone(),
+        }
     }
 }
 
@@ -390,9 +406,50 @@ pub struct ContributionResult {
     pub commit_hash: String,
     pub message: String,
     pub files_changed: Vec<String>,
-    pub insertions: u32,
-    pub deletions: u32,
+    pub insertions: i32,
+    pub deletions: i32,
     pub ai_confidence: f32,
+}
+
+/// Python binding support
+#[cfg(feature = "python")]
+use pyo3::prelude::*;
+
+#[cfg(feature = "python")]
+#[pyclass]
+pub struct PyGitHubAgent {
+    agent: GitHubAgent,
+    runtime: tokio::runtime::Runtime,
+}
+
+#[cfg(feature = "python")]
+#[pymethods]
+impl PyGitHubAgent {
+    #[new]
+    fn new() -> PyResult<Self> {
+        let runtime = tokio::runtime::Runtime::new()
+            .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))?;
+            
+        let agent = runtime.block_on(async {
+            GitHubAgent::new(AgentConfig::default()).await
+        }).map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))?;
+        
+        Ok(Self { agent, runtime })
+    }
+    
+    fn create_demo_session(&self, access_level: &str) -> PyResult<String> {
+        let level = match access_level {
+            "demo" => AccessLevel::Demo,
+            "showcase" => AccessLevel::Showcase,
+            "enterprise" => AccessLevel::EnterpriseTrial,
+            _ => AccessLevel::Demo,
+        };
+        
+        let session = self.agent.create_demo_session(level)
+            .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))?;
+            
+        Ok(session.id.to_string())
+    }
 }
 
 /// Agent performance statistics
@@ -405,52 +462,11 @@ pub struct AgentStatistics {
     pub active_sessions: usize,
 }
 
-// Python bindings when python feature is enabled
-#[cfg(feature = "python")]
-use pyo3::prelude::*;
-
+/// Python module definition
 #[cfg(feature = "python")]
 #[pymodule]
 fn github_agent_core(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<PyGitHubAgent>()?;
     Ok(())
-}
-
-#[cfg(feature = "python")]
-#[pyclass]
-struct PyGitHubAgent {
-    inner: Arc<GitHubAgent>,
-}
-
-#[cfg(feature = "python")]
-#[pymethods]
-impl PyGitHubAgent {
-    #[new]
-    fn new() -> PyResult<Self> {
-        let config = AgentConfig::default();
-        let rt = tokio::runtime::Runtime::new().unwrap();
-        let inner = rt.block_on(async {
-            GitHubAgent::new(config).await
-        }).map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))?;
-        
-        Ok(Self {
-            inner: Arc::new(inner),
-        })
-    }
-    
-    fn create_demo_session(&self, access_level: &str) -> PyResult<String> {
-        let level = match access_level {
-            "demo" => AccessLevel::Demo,
-            "showcase" => AccessLevel::Showcase,
-            "enterprise_trial" => AccessLevel::EnterpriseTrial,
-            _ => return Err(pyo3::exceptions::PyValueError::new_err("Invalid access level")),
-        };
-        
-        let session = self.inner
-            .create_demo_session(level)
-            .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))?;
-            
-        Ok(session.id.to_string())
-    }
 }
 
