@@ -25,6 +25,22 @@ _Domínio completo do GitHub através de API, automações, integrações e ferr
 🛡️ **Security First**: HMAC verification, token management, and best practices  
 🎨 **Rich UX**: Colorful outputs and user-friendly interfaces
 
+## 🎯 **NEW: GitHub Agent v2.0 Landing Page**
+
+[![Deploy to GitHub Pages](https://github.com/NEO-SH1W4/github_mastery/workflows/Deploy%20Landing%20Page%20to%20GitHub%20Pages/badge.svg)](https://github.com/NEO-SH1W4/github_mastery/actions)
+
+**🚀 [Live Demo](https://neo-sh1w4.github.io/github_mastery/)** - Professional landing page with advanced lead scoring
+
+### What's Included:
+- 📄 **Professional Landing Page** with conversion optimization
+- 🧠 **Advanced Lead Scoring System** with behavioral tracking
+- 📧 **Email Marketing Sequences** for different user personas
+- 📊 **Analytics Integration** (GA4, Mixpanel ready)
+- 🔄 **A/B Testing Framework** built-in
+- 🚀 **Auto-deploy via GitHub Pages**
+
+📖 **[Complete Documentation](LANDING_PAGE.md)** | 📈 **[Go-to-Market Strategy](docs/GO_TO_MARKET_STRATEGY.md)**
+
 ## 📊 Development Potential
 
 - **Target Market**: Developers, DevOps teams, GitHub power users
@@ -103,6 +119,8 @@ npm run dev
 ## 📚 Documentation
 
 - 🌐 [**Project Homepage**](./index.html) - Interactive project overview
+- 🎯 [**Landing Page Demo**](https://neo-sh1w4.github.io/github_mastery/) - Live conversion-optimized page
+- 📖 [**Landing Page Guide**](LANDING_PAGE.md) - Complete setup and customization
 - 🏃‍♂️ [**Quick Start Guide**](./docs/en/QUICKSTART.md)
 - 🔌 [**API Usage Examples**](./examples/)
 - 🛠️ [**CLI Commands Reference**](./docs/en/CLI.md)
@@ -130,12 +148,17 @@ npm run dev
 ```
 github-mastery/
 ├── index.html           # Project homepage
+├── landing-page/        # Professional landing page
+│   ├── index.html      # Landing page HTML
+│   ├── js/lead-scoring.js # Advanced lead scoring
+│   └── README.md       # Landing page documentation
 ├── styles.css           # Homepage styles
 ├── api/                 # GitHub API client
 ├── cli-tools/           # Command line interface
 ├── webhooks/            # Webhook server
 ├── examples/            # Usage examples
 ├── docs/                # Documentation
+│   ├── GO_TO_MARKET_STRATEGY.md # Business strategy
 │   ├── en/             # English docs
 │   ├── pt-br/          # Portuguese docs
 │   └── es/             # Spanish docs
@@ -163,6 +186,8 @@ See the [complete contribution guide](./CONTRIBUTING.md).
 - ✅ DOCSYNC-style design with badges
 - ✅ Comprehensive Quick Start guides
 - ✅ Multilingual contributing system
+- ✅ **Professional landing page with lead scoring**
+- ✅ **Go-to-market strategy implementation**
 
 ### v1.2.0 (Q3 2025)
 
@@ -170,6 +195,7 @@ See the [complete contribution guide](./CONTRIBUTING.md).
 - 🔄 Advanced PR operations
 - 📊 Analytics and metrics
 - 🔧 Bulk operations
+- 🎯 **Landing page A/B testing**
 
 ### v1.3.0 (Q4 2025)
 
@@ -177,6 +203,7 @@ See the [complete contribution guide](./CONTRIBUTING.md).
 - 🤖 Advanced automations
 - 🔗 Third-party integrations
 - 📋 Project templates
+- 💰 **Revenue optimization**
 
 ### v2.0.0 (2026)
 
@@ -184,6 +211,7 @@ See the [complete contribution guide](./CONTRIBUTING.md).
 - 🧩 Plugin ecosystem
 - ☁️ Cloud deployment
 - 📱 Mobile interface
+- 🎯 **Full product launch**
 
 ## 📜 License
 
@@ -197,6 +225,6 @@ Built with ❤️ for the developer community. If this project helped you, consi
 
 <div align="center">
 
-**[🌐 Local Homepage](./index.html) • [🏠 GitHub](https://github.com/NEO-SH1W4/github-mastery) • [📖 Docs](https://github.com/NEO-SH1W4/github-mastery#readme) • [🐛 Issues](https://github.com/NEO-SH1W4/github-mastery/issues) • [💬 Discussions](https://github.com/NEO-SH1W4/github-mastery/discussions)**
+**[🌐 Local Homepage](./index.html) • [🎯 Landing Page](https://neo-sh1w4.github.io/github_mastery/) • [🏠 GitHub](https://github.com/NEO-SH1W4/github-mastery) • [📖 Docs](https://github.com/NEO-SH1W4/github-mastery#readme) • [🐛 Issues](https://github.com/NEO-SH1W4/github-mastery/issues) • [💬 Discussions](https://github.com/NEO-SH1W4/github-mastery/discussions)**
 
 </div>
