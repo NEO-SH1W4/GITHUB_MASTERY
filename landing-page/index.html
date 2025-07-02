@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/framer-motion@6.5.1/dist/framer-motion.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="js/lead-scoring.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -58,9 +59,9 @@
                     <span class="ml-2 px-2 py-1 text-xs bg-purple-100 text-purple-800 rounded-full">Beta</span>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="#demo" class="text-gray-700 hover:text-purple-600">Demo</a>
-                    <a href="#features" class="text-gray-700 hover:text-purple-600">Features</a>
-                    <a href="#pricing" class="text-gray-700 hover:text-purple-600">Pricing</a>
+                    <a href="#demo" class="text-gray-700 hover:text-purple-600" data-track="visited_demo">Demo</a>
+                    <a href="#features" class="text-gray-700 hover:text-purple-600" data-track="visited_features">Features</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-purple-600" data-track="visited_pricing">Pricing</a>
                     <button @click="requestAccess()" class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">
                         Request Access
                     </button>
@@ -616,7 +617,13 @@
                 },
                 
                 submitAccessRequest() {
-                    // Here you would integrate with your lead scoring system
+                    // Integrate with lead scoring system
+                    if (window.leadScoring) {
+                        window.leadScoring.identifyLead(this.form);
+                        window.leadScoring.trackCustomEvent('access_requested', this.form);
+                    }
+                    
+                    // Track with analytics
                     this.trackLead('access_requested', this.form);
                     
                     // Show success message
@@ -631,11 +638,16 @@
                     // Integration with lead scoring system
                     console.log('Lead event:', event, data);
                     
-                    // This would connect to your actual analytics
+                    // Track with Google Analytics
                     if (typeof gtag !== 'undefined') {
                         gtag('event', event, {
                             'custom_parameter': JSON.stringify(data)
                         });
+                    }
+                    
+                    // Track with lead scoring
+                    if (window.leadScoring) {
+                        window.leadScoring.trackCustomEvent(event, data);
                     }
                 },
                 
