@@ -65,8 +65,8 @@ Thank you for your interest in contributing to GitHub Mastery! This project aims
 ### Local Development
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/GITHUB_MASTERY.git
-cd GITHUB_MASTERY
+git clone https://github.com/YOUR_USERNAME/github-mastery.git
+cd github-mastery
 
 # Install dependencies
 npm install
@@ -180,8 +180,8 @@ Bem-vindos contribuidores brasileiros e lusófonos! Sua participação é fundam
 
 ```bash
 # Clone seu fork
-git clone https://github.com/SEU_USUARIO/GITHUB_MASTERY.git
-cd GITHUB_MASTERY
+git clone https://github.com/SEU_USUARIO/github-mastery.git
+cd github-mastery
 
 # Instale dependências
 npm install
@@ -256,8 +256,8 @@ docs(api): atualizar guia de autenticação
 
 ```bash
 # Clona tu fork
-git clone https://github.com/TU_USUARIO/GITHUB_MASTERY.git
-cd GITHUB_MASTERY
+git clone https://github.com/TU_USUARIO/github-mastery.git
+cd github-mastery
 
 # Instala dependencias
 npm install
@@ -334,7 +334,7 @@ This project follows the [Contributor Covenant](https://www.contributor-covenant
 
 **Obrigado por contribuir com o GitHub Mastery!** 🚀
 
-[🏠 Homepage](https://github.com/NEO-SH1W4/GITHUB_MASTERY) • [📖 Docs](https://github.com/NEO-SH1W4/GITHUB_MASTERY#readme) • [🐛 Issues](https://github.com/NEO-SH1W4/GITHUB_MASTERY/issues)
+[🏠 Homepage](https://github.com/NEO-SH1W4/github-mastery) • [📖 Docs](https://github.com/NEO-SH1W4/github-mastery#readme) • [🐛 Issues](https://github.com/NEO-SH1W4/github-mastery/issues)
 
 </div>
 

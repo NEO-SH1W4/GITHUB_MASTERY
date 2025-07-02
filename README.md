@@ -12,7 +12,7 @@
 
 *Domínio completo do GitHub através de API, automações, integrações e ferramentas avançadas*
 
-[🇧🇷 Português](./docs/pt-br/README.md) | [🇪🇸 Español](./docs/es/README.md) | 🇺🇸 English
+[🌐 **Visit Homepage**](./index.html) | [🇧🇷 Português](./docs/pt-br/README.md) | [🇪🇸 Español](./docs/es/README.md) | 🇺🇸 English
 
 </div>
 
@@ -37,13 +37,18 @@
 
 ```bash
 # Clone and setup
-git clone https://github.com/NEO-SH1W4/GITHUB_MASTERY.git
-cd GITHUB_MASTERY
+git clone https://github.com/NEO-SH1W4/github-mastery.git
+cd github-mastery
 npm install
 
 # Configure environment
 cp .env.example .env
 # Add your GitHub token to .env
+
+# View homepage (open in browser)
+start index.html  # Windows
+# open index.html  # macOS
+# xdg-open index.html  # Linux
 
 # Start CLI
 npm start
@@ -94,6 +99,7 @@ npm run dev
 
 ## 📚 Documentation
 
+- 🌐 [**Project Homepage**](./index.html) - Interactive project overview
 - 🏃‍♂️ [**Quick Start Guide**](./docs/en/QUICKSTART.md)
 - 🔌 [**API Usage Examples**](./examples/)
 - 🛠️ [**CLI Commands Reference**](./docs/en/CLI.md)
@@ -118,7 +124,9 @@ npm run dev
 ### Project Structure
 ```
 github-mastery/
-├── api/                  # GitHub API client
+├── index.html           # Project homepage
+├── styles.css           # Homepage styles
+├── api/                 # GitHub API client
 ├── cli-tools/           # Command line interface
 ├── webhooks/            # Webhook server
 ├── examples/            # Usage examples
@@ -180,7 +188,7 @@ Built with ❤️ for the developer community. If this project helped you, consi
 
 <div align="center">
 
-**[🏠 Homepage](https://github.com/NEO-SH1W4/GITHUB_MASTERY) • [📖 Docs](https://github.com/NEO-SH1W4/GITHUB_MASTERY#readme) • [🐛 Issues](https://github.com/NEO-SH1W4/GITHUB_MASTERY/issues) • [💬 Discussions](https://github.com/NEO-SH1W4/GITHUB_MASTERY/discussions)**
+**[🌐 Local Homepage](./index.html) • [🏠 GitHub](https://github.com/NEO-SH1W4/github-mastery) • [📖 Docs](https://github.com/NEO-SH1W4/github-mastery#readme) • [🐛 Issues](https://github.com/NEO-SH1W4/github-mastery/issues) • [💬 Discussions](https://github.com/NEO-SH1W4/github-mastery/discussions)**
 
 </div>
 

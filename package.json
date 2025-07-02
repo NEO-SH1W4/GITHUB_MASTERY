@@ -6,18 +6,21 @@
   "type": "module",
   "scripts": {
     "start": "node cli-tools/gh-cli.js",
+    "homepage": "start index.html",
     "webhook": "node webhooks/webhook-server.js",
     "example": "node examples/basic-api-usage.js",
+    "validate-env": "node -e \"import('./utils/env-validator.js').then(m => m.runFullValidation())\"",
     "test": "echo 'Testes serão implementados em breve'",
-    "lint": "eslint **/*.js",
-    "lint:fix": "eslint **/*.js --fix",
-    "format": "prettier --write **/*.js",
-    "format:check": "prettier --check **/*.js",
+    "lint": "eslint **/*.js --ignore-pattern node_modules/",
+    "lint:fix": "eslint **/*.js --fix --ignore-pattern node_modules/",
+    "format": "prettier --write **/*.js --ignore-path .gitignore",
+    "format:check": "prettier --check **/*.js --ignore-path .gitignore",
     "dev": "nodemon webhooks/webhook-server.js",
     "validate": "npm run lint && npm run format:check",
     "clean": "rm -rf node_modules package-lock.json || echo 'Limpeza concluída'",
-    "setup": "npm install && npm run format",
-    "ci": "npm run validate"
+    "setup": "npm install && npm run format && npm run validate-env",
+    "ci": "npm run validate && npm run validate-env",
+    "health": "npm run validate-env && echo 'Projeto saudável!'"
   },
   "keywords": [
     "github",
