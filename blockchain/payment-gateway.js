@@ -4,17 +4,29 @@
  * Inspirado no modelo Virtual Protocol
  */
 
-import { ethers } from 'ethers';
+// import { ethers } from 'ethers';
 import chalk from 'chalk';
 
 export class GitHubMasteryPaymentGateway {
     constructor(config = {}) {
-        this.provider =
-            config.provider ||
-            new ethers.providers.JsonRpcProvider(process.env.RPC_URL);
-        this.contractAddress =
-            config.contractAddress || process.env.GHMAS_CONTRACT_ADDRESS;
+        // Versão demo - sem blockchain real
+        this.provider = config.provider || 'demo';
+        this.contractAddress = config.contractAddress || '0xGHMAS_DEMO';
         this.wallet = config.wallet;
+        
+        // Simular dados do usuário
+        this.demoData = {
+            balance: 1000, // 1000 GHMAS
+            subscription: {
+                isActive: false,
+                tier: 'free',
+                expiryTime: 0
+            },
+            staking: {
+                amount: 0,
+                duration: 0
+            }
+        };
 
         // Pricing em GHMAS tokens
         this.pricing = {
@@ -33,22 +45,21 @@ export class GitHubMasteryPaymentGateway {
     }
 
     /**
-     * Verificar se usuário tem tokens suficientes
+     * Verificar se usuário tem tokens suficientes (versão demo)
      */
     async checkBalance(userAddress, requiredAmount) {
         try {
-            const contract = new ethers.Contract(
-                this.contractAddress,
-                this.getABI(),
-                this.provider
-            );
-
-            const balance = await contract.balanceOf(userAddress);
-            const balanceGHMAS = ethers.utils.formatEther(balance);
-
-            console.log(chalk.blue(`💰 Balance: ${balanceGHMAS} GHMAS`));
-
-            return parseFloat(balanceGHMAS) >= requiredAmount;
+            // Simular verificação de balanço
+            const balance = this.demoData.balance;
+            
+            console.log(chalk.blue(`💰 Balance: ${balance} GHMAS`));
+            
+            if (balance < requiredAmount) {
+                console.log(chalk.yellow(`⚠️  Saldo insuficiente. Necessário: ${requiredAmount} GHMAS`));
+                return false;
+            }
+            
+            return true;
         } catch (error) {
             console.error(chalk.red('❌ Erro ao verificar balance:'), error.message);
             return false;

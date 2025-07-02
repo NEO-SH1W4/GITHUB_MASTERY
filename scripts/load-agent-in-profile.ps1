@@ -183,6 +183,7 @@ function Load-GitHubAgent {
     Write-Host "  gcw            - Weekly automation" -ForegroundColor Cyan
     Write-Host "  gcstats        - View statistics" -ForegroundColor Cyan
     Write-Host "  gchelp         - Show help" -ForegroundColor Cyan
+}
 
 # Carregar o agente
 Load-GitHubAgent
