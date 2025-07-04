@@ -4,7 +4,7 @@
  * @fileoverview Global test configuration and utilities
  */
 
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 
 // Load test environment variables
 dotenv.config({ path: '.env.test' });
