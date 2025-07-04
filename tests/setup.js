@@ -17,7 +17,7 @@ beforeAll(async () => {
   // Set test environment
   process.env.NODE_ENV = 'test';
   process.env.LOG_LEVEL = 'error'; // Suppress logs during tests
-  
+
   // Mock console.log during tests to reduce noise
   console.log = jest.fn();
   console.info = jest.fn();

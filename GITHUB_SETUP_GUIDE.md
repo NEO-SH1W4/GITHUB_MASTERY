@@ -15,11 +15,13 @@
 ### 1. Adicionar Chave SSH ao GitHub
 
 **Sua chave pública (já copiada):**
+
 ```
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPEBafTQJ3IlDxsSlom+ZXLgXsXSnD4Z1IT9NJV5Vu3j symbeon@local
 ```
 
 **Passos:**
+
 1. Acesse: https://github.com/settings/keys
 2. Clique em "New SSH key"
 3. Título sugerido: "PC João - Windows"
@@ -29,12 +31,14 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPEBafTQJ3IlDxsSlom+ZXLgXsXSnD4Z1IT9NJV5Vu3j
 ### 2. Configurar SSH Agent (Windows)
 
 Execute este comando PowerShell como Administrador:
+
 ```powershell
 Set-Service ssh-agent -StartupType Automatic
 Start-Service ssh-agent
 ```
 
 Depois, no PowerShell normal:
+
 ```powershell
 ssh-add "$env:USERPROFILE\.ssh\symbeon_id_ed25519"
 ```
@@ -54,6 +58,7 @@ Acesse: https://github.com/settings/profile
 **Sugestões de configuração:**
 
 #### Informações Básicas
+
 - **Name**: João Oliveira (ou seu nome completo)
 - **Bio**: Sugestões:
   - "🚀 Full Stack Developer | 💻 DevOps Enthusiast | 🔧 Automation Expert"
@@ -64,20 +69,25 @@ Acesse: https://github.com/settings/profile
 - **Website**: Seu portfolio ou LinkedIn
 
 #### Informações Adicionais
+
 - **Twitter/X**: @seuusername
 - **LinkedIn**: linkedin.com/in/seuusername
 
 #### README do Perfil
+
 Crie um repositório com seu username: `NEO-SH1W4/NEO-SH1W4`
 
 Exemplo de `README.md`:
+
 ```markdown
 # Olá, eu sou João! 👋
 
 ## 🚀 Sobre Mim
+
 Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e automatizar processos.
 
 ## 🛠️ Tecnologias & Ferramentas
+
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -85,14 +95,17 @@ Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e automatiza
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
 ## 📊 GitHub Stats
+
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=NEO-SH1W4&show_icons=true&theme=dark)
 
 ## 🌟 Projetos em Destaque
+
 - [GitHub Mastery](https://github.com/NEO-SH1W4/github-mastery) - Sistema de gestão de projetos
 - [GuarDrive](https://github.com/NEO-SH1W4/guardrive) - Solução de backup automatizado
 - [MCP Ecosystem](https://github.com/NEO-SH1W4/mcp-ecosystem) - Ferramentas MCP
 
 ## 📫 Como me encontrar
+
 - LinkedIn: [João Oliveira](https://linkedin.com/in/seuusername)
 - Email: joao.oliveirax@icloud.com
 ```
@@ -100,12 +113,14 @@ Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e automatiza
 ### 5. Configurações Recomendadas do Repositório
 
 #### Para novos repositórios:
+
 1. **Acesse**: https://github.com/settings/repositories
 2. Configure:
    - Default branch name: `main`
    - Automatically delete head branches: ✓
 
 #### Segurança:
+
 1. **Acesse**: https://github.com/settings/security
 2. Ative:
    - Two-factor authentication (2FA)
@@ -114,6 +129,7 @@ Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e automatiza
 ### 6. Tokens de Acesso Pessoal (PAT)
 
 Para CI/CD e automações:
+
 1. Acesse: https://github.com/settings/tokens
 2. Clique em "Generate new token (classic)"
 3. Configure:
@@ -129,16 +145,19 @@ https://github.com/settings/emails
 ## Comandos Úteis
 
 ### Clonar com SSH
+
 ```bash
 git clone git@github.com:NEO-SH1W4/repositorio.git
 ```
 
 ### Configurar upstream para fork
+
 ```bash
 git remote add upstream git@github.com:original-owner/original-repo.git
 ```
 
 ### Assinar commits com GPG (opcional)
+
 ```bash
 gpg --gen-key
 git config --global user.signingkey YOUR_KEY_ID
@@ -160,6 +179,7 @@ git config --global commit.gpgsign true
 ## Troubleshooting
 
 ### SSH não funciona?
+
 ```powershell
 # Verificar se o agente está rodando
 Get-Service ssh-agent
@@ -173,9 +193,10 @@ ssh-add "$env:USERPROFILE\.ssh\symbeon_id_ed25519"
 ```
 
 ### Git pede senha?
+
 Certifique-se de usar URLs SSH:
+
 ```bash
 # Mudar de HTTPS para SSH
 git remote set-url origin git@github.com:NEO-SH1W4/repositorio.git
 ```
-

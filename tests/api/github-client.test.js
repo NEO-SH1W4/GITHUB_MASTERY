@@ -78,23 +78,23 @@ describe('GitHubClient', () => {
   describe('listRepositories', () => {
     it('should return repositories list', async () => {
       const mockRepos = [
-        { 
-          name: 'repo1', 
+        {
+          name: 'repo1',
           full_name: 'user/repo1',
           description: 'Test repository 1',
           language: 'JavaScript',
           stargazers_count: 10,
           forks_count: 5,
-          open_issues_count: 2
+          open_issues_count: 2,
         },
-        { 
-          name: 'repo2', 
+        {
+          name: 'repo2',
           full_name: 'user/repo2',
           description: 'Test repository 2',
           language: 'Python',
           stargazers_count: 20,
           forks_count: 8,
-          open_issues_count: 1
+          open_issues_count: 1,
         },
       ];
 
