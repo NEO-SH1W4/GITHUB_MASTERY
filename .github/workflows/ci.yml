@@ -36,7 +36,18 @@ jobs:
 
       - name: Check formatting
         run: |
-          npx prettier --check "**/*.{js,jsx,ts,tsx,json,md,html,css}"
+          # Instala o Prettier globalmente para evitar problemas de path
+          npm install -g prettier
+
+          # Lista todos os arquivos que serão verificados
+          echo "Files to check:"
+          git ls-files | grep -E "\.(js|jsx|ts|tsx|json|md|html|css)$"
+
+          # Executa o Prettier
+          prettier --check "**/*.{js,jsx,ts,tsx,json,md,html,css}" --ignore-path .gitignore || (
+            echo "\nFormatting issues found. Run 'npm run format' to fix them."
+            exit 1
+          )
 
   security:
     name: Security Audit

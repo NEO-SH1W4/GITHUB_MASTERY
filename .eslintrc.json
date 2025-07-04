@@ -4,8 +4,12 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "plugin:jest/recommended"],
-  "parserOptions": {
+  "extends": [
+    "eslint:recommended",
+    "prettier"
+  ],
+  "plugins": ["prettier"],
+  "parserOptions":
     "ecmaVersion": 2022,
     "sourceType": "module"
   },
