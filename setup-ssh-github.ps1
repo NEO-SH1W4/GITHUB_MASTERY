@@ -69,6 +69,6 @@ Read-Host
 ssh -T git@github.com
 
 Write-Host "`n=== Configuração Concluída ===" -ForegroundColor Green
-Write-Host "Pressione Enter para sair"
+Write-Host "Pressione Enter para sair" -ForegroundColor White
 Read-Host
 
