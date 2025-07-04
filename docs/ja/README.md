@@ -113,4 +113,3 @@ node cli-tools/gh-cli.js create-repo
 **[🌐 ローカルホームページ](../../index.html) • [🎯 ランディングページ](https://neo-sh1w4.github.io/github_mastery/) • [🏠 GitHub](https://github.com/NEO-SH1W4/github-mastery) • [📖 ドキュメント](https://github.com/NEO-SH1W4/github-mastery#readme) • [🐛 課題](https://github.com/NEO-SH1W4/github-mastery/issues) • [💬 ディスカッション](https://github.com/NEO-SH1W4/github-mastery/discussions)**
 
 </div>
-

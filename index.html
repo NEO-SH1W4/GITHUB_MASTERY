@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:;" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:;"
+    />
     <meta name="referrer" content="no-referrer" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
-    <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
-    
+    <meta
+      http-equiv="Permissions-Policy"
+      content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+    />
+
     <!-- Proteções Avançadas com Honeypot -->
     <style id="security-styles">
       .protected-content::before {
@@ -21,14 +27,16 @@
         pointer-events: none;
       }
       @media print {
-        body { display: none !important; }
+        body {
+          display: none !important;
+        }
       }
     </style>
-    
+
     <!-- Sistema Anti-Roubo Avançado -->
     <script>
       // Desabilitar inspeção de código
-      document.addEventListener('keydown', function(e) {
+      document.addEventListener('keydown', function (e) {
         if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) {
           e.preventDefault();
           return false;
@@ -56,15 +64,21 @@
         devtools.toString = () => {
           window.location.href = 'about:blank';
           return '';
-        }
+        };
       }, 500);
 
       // Proteção contra seleção de texto
       document.addEventListener('selectstart', e => e.preventDefault());
 
       // Aviso de direitos autorais
-      console.log('%c⚠️ AVISO DE DIREITOS AUTORAIS', 'color: red; font-size: 30px; font-weight: bold;');
-      console.log('%cEste código é propriedade intelectual protegida.\nQualquer tentativa de cópia ou reprodução não autorizada será processada legalmente.', 'font-size: 16px;');
+      console.log(
+        '%c⚠️ AVISO DE DIREITOS AUTORAIS',
+        'color: red; font-size: 30px; font-weight: bold;'
+      );
+      console.log(
+        '%cEste código é propriedade intelectual protegida.\nQualquer tentativa de cópia ou reprodução não autorizada será processada legalmente.',
+        'font-size: 16px;'
+      );
     </script>
     <title>GitHub Mastery - Technical Portfolio & Market Analysis</title>
     <meta
@@ -964,13 +978,16 @@
         </div>
         <div class="footer-bottom">
           <p>
-            &copy; 2025 GitHub Mastery Technical Portfolio. All rights reserved worldwide. This work is protected by copyright
-            laws and international treaties. Unauthorized reproduction, distribution, or modification of this work is strictly
-            prohibited and may result in severe civil and criminal penalties.
+            &copy; 2025 GitHub Mastery Technical Portfolio. All rights reserved
+            worldwide. This work is protected by copyright laws and international
+            treaties. Unauthorized reproduction, distribution, or modification of this
+            work is strictly prohibited and may result in severe civil and criminal
+            penalties.
           </p>
           <p class="legal-notice">
-            CONFIDENTIAL AND PROPRIETARY. Contains trade secrets and intellectual property of GitHub Mastery.
-            Any unauthorized access, use, or disclosure is strictly prohibited.
+            CONFIDENTIAL AND PROPRIETARY. Contains trade secrets and intellectual
+            property of GitHub Mastery. Any unauthorized access, use, or disclosure is
+            strictly prohibited.
           </p>
         </div>
       </div>
@@ -979,10 +996,10 @@
     <!-- Sistema de Proteção MCP v2.0.0 -->
     <script>
       // Proteção avançada contra roubo de código
-      (function() {
+      (function () {
         const protectionKey = '{{PROTECTION_KEY}}';
         const verificationEndpoint = 'https://api.github-mastery.com/verify';
-        
+
         function generateProtectionHash() {
           return Array.from(crypto.getRandomValues(new Uint8Array(32)))
             .map(b => b.toString(16).padStart(2, '0'))

@@ -113,4 +113,3 @@ node cli-tools/gh-cli.js create-repo
 **[🌐 الصفحة الرئيسية المحلية](../../index.html) • [🎯 الصفحة المقصودة](https://neo-sh1w4.github.io/github_mastery/) • [🏠 GitHub](https://github.com/NEO-SH1W4/github-mastery) • [📖 الوثائق](https://github.com/NEO-SH1W4/github-mastery#readme) • [🐛 المشكلات](https://github.com/NEO-SH1W4/github-mastery/issues) • [💬 المناقشات](https://github.com/NEO-SH1W4/github-mastery/discussions)**
 
 c/dive
-

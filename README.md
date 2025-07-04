@@ -3,16 +3,19 @@
 ## Status do Projeto
 
 ### Infraestrutura & DevOps
+
 ✅ Configuração SSH estabelecida e testada
 ✅ CI/CD com GitHub Actions configurado
 ✅ Ambiente de desenvolvimento padronizado
 
 ### Desenvolvimento
+
 ✅ Integração MCP implementada
 ✅ Testes unitários configurados (Jest)
 ✅ ESLint + Prettier (padrão AirBnB estendido)
 
 ### Documentação
+
 ✅ README trilíngue (EN/PT-BR/ES)
 ✅ Guias de contribuição atualizados
 ✅ Landing page com analytics

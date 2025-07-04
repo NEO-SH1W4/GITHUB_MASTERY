@@ -1672,7 +1672,8 @@ footer {
   -webkit-touch-callout: none;
 }
 
-img, video {
+img,
+video {
   pointer-events: none;
   -webkit-user-drag: none;
   -moz-user-drag: none;
@@ -1691,15 +1692,24 @@ img, video {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, transparent 45%, rgba(88, 166, 255, 0.1) 50%, transparent 55%);
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(88, 166, 255, 0.1) 50%,
+    transparent 55%
+  );
   background-size: 200% 200%;
   animation: protectionShine 3s linear infinite;
   pointer-events: none;
 }
 
 @keyframes protectionShine {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /* Enhanced Typography */

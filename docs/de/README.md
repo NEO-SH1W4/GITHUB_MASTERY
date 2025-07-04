@@ -113,4 +113,3 @@ Mit ❤️ für die Entwickler-Community gebaut. Wenn dieses Projekt Ihnen gehol
 **[🌐 Lokale Homepage](../../index.html) • [🎯 Landing Page](https://neo-sh1w4.github.io/github_mastery/) • [🏠 GitHub](https://github.com/NEO-SH1W4/github-mastery) • [📖 Dokumentation](https://github.com/NEO-SH1W4/github-mastery#readme) • [🐛 Probleme](https://github.com/NEO-SH1W4/github-mastery/issues) • [💬 Diskussionen](https://github.com/NEO-SH1W4/github-mastery/discussions)**
 
 </div>
-

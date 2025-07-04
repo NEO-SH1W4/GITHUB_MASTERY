@@ -35,7 +35,8 @@ jobs:
         run: npm test
 
       - name: Check formatting
-        run: npm run format:check
+        run: |
+          npx prettier --check "**/*.{js,jsx,ts,tsx,json,md,html,css}"
 
   security:
     name: Security Audit
