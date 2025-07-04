@@ -7,6 +7,42 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Planned
+- Dashboard web interativo
+- Sistema de plugins
+- Integração com serviços de terceiros
+- Interface mobile
+
+## [1.1.0] - 2025-07-04
+
+### Added
+- Landing page profissional com sistema de lead scoring
+- Documentação trilíngue (EN/PT-BR/ES)
+- Configuração CI/CD com GitHub Actions
+- ESLint com regras estendidas do AirBnB
+- Testes unitários com Jest
+- Guias de contribuição atualizados
+- Analytics integrado na landing page
+- Configuração SSH segura (ED25519)
+
+### Changed
+- Migração para ES Modules (type: "module" no package.json)
+- Atualização de dependências para versões mais recentes
+- Melhorias na documentação
+- Padronização do ambiente de desenvolvimento
+
+### Fixed
+- Configuração do ESLint para compatibilidade com Jest
+- Problemas nos pipelines de CI/CD
+- Setup de ambiente de desenvolvimento
+- Erros de teste e linting
+
+### Security
+- Atualização de dependências para corrigir vulnerabilidades
+- Implementação de HMAC em webhooks
+- Melhorias na gestão de tokens
+- Configuração SSH com nova chave ED25519
+
 ### Added
 
 - Sistema PowerShell Agent MCP Enhanced v2.0.0
