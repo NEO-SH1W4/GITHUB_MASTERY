@@ -1,10 +1,21 @@
 # GitHub Mastery
 
-## Status
+## Status do Projeto
 
+### Infraestrutura & DevOps
 ✅ Configuração SSH estabelecida e testada
-✅ Ambiente de desenvolvimento configurado
+✅ CI/CD com GitHub Actions configurado
+✅ Ambiente de desenvolvimento padronizado
+
+### Desenvolvimento
 ✅ Integração MCP implementada
+✅ Testes unitários configurados (Jest)
+✅ ESLint + Prettier (padrão AirBnB estendido)
+
+### Documentação
+✅ README trilíngue (EN/PT-BR/ES)
+✅ Guias de contribuição atualizados
+✅ Landing page com analytics
 
 <div align="center">
 
@@ -59,8 +70,13 @@ _Domínio completo do GitHub através de API, automações, integrações e ferr
 ## 🚀 Quick Installation
 
 ```bash
-# Clone and setup
+# Clone and setup (HTTPS)
 git clone https://github.com/NEO-SH1W4/github-mastery.git
+
+# Or using SSH
+git clone git@github.com:NEO-SH1W4/github-mastery.git
+
+# Install dependencies
 cd github-mastery
 npm install
 
