@@ -3,6 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:;" />
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
+    
+    <!-- Proteções Avançadas com Honeypot -->
+    <style id="security-styles">
+      .protected-content::before {
+        content: attr(data-protection);
+        position: absolute;
+        z-index: -1;
+        opacity: 0.0001;
+        pointer-events: none;
+      }
+      @media print {
+        body { display: none !important; }
+      }
+    </style>
+    
+    <!-- Sistema Anti-Roubo Avançado -->
+    <script>
+      // Desabilitar inspeção de código
+      document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) {
+          e.preventDefault();
+          return false;
+        }
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.keyCode === 67)) {
+          e.preventDefault();
+          return false;
+        }
+        if (e.ctrlKey && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
+          e.preventDefault();
+          return false;
+        }
+        if (e.key === 'F12' || e.keyCode === 123) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // Desabilitar menu de contexto
+      document.addEventListener('contextmenu', e => e.preventDefault());
+
+      // Proteção contra DevTools
+      setInterval(() => {
+        const devtools = /./;
+        devtools.toString = () => {
+          window.location.href = 'about:blank';
+          return '';
+        }
+      }, 500);
+
+      // Proteção contra seleção de texto
+      document.addEventListener('selectstart', e => e.preventDefault());
+
+      // Aviso de direitos autorais
+      console.log('%c⚠️ AVISO DE DIREITOS AUTORAIS', 'color: red; font-size: 30px; font-weight: bold;');
+      console.log('%cEste código é propriedade intelectual protegida.\nQualquer tentativa de cópia ou reprodução não autorizada será processada legalmente.', 'font-size: 16px;');
+    </script>
     <title>GitHub Mastery - Technical Portfolio & Market Analysis</title>
     <meta
       name="description"
@@ -901,12 +964,53 @@
         </div>
         <div class="footer-bottom">
           <p>
-            &copy; 2025 GitHub Mastery Technical Portfolio. Demonstrating architectural
-            expertise in enterprise DevOps automation.
+            &copy; 2025 GitHub Mastery Technical Portfolio. All rights reserved worldwide. This work is protected by copyright
+            laws and international treaties. Unauthorized reproduction, distribution, or modification of this work is strictly
+            prohibited and may result in severe civil and criminal penalties.
+          </p>
+          <p class="legal-notice">
+            CONFIDENTIAL AND PROPRIETARY. Contains trade secrets and intellectual property of GitHub Mastery.
+            Any unauthorized access, use, or disclosure is strictly prohibited.
           </p>
         </div>
       </div>
     </footer>
+
+    <!-- Sistema de Proteção MCP v2.0.0 -->
+    <script>
+      // Proteção avançada contra roubo de código
+      (function() {
+        const protectionKey = '{{PROTECTION_KEY}}';
+        const verificationEndpoint = 'https://api.github-mastery.com/verify';
+        
+        function generateProtectionHash() {
+          return Array.from(crypto.getRandomValues(new Uint8Array(32)))
+            .map(b => b.toString(16).padStart(2, '0'))
+            .join('');
+        }
+
+        // Proteção de execução
+        const protectionHash = generateProtectionHash();
+        document.documentElement.setAttribute('data-protection', protectionHash);
+
+        // Monitor de integridade
+        setInterval(() => {
+          const currentHash = document.documentElement.getAttribute('data-protection');
+          if (currentHash !== protectionHash) {
+            document.body.innerHTML = 'Violação de Segurança Detectada';
+            location.reload();
+          }
+        }, 1000);
+
+        // Proteção contra debugging
+        const startTime = performance.now();
+        debugger;
+        const endTime = performance.now();
+        if (endTime - startTime > 100) {
+          location.href = 'about:blank';
+        }
+      })();
+    </script>
 
     <script>
       // Initialize AOS (Animate On Scroll)

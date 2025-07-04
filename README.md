@@ -29,7 +29,7 @@
 
 _Domínio completo do GitHub através de API, automações, integrações e ferramentas avançadas_
 
-[🌐 **Visit Homepage**](https://neo-sh1w4.github.io/github_mastery/) | [🇧🇷 Português](./docs/pt-br/README.md) | [🇪🇸 Español](./docs/es/README.md) | 🇺🇸 English
+[🌐 **Visit Homepage**](https://neo-sh1w4.github.io/github_mastery/) | [🇧🇷 Português](./docs/pt-br/README.md) | [🇪🇸 Español](./docs/es/README.md) | [🇨🇳 中文](./docs/zh/README.md) | [🇮🇳 हिंदी](./docs/hi/README.md) | [🇯🇵 日本語](./docs/ja/README.md) | [🌍 العربية](./docs/ar/README.md) | [🇩🇪 Deutsch](./docs/de/README.md) | 🇺🇸 English
 
 </div>
 
