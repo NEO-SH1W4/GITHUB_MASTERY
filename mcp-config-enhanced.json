@@ -1,0 +1,23 @@
+﻿{
+    "capabilities":  {
+                         "python_brain":  true,
+                         "health_monitoring":  true,
+                         "rust_core":  true,
+                         "advanced_metrics":  true
+                     },
+    "mcpServers":  {
+                       "github-mastery-enhanced":  {
+                                                       "args":  [
+                                                                    "./mcp/github-mcp-server-enhanced.js"
+                                                                ],
+                                                       "env":  {
+                                                                   "AI_CAPABILITIES":  "true",
+                                                                   "MCP_SERVER_NAME":  "github-mastery-enhanced",
+                                                                   "GITHUB_TOKEN":  "",
+                                                                   "MCP_SERVER_VERSION":  "2.0.0",
+                                                                   "PERFORMANCE_MODE":  "ultra"
+                                                               },
+                                                       "command":  "node"
+                                                   }
+                   }
+}
