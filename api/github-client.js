@@ -159,6 +159,11 @@ class GitHubClient {
    */
   async createRepository(repoData) {
     try {
+      // Validar se o nome do repositório foi fornecido
+      if (!repoData.name || repoData.name.trim() === '') {
+        throw new Error('Repository name is required');
+      }
+
       console.log(chalk.blue(`🆕 Criando repositório ${repoData.name}...`));
 
       const { data: newRepo } =
@@ -216,6 +221,67 @@ class GitHubClient {
       return issues;
     } catch (error) {
       console.log(chalk.red('❌ Erro ao listar issues:'), error.message);
+      throw error;
+    }
+  }
+
+  /**
+   * Criar uma nova issue
+   */
+  async createIssue(owner, repo, issueData) {
+    try {
+      const { data: issue } = await this.octokit.rest.issues.create({
+        owner,
+        repo,
+        ...issueData,
+      });
+
+      return issue;
+    } catch (error) {
+      console.error(chalk.red('❌ Erro ao criar issue:'), error.message);
+      throw error;
+    }
+  }
+
+  /**
+   * Obter informações de rate limit
+   */
+  async getRateLimit() {
+    try {
+      const { data } = await this.octokit.rest.rateLimit.get();
+      return data;
+    } catch (error) {
+      console.error(chalk.red('❌ Erro ao obter rate limit:'), error.message);
+      throw error;
+    }
+  }
+
+  /**
+   * Validar token de autenticação
+   */
+  async validateToken() {
+    try {
+      await this.octokit.rest.users.getAuthenticated();
+      return true;
+    } catch (error) {
+      console.error(chalk.red('❌ Token inválido:'), error.message);
+      return false;
+    }
+  }
+
+  /**
+   * Obter informações de um pull request
+   */
+  async getPullRequest(owner, repo, prNumber) {
+    try {
+      const { data } = await this.octokit.rest.pulls.get({
+        owner,
+        repo,
+        pull_number: prNumber,
+      });
+      return data;
+    } catch (error) {
+      console.error(chalk.red('❌ Erro ao obter PR:'), error.message);
       throw error;
     }
   }

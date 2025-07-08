@@ -27,8 +27,8 @@ import {
 import { EventEmitter } from 'events';
 import { GitHubClient } from '../api/github-client.js';
 import { createLogger } from '../utils/logger.js';
-import fs from 'fs/promises';
-import path from 'path';
+// import fs from 'fs/promises'; // removed
+// import path from 'path'; // removed
 
 class ConsolidatedGitHubMCPServer extends EventEmitter {
   constructor() {
@@ -104,7 +104,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
                   default: 'updated'
                 },
                 direction: { type: 'string', enum: ['asc', 'desc'], default: 'desc' },
-                type: { type: 'string', enum: ['all', 'owner', 'public', 'private', 'member'] },
+                type: { type: 'string', enum: ['all', '_owner', 'public', 'private', 'member'] },
                 language: { type: 'string', description: 'Filter by primary language' }
               },
               required: [],
@@ -137,7 +137,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
             inputSchema: {
               type: 'object',
               properties: {
-                repo: { type: 'string' },
+                _repo: { type: 'string' },
                 type: { 
                   type: 'string', 
                   enum: ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore'],
@@ -156,7 +156,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
                 },
                 ai_suggestions: { type: 'boolean', default: true }
               },
-              required: ['repo', 'description'],
+              required: ['_repo', 'description'],
             },
           },
 
@@ -167,12 +167,12 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
             inputSchema: {
               type: 'object',
               properties: {
-                owner: { type: 'string' },
-                repo: { type: 'string' },
+                _owner: { type: 'string' },
+                _repo: { type: 'string' },
                 include_predictions: { type: 'boolean', default: true },
                 ai_analysis: { type: 'boolean', default: true }
               },
-              required: ['owner', 'repo'],
+              required: ['_owner', '_repo'],
             },
           },
 
@@ -182,7 +182,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
             inputSchema: {
               type: 'object',
               properties: {
-                days: { type: 'number', default: 30 },
+                _days: { type: 'number', default: 30 },
                 include_predictions: { type: 'boolean', default: true },
                 format: { type: 'string', enum: ['summary', 'detailed', 'json'], default: 'summary' }
               },
@@ -201,7 +201,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
                   type: 'string',
                   enum: ['analyze_patterns', 'optimize_timing', 'predict_trends', 'generate_commit']
                 },
-                params: { type: 'object' }
+                _params: { type: 'object' }
               },
               required: ['function'],
             },
@@ -274,7 +274,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
 
     // Handler para ler recursos
     this.server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
-      const { uri } = request.params;
+      const { uri } = request._params;
       
       try {
         switch (uri) {
@@ -303,7 +303,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
 
     // Handler para executar ferramentas
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
-      const { name, arguments: args } = request.params;
+      const { name, arguments: args } = request._params;
 
       try {
         // Registrar mÃ©trica
@@ -537,15 +537,15 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
 
     // Filtrar por linguagem se especificado
     const filtered = language
-      ? repos.filter(repo => repo.language === language)
+      ? repos.filter(_repo => _repo.language === language)
       : repos;
 
     // Enriquecer dados com anÃ¡lise
     const enriched = await Promise.all(
-      filtered.slice(0, limit).map(async repo => ({
-        ...repo,
-        health_score: await this.calculateHealthScore(repo),
-        contribution_opportunity: this.assessContributionOpportunity(repo),
+      filtered.slice(0, limit).map(async _repo => ({
+        ..._repo,
+        health_score: await this.calculateHealthScore(_repo),
+        contribution_opportunity: this.assessContributionOpportunity(_repo),
       }))
     );
 
@@ -557,15 +557,15 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
   }
 
   async handleSmartContribution(args) {
-    const { repo, type, description, files, ai_suggestions } = args;
+    const { _repo, type, description, files, ai_suggestions } = args;
     
     // Se AI suggestions estiver habilitado, usar o Agent Brain
     if (ai_suggestions) {
       const aiResult = await this.callAgentBrain('generate_contribution', {
-        repo,
+        _repo,
         type,
         description,
-        context: await this.getRepoContext(repo)
+        context: await this.getRepoContext(_repo)
       });
 
       if (aiResult.suggestions) {
@@ -576,7 +576,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
 
     // Executar contribuiÃ§Ã£o atravÃ©s do Agent Core (Rust)
     const result = await this.callAgentCore('execute_smart_contribution', {
-      repo,
+      _repo,
       commit_type: type,
       message: description,
       files: args.files || []
@@ -593,12 +593,12 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
   }
 
   async handleRepoHealthCheck(args) {
-    const { owner, repo, include_predictions, ai_analysis } = args;
+    const { _owner, _repo, include_predictions, ai_analysis } = args;
     
     // Coletar dados bÃ¡sicos
-    const repoData = await this.githubClient.getRepository(owner, repo);
-    const issues = await this.githubClient.listIssues(owner, repo, { state: 'open' });
-    const pulls = await this.githubClient.listPullRequests(owner, repo, { state: 'open' });
+    const repoData = await this.githubClient.getRepository(_owner, _repo);
+    const issues = await this.githubClient.listIssues(_owner, _repo, { state: 'open' });
+    const pulls = await this.githubClient.listPullRequests(_owner, _repo, { state: 'open' });
     
     // Calcular mÃ©tricas de saÃºde
     const healthMetrics = {
@@ -611,20 +611,20 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
       pull_requests: {
         open: pulls.length,
         avg_age_days: this.calculateAverageAge(pulls),
-        merge_rate: await this.calculateMergeRate(owner, repo)
+        merge_rate: await this.calculateMergeRate(_owner, _repo)
       },
       activity: {
         last_push: repoData.pushed_at,
-        last_commit: await this.getLastCommitDate(owner, repo),
-        contributors_30d: await this.getActiveContributors(owner, repo, 30)
+        last_commit: await this.getLastCommitDate(_owner, _repo),
+        contributors_30d: await this.getActiveContributors(_owner, _repo, 30)
       }
     };
 
     // Adicionar previsÃµes se solicitado
     if (include_predictions) {
       healthMetrics.predictions = await this.callAgentBrain('predict_repo_health', {
-        owner,
-        repo,
+        _owner,
+        _repo,
         current_metrics: healthMetrics
       });
     }
@@ -632,8 +632,8 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
     // Adicionar anÃ¡lise AI se solicitado
     if (ai_analysis) {
       healthMetrics.ai_analysis = await this.callAgentBrain('analyze_repo_health', {
-        owner,
-        repo,
+        _owner,
+        _repo,
         metrics: healthMetrics
       });
     }
@@ -642,7 +642,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
   }
 
   async handleAgentExecute(args) {
-    const { function: func, params = {} } = args;
+    const { function: _func, _params = {} } = args;
     
     // Validar funÃ§Ã£o
     const allowedFunctions = [
@@ -652,15 +652,15 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
       'generate_commit'
     ];
     
-    if (!allowedFunctions.includes(func)) {
-      throw new Error(`Invalid function: ${func}`);
+    if (!allowedFunctions.includes(_func)) {
+      throw new Error(`Invalid function: ${_func}`);
     }
 
     // Executar atravÃ©s do Agent Core
-    const result = await this.callAgentCore(func, params);
+    const result = await this.callAgentCore(_func, _params);
     
     return {
-      function: func,
+      function: _func,
       result,
       execution_time_ms: result._execution_time || 0,
       rust_performance_boost: '10x' // DemonstraÃ§Ã£o das vantagens do Rust
@@ -702,16 +702,16 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
   /**
    * MÃ©todos auxiliares
    */
-  async callAgentCore(func, params) {
+  async callAgentCore(_func, _params) {
     // Simular chamada ao Agent Core (Rust)
     // Em produÃ§Ã£o, isso seria uma chamada real via FFI ou HTTP
     return {
       _execution_time: Math.random() * 100,
-      result: `Executed ${func} with ultra-fast Rust performance`
+      result: `Executed ${_func} with ultra-fast Rust performance`
     };
   }
 
-  async callAgentBrain(func, params) {
+  async callAgentBrain(_func, _params) {
     // Simular chamada ao Agent Brain (Python)
     // Em produÃ§Ã£o, isso seria uma chamada real via Python binding ou HTTP
     return {
@@ -720,22 +720,22 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
     };
   }
 
-  calculateHealthScore(repo) {
+  calculateHealthScore(_repo) {
     // Algoritmo simples de pontuaÃ§Ã£o de saÃºde
     let score = 100;
     
     // Penalizar por falta de atividade
-    const daysSinceUpdate = (Date.now() - new Date(repo.updated_at)) / (1000 * 60 * 60 * 24);
+    const daysSinceUpdate = (Date.now() - new Date(_repo.updated_at)) / (1000 * 60 * 60 * 24);
     if (daysSinceUpdate > 90) score -= 20;
     if (daysSinceUpdate > 180) score -= 30;
     
     // Bonificar por popularidade
-    if (repo.stargazers_count > 100) score += 10;
-    if (repo.stargazers_count > 1000) score += 10;
+    if (_repo.stargazers_count > 100) score += 10;
+    if (_repo.stargazers_count > 1000) score += 10;
     
     // Penalizar por muitas issues abertas
-    if (repo.open_issues_count > 50) score -= 10;
-    if (repo.open_issues_count > 100) score -= 20;
+    if (_repo.open_issues_count > 50) score -= 10;
+    if (_repo.open_issues_count > 100) score -= 20;
     
     return Math.max(0, Math.min(100, score));
   }
@@ -748,7 +748,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
     }
   }
 
-  hasPermission(permission) {
+  hasPermission(_permission) {
     // Implementar lÃ³gica de permissÃµes
     return true; // Simplificado para demonstraÃ§Ã£o
   }
@@ -810,7 +810,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
     }
 
     const user = await this.githubClient.getAuthenticatedUser();
-    const stats = await this.githubClient.getUserStats();
+    const _stats = await this.githubClient.getUserStats();
     
     return {
       contents: [
@@ -819,11 +819,11 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
           mimeType: 'application/json',
           text: JSON.stringify({
             profile: user,
-            statistics: stats,
+            statistics: _stats,
             enriched_data: {
-              productivity_score: this.calculateProductivityScore(stats),
-              expertise_areas: this.detectExpertiseAreas(stats),
-              contribution_patterns: this.analyzeContributionPatterns(stats)
+              productivity_score: this.calculateProductivityScore(_stats),
+              expertise_areas: this.detectExpertiseAreas(_stats),
+              contribution_patterns: this.analyzeContributionPatterns(_stats)
             }
           }, null, 2)
         }
@@ -958,17 +958,17 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
   /**
    * MÃ©todos auxiliares para anÃ¡lise
    */
-  calculateProductivityScore(stats) {
+  calculateProductivityScore(_stats) {
     // Implementar cÃ¡lculo de produtividade
     return Math.floor(Math.random() * 30) + 70; // Simulado
   }
 
-  detectExpertiseAreas(stats) {
+  detectExpertiseAreas(_stats) {
     // Detectar Ã¡reas de expertise baseado em atividade
     return ['JavaScript', 'Rust', 'Python', 'DevOps'];
   }
 
-  analyzeContributionPatterns(stats) {
+  analyzeContributionPatterns(_stats) {
     // Analisar padrÃµes de contribuiÃ§Ã£o
     return {
       most_active_day: 'Wednesday',
@@ -979,9 +979,9 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
 
   aggregateLanguages(repos) {
     const languages = {};
-    repos.forEach(repo => {
-      if (repo.language) {
-        languages[repo.language] = (languages[repo.language] || 0) + 1;
+    repos.forEach(_repo => {
+      if (_repo.language) {
+        languages[_repo.language] = (languages[_repo.language] || 0) + 1;
       }
     });
     return languages;
@@ -989,7 +989,7 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
 
   async calculateOverallHealth(repos) {
     const scores = await Promise.all(
-      repos.slice(0, 10).map(repo => this.calculateHealthScore(repo))
+      repos.slice(0, 10).map(_repo => this.calculateHealthScore(_repo))
     );
     return {
       average_score: scores.reduce((a, b) => a + b, 0) / scores.length,
@@ -1033,25 +1033,25 @@ class ConsolidatedGitHubMCPServer extends EventEmitter {
     return ages.reduce((a, b) => a + b, 0) / ages.length;
   }
 
-  async calculateMergeRate(owner, repo) {
+  async calculateMergeRate(_owner, _repo) {
     // Simplificado - em produÃ§Ã£o, calcularia a taxa real de merge
     return 0.75;
   }
 
-  async getLastCommitDate(owner, repo) {
+  async getLastCommitDate(_owner, _repo) {
     // Simplificado - em produÃ§Ã£o, buscaria o Ãºltimo commit
     return new Date().toISOString();
   }
 
-  async getActiveContributors(owner, repo, days) {
+  async getActiveContributors(_owner, _repo, _days) {
     // Simplificado - em produÃ§Ã£o, contaria contribuidores Ãºnicos
     return Math.floor(Math.random() * 10) + 1;
   }
 
-  async getRepoContext(repo) {
+  async getRepoContext(_repo) {
     // Obter contexto do repositÃ³rio para AI
     return {
-      name: repo,
+      name: _repo,
       type: 'detected_from_name',
       suggested_structure: []
     };

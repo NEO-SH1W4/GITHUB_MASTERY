@@ -1,0 +1,6 @@
+{
+    "routing_strategy":  "adaptive",
+    "task_type":  "\\analysis\\",
+    "timestamp":  "2025-07-08 18:40:48",
+    "model":  "claude-4-sonnet"
+}

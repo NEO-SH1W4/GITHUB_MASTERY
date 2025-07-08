@@ -152,6 +152,7 @@ npm run dev
 - 🔌 [**API Usage Examples**](./examples/)
 - 🛠️ [**CLI Commands Reference**](./docs/en/CLI.md)
 - 🔗 [**Webhook Setup Guide**](./docs/en/WEBHOOKS.md)
+- 🤖 [**Model Routing Rules**](./MODEL_ROUTING_RULES.md) - Adaptive model selection
 - 🤝 [**Contributing Guide**](./CONTRIBUTING.md)
 - 📋 [**Changelog**](./CHANGELOG.md)
 
