@@ -61,6 +61,19 @@
     "contextSharing": true,
     "ruleSynchronization": true
   },
+  "gidenIntegration": {
+    "enabled": true,
+    "aidenProjectPath": "C:\\Users\\João\\Desktop\\PROJETOS\\AGENTES_IA\\AIDEN_PROJECT",
+    "capabilities": [
+      "adaptive-learning",
+      "self-evolution",
+      "code-review",
+      "repo-optimization",
+      "workflow-generation"
+    ],
+    "learningMode": "continuous",
+    "confidenceThreshold": 0.85
+  },
   "agentCapabilities": {
     "rustCore": {
       "enabled": true,
