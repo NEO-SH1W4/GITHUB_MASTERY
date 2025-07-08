@@ -167,6 +167,77 @@ describe('GitHubClient', () => {
     });
   });
 
+  describe('getRateLimit', () => {
+    it('should return rate limit info', async () => {
+      const mockRateLimit = {
+        resources: {
+          core: {
+            limit: 5000,
+            used: 10,
+            remaining: 4990,
+            reset: 1625443200,
+          },
+        },
+      };
+
+      client.octokit.rest.rateLimit.get.mockResolvedValue({
+        data: mockRateLimit,
+      });
+
+      const result = await client.getRateLimit();
+      expect(result).toEqual(mockRateLimit);
+      expect(client.octokit.rest.rateLimit.get).toHaveBeenCalled();
+    });
+
+    it('should handle rate limit errors', async () => {
+      client.octokit.rest.rateLimit.get.mockRejectedValue(
+        new Error('Rate limit error')
+      );
+
+      await expect(client.getRateLimit()).rejects.toThrow('Rate limit error');
+    });
+  });
+
+  describe('validateToken', () => {
+    it('should validate token successfully', async () => {
+      const mockUser = { login: 'testuser' };
+      client.octokit.rest.users.getAuthenticated.mockResolvedValue({
+        data: mockUser,
+      });
+
+      const result = await client.validateToken();
+      expect(result).toBe(true);
+      expect(client.octokit.rest.users.getAuthenticated).toHaveBeenCalled();
+    });
+
+    it('should return false for invalid token', async () => {
+      client.octokit.rest.users.getAuthenticated.mockRejectedValue(
+        new Error('Invalid token')
+      );
+
+      const result = await client.validateToken();
+      expect(result).toBe(false);
+    });
+  });
+
+  describe('createRepository', () => {
+    it('should handle repository creation errors', async () => {
+      client.octokit.rest.repos.createForAuthenticatedUser.mockRejectedValue(
+        new Error('Repository creation failed')
+      );
+
+      await expect(
+        client.createRepository({ name: 'test-repo' })
+      ).rejects.toThrow('Repository creation failed');
+    });
+
+    it('should validate repository name', async () => {
+      await expect(
+        client.createRepository({ name: '' })
+      ).rejects.toThrow('Repository name is required');
+    });
+  });
+
   describe('listIssues', () => {
     it('should return issues list', async () => {
       const mockIssues = [

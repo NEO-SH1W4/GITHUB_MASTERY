@@ -43,6 +43,8 @@
     "mcp:health": "node -e \"console.log('MCP Health Check - TODO: Implement')\"",
     "mcp:build:stealth": "powershell -ExecutionPolicy Bypass -File scripts/create-stealth-build.ps1",
     "mcp:enhanced": "node mcp/github-mcp-server-enhanced.js",
+    "giden:test": "node scripts/test-giden-integration.js",
+    "giden:init": "node -e \"console.log('GIDEN initialization will happen automatically when MCP server starts')\"",
     "deploy:ecosystem": "node scripts/deploy-to-ecosystem.js",
     "deploy:check": "node scripts/deploy-to-ecosystem.js --dry-run",
     "deploy:rollback": "node scripts/deploy-to-ecosystem.js --rollback",

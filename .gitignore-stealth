@@ -1,0 +1,12 @@
+# Arquivos com referências ao VIREON (manter privados)
+mcp/consolidated-mcp-server.js
+mcp/consolidated-mcp-server.backup.js
+INTEGRATION_STRATEGY.md
+
+# Arquivos de desenvolvimento interno
+*-VIREON-*
+*vireon*
+*.backup.js
+
+# Notas internas
+SESSION_*_CONSOLIDATION.md

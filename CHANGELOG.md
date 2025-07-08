@@ -5,6 +5,36 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2025-07-08
+
+### Added
+
+- 🤖 **GIDEN 2.0**: Autonomous GitHub Intelligence Digital Entity Network
+- 🧠 Built-in AI models for code analysis, pattern detection, and workflow optimization
+- 📊 Self-contained learning system with persistent data storage
+- 🔄 Adaptive evolution capabilities with automatic improvement
+- 🎯 Predictive analytics for repository health and issue prediction
+- 📈 Performance metrics and learning event tracking
+- 🛠️ MCP integration with enhanced GitHub operations
+
+### Changed
+
+- 🔧 **BREAKING**: GIDEN no longer depends on external AIDEN project
+- 📚 Updated documentation to reflect autonomous system
+- ⚙️ Simplified setup process - no external dependencies required
+- 🏗️ Refactored GIDEN architecture for independence and performance
+
+### Removed
+
+- ❌ AIDEN project dependency
+- ❌ Python environment requirement
+- ❌ External AI service dependencies
+
+### Security
+
+- 🔒 Local-only AI processing - no external data transmission
+- 🛡️ Self-contained learning stays within user environment
+
 ## [Unreleased]
 
 ### Planned
@@ -15,6 +45,14 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Interface mobile
 
 ## [1.1.0] - 2025-07-04
+
+### Added
+
+- Autonomous GIDEN AI Core with internal AI models
+- Self-contained learning and evolution system
+- Full integration with GitHub Mastery MCP
+- New GIDEN features: code review, pattern detection, workflow automation
+- Updated setup guides and documentation
 
 ### Added
 
