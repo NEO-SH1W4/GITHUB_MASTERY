@@ -1,8 +1,8 @@
-# GIDEN Integration with GitHub Mastery
+# GIDEN - GitHub Intelligence Digital Entity Network
 
 ## 🤖 Overview
 
-GIDEN (GitHub Intelligence Digital Entity Network) is now integrated with GitHub Mastery through the MCP (Model Context Protocol) server. This integration brings AIDEN's adaptive AI capabilities to GitHub operations.
+GIDEN (GitHub Intelligence Digital Entity Network) is an autonomous AI system integrated with GitHub Mastery through the MCP (Model Context Protocol) server. GIDEN provides advanced GitHub operations with built-in adaptive learning, self-evolution capabilities, and intelligent code analysis - completely independent and self-contained.
 
 ## 🚀 Features
 
@@ -30,18 +30,27 @@ GIDEN (GitHub Intelligence Digital Entity Network) is now integrated with GitHub
 
 ### Prerequisites
 
-1. **AIDEN Project** must be available at:
-   ```
-   C:\Users\João\Desktop\PROJETOS\AGENTES_IA\AIDEN_PROJECT
-   ```
-
-2. **Python Environment** with AIDEN dependencies installed
+1. **Node.js** (v18 or higher)
+2. **GitHub Mastery** project properly installed
+3. **MCP Server** configured and running
 
 ### Configuration
 
-Set the environment variable for AIDEN project path:
+GIDEN is now **completely autonomous** and requires **no external dependencies**:
+
+- ✅ No AIDEN project installation needed
+- ✅ No Python environment required
+- ✅ No external AI services
+- ✅ Self-contained learning system
+- ✅ Built-in AI models
+
+Optional configuration (environment variables):
 ```powershell
-$env:AIDEN_PROJECT_PATH = "C:\Users\João\Desktop\PROJETOS\AGENTES_IA\AIDEN_PROJECT"
+# Optional: Custom learning data path
+$env:GIDEN_LEARNING_PATH = "C:\path\to\custom\learning\data"
+
+# Optional: Confidence threshold (0.0-1.0)
+$env:GIDEN_CONFIDENCE_THRESHOLD = "0.85"
 ```
 
 ### Starting the Server with GIDEN
