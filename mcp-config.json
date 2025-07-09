@@ -1,26 +1,16 @@
 {
   "mcpServers": {
-    "github-mastery-consolidated": {
+    "github-mastery-optimized": {
       "command": "node",
       "args": ["./mcp/consolidated-mcp-server.js"],
       "env": {
         "GITHUB_TOKEN": "",
-        "MCP_SERVER_NAME": "github-mastery-consolidated",
+        "MCP_SERVER_NAME": "github-mastery-optimized",
         "MCP_SERVER_VERSION": "2.0.0",
+        "PERFORMANCE_MODE": "balanced",
         "VIREON_INTEGRATION": "true",
-        "RUST_AGENT_CORE": "true",
-        "PYTHON_AGENT_BRAIN": "true"
+        "LOG_LEVEL": "info"
       }
-    },
-    "github-mastery-legacy": {
-      "command": "node",
-      "args": ["./mcp/github-mcp-server.js"],
-      "env": {
-        "GITHUB_TOKEN": "",
-        "MCP_SERVER_NAME": "github-mastery",
-        "MCP_SERVER_VERSION": "1.0.0"
-      },
-      "enabled": false
     }
   },
   "allowedOriginsRegex": [
@@ -48,16 +38,11 @@
       "key": "github-health",
       "description": "Check repository health",
       "action": "repo_health_check"
-    },
-    {
-      "key": "github-ecosystem",
-      "description": "Get ecosystem status",
-      "action": "ecosystem_status"
     }
   ],
   "vireonIntegration": {
     "enabled": true,
-    "consciousnessLevel": "metacognitive",
+    "consciousnessLevel": "basic",
     "contextSharing": true,
     "ruleSynchronization": true
   },
@@ -66,31 +51,33 @@
     "aidenProjectPath": "C:\\Users\\João\\Desktop\\PROJETOS\\AGENTES_IA\\AIDEN_PROJECT",
     "capabilities": [
       "adaptive-learning",
-      "self-evolution",
       "code-review",
-      "repo-optimization",
-      "workflow-generation"
+      "repo-optimization"
     ],
-    "learningMode": "continuous",
+    "learningMode": "passive",
     "confidenceThreshold": 0.85
   },
   "agentCapabilities": {
     "rustCore": {
       "enabled": true,
-      "performance": "10x",
+      "performance": "balanced",
       "features": [
-        "zero-copy-operations",
-        "concurrent-api-calls",
-        "memory-efficient-caching"
+        "memory-efficient-caching",
+        "concurrent-api-calls"
       ]
     },
     "pythonBrain": {
       "enabled": true,
       "models": [
         "gpt-commit-generation",
-        "pattern-recognition",
-        "predictive-analytics"
+        "pattern-recognition"
       ]
     }
+  },
+  "resourceMonitoring": {
+    "enabled": true,
+    "memoryThreshold": 512,
+    "cpuThreshold": 70,
+    "checkIntervalMs": 30000
   }
 }
