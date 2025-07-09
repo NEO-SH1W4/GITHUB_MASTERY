@@ -154,6 +154,7 @@ npm run dev
 - 🔗 [**Webhook Setup Guide**](./docs/en/WEBHOOKS.md)
 - 🤖 [**Model Routing Rules**](./MODEL_ROUTING_RULES.md) - Adaptive model selection
 - 🤝 [**Contributing Guide**](./CONTRIBUTING.md)
+- 🛡️ [**Code of Conduct**](./CODE_OF_CONDUCT.md)
 - 📋 [**Changelog**](./CHANGELOG.md)
 
 ## 🛠️ For Developers

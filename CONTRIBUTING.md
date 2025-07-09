@@ -331,7 +331,7 @@ docs(api): actualizar guía de autenticación
 
 ## 📄 Code of Conduct
 
-This project follows the [Contributor Covenant](https://www.contributor-covenant.org/). By participating, you agree to uphold this code.
+Please read our [Code of Conduct](./CODE_OF_CONDUCT.md), based on the [Contributor Covenant](https://www.contributor-covenant.org/). By participating, you agree to uphold this code.
 
 ### Our Standards
 
