@@ -37,12 +37,37 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Added
+
+- 💚 Sistema de recuperação de terminal comprometido
+- 🧹 Scripts de manutenção e diagnóstico do sistema
+- 📊 Monitoramento de recursos para maior estabilidade
+- 🔄 Configuração MCP otimizada para redução de consumo de recursos
+- 🛠️ Ferramentas de teste e verificação de integrações
+
+### Fixed
+
+- 👁️ Comprometimento do terminal na primeira versão funcional
+- 💾 Vazamento de memória em processos Node.js redundantes
+- 🔒 Gerenciamento de token GitHub para autenticação segura
+
+### Changed
+
+- 🤖 Redução do nível de consciência VIREON para "basic" para economizar recursos
+- 🔧 Monitoramento e gerenciamento avançado de processos
+
+### Security
+
+- 🔐 Validação reforçada do token GitHub
+- 🔍 Monitoramento detalhado dos processos em execução
+
 ### Planned
 
 - Dashboard web interativo
 - Sistema de plugins
 - Integração com serviços de terceiros
 - Interface mobile
+- Rotação automática de token GitHub
 
 ## [1.1.0] - 2025-07-04
 
