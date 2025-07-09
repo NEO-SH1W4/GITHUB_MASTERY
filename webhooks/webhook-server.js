@@ -181,23 +181,55 @@ app.get('/health', (req, res) => {
 /**
  * Iniciar servidor
  */
-app.listen(PORT, () => {
-  console.log(chalk.green(`🎣 Webhook server rodando na porta ${PORT}`));
-  console.log(chalk.cyan(`📝 Status: http://localhost:${PORT}/status`));
-  console.log(chalk.cyan(`💚 Health: http://localhost:${PORT}/health`));
-  console.log(chalk.cyan(`🎯 Webhook: http://localhost:${PORT}/webhook`));
+function startServer(port = PORT) {
+  return new Promise((resolve, reject) => {
+    const server = app.listen(port, () => {
+      console.log(chalk.green(`🎣 Webhook server rodando na porta ${port}`));
+      console.log(chalk.cyan(`📝 Status: http://localhost:${port}/status`));
+      console.log(chalk.cyan(`💚 Health: http://localhost:${port}/health`));
+      console.log(chalk.cyan(`🎯 Webhook: http://localhost:${port}/webhook`));
 
-  if (!WEBHOOK_SECRET) {
-    console.log(
-      chalk.yellow(
-        '\n⚠️  Configure WEBHOOK_SECRET no arquivo .env para maior segurança'
-      )
-    );
-  }
+      if (!WEBHOOK_SECRET) {
+        console.log(
+          chalk.yellow(
+            '\n⚠️  Configure WEBHOOK_SECRET no arquivo .env para maior segurança'
+          )
+        );
+      }
 
-  console.log(chalk.blue('\n📖 Para configurar no GitHub:'));
-  console.log(chalk.gray('   1. Vá em Settings > Webhooks no seu repositório'));
-  console.log(chalk.gray(`   2. Adicione URL: http://localhost:${PORT}/webhook`));
-  console.log(chalk.gray('   3. Selecione eventos desejados'));
-  console.log(chalk.gray('   4. Configure o secret (se disponível)'));
-});
+      console.log(chalk.blue('\n📖 Para configurar no GitHub:'));
+      console.log(
+        chalk.gray('   1. Vá em Settings > Webhooks no seu repositório')
+      );
+      console.log(
+        chalk.gray(`   2. Adicione URL: http://localhost:${port}/webhook`)
+      );
+      console.log(chalk.gray('   3. Selecione eventos desejados'));
+      console.log(chalk.gray('   4. Configure o secret (se disponível)'));
+      resolve(server);
+    });
+
+    server.on('error', error => {
+      console.error(
+        chalk.red(`Erro ao iniciar webhook server: ${error.message}`)
+      );
+      reject(error);
+    });
+  });
+}
+
+// Executar o servidor se este arquivo for executado diretamente
+if (process.argv[1] && process.argv[1].includes('webhook-server.js')) {
+  startServer();
+}
+
+export {
+  app,
+  startServer,
+  handlePushEvent,
+  handleIssuesEvent,
+  handlePullRequestEvent,
+  handleReleaseEvent,
+  handleStarEvent,
+  verifyGitHubSignature,
+};
