@@ -154,6 +154,7 @@ npm run dev
 - 🔗 [**Webhook Setup Guide**](./docs/en/WEBHOOKS.md)
 - 🤖 [**Model Routing Rules**](./MODEL_ROUTING_RULES.md) - Adaptive model selection
 - 🤝 [**Contributing Guide**](./CONTRIBUTING.md)
+- 📜 [**Code of Conduct**](./CODE_OF_CONDUCT.md)
 - 📋 [**Changelog**](./CHANGELOG.md)
 
 ## 🛠️ For Developers
@@ -245,6 +246,8 @@ See the [complete contribution guide](./CONTRIBUTING.md).
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+
+See our [Code of Conduct](./CODE_OF_CONDUCT.md) for community standards.
 ## 🌟 Acknowledgments
 
 Built with ❤️ for the developer community. If this project helped you, consider giving it a ⭐!
