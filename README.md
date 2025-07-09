@@ -149,6 +149,7 @@ npm run dev
 - 🎯 [**Landing Page Demo**](https://neo-sh1w4.github.io/github_mastery/) - Live conversion-optimized page
 - 📖 [**Landing Page Guide**](LANDING_PAGE.md) - Complete setup and customization
 - 🏃‍♂️ [**Quick Start Guide**](./docs/en/QUICKSTART.md)
+- 🖥️ [**IDE Setup Guide**](./docs/IDE_SETUP.md)
 - 🔌 [**API Usage Examples**](./examples/)
 - 🛠️ [**CLI Commands Reference**](./docs/en/CLI.md)
 - 🔗 [**Webhook Setup Guide**](./docs/en/WEBHOOKS.md)

@@ -175,6 +175,7 @@ Após a configuração, consulte:
 - `README.md` para visão geral do projeto
 - `docs/CONTRIBUTING.md` para diretrizes de contribuição
 - `docs/ARCHITECTURE.md` para detalhes da arquitetura MCP
+- `docs/IDE_SETUP.md` para configuração das principais IDEs
 
 ---
 
