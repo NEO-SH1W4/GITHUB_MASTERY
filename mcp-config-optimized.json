@@ -1,0 +1,83 @@
+{
+  "mcpServers": {
+    "github-mastery-optimized": {
+      "command": "node",
+      "args": ["./mcp/consolidated-mcp-server.js"],
+      "env": {
+        "GITHUB_TOKEN": "",
+        "MCP_SERVER_NAME": "github-mastery-optimized",
+        "MCP_SERVER_VERSION": "2.0.0",
+        "PERFORMANCE_MODE": "balanced",
+        "VIREON_INTEGRATION": "true",
+        "LOG_LEVEL": "info"
+      }
+    }
+  },
+  "allowedOriginsRegex": [
+    "https://github\\.com/.*",
+    "https://.*\\.github\\.io/.*",
+    "http://localhost:.*"
+  ],
+  "globalShortcuts": [
+    {
+      "key": "github-auth",
+      "description": "Authenticate with GitHub",
+      "action": "authenticate"
+    },
+    {
+      "key": "github-repos",
+      "description": "List GitHub repositories",
+      "action": "list_repositories"
+    },
+    {
+      "key": "github-smart-commit",
+      "description": "Make AI-powered smart contribution",
+      "action": "smart_contribution"
+    },
+    {
+      "key": "github-health",
+      "description": "Check repository health",
+      "action": "repo_health_check"
+    }
+  ],
+  "vireonIntegration": {
+    "enabled": true,
+    "consciousnessLevel": "basic",
+    "contextSharing": true,
+    "ruleSynchronization": true
+  },
+  "gidenIntegration": {
+    "enabled": true,
+    "aidenProjectPath": "C:\\Users\\João\\Desktop\\PROJETOS\\AGENTES_IA\\AIDEN_PROJECT",
+    "capabilities": [
+      "adaptive-learning",
+      "code-review",
+      "repo-optimization"
+    ],
+    "learningMode": "passive",
+    "confidenceThreshold": 0.85
+  },
+  "agentCapabilities": {
+    "rustCore": {
+      "enabled": true,
+      "performance": "balanced",
+      "features": [
+        "memory-efficient-caching",
+        "concurrent-api-calls"
+      ]
+    },
+    "pythonBrain": {
+      "enabled": true,
+      "models": [
+        "gpt-commit-generation",
+        "pattern-recognition"
+      ]
+    }
+  },
+  "resourceMonitoring": {
+    "enabled": true,
+    "memoryThreshold": 512,
+    "cpuThreshold": 70,
+    "checkIntervalMs": 30000
+  }
+}
